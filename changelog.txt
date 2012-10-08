@@ -1,4 +1,7 @@
 Changelog
 
+[r2 - 09/10/2012 - 5.0.5]
+Added some infos in the readme.
+
 [r1 - 09/10/2012 - 5.0.5]
 First proper release on GitHub.
