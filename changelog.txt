@@ -1,0 +1,4 @@
+Changelog
+
+[r1 - 09/10/2012 - 5.0.5]
+First proper release on GitHub.

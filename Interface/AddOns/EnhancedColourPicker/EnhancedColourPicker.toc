@@ -1,0 +1,13 @@
+## Interface: 40000
+## Title: EnhancedColourPicker
+## Notes: Adds Copy and Paste Functions to the ColorPicker
+## Version: 4
+## Author: Jncl
+## X-Credits: Lozareth for the original Discord Library Mod, Kyahx for stripping it out from Discord
+## DefaultState: Enabled
+## X-Curse-Packaged-Version: b1.13623.1
+## X-Curse-Project-Name: EnhancedColourPicker
+## X-Curse-Project-ID: enhanced-colour-picker
+## X-Curse-Repository-ID: wow/enhanced-colour-picker/mainline
+
+EnhancedColourPicker.lua

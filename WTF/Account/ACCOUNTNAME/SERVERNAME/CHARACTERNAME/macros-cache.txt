@@ -1,0 +1,8 @@
+MACRO 16777301 "Pet" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [mod: ctrl] Summon Infernal; Summon Doomguard
+END
+MACRO 16777390 "ZGVMacro2" "0"
+/target Bowmistress Li
+/run ZGV:MRM()
+END

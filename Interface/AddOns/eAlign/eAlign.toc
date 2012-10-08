@@ -1,0 +1,9 @@
+## Interface: 40200
+## Title: eAlign
+## Author: Eurytus
+## Notes: Alignment grid.
+## X-Curse-Packaged-Version: 4.2.1
+## X-Curse-Project-Name: eAlign
+## X-Curse-Project-ID: ealign
+## X-Curse-Repository-ID: wow/ealign/mainline
+eAlign.lua
