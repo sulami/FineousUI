@@ -1,7 +1,4 @@
 FineousUI - Minimal Warlock Raid UI
-r1
-WoW 5.0.5
-09/10/2012
 
 IMPORTANT: TO DOWNLOAD FROM GITHUB YOU NEED TOO CLICK ON DOWNLOADS ON THE UPPER RIGHT SIDE!
 (This might be hard to figure out if you don't know GitHub.)

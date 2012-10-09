@@ -1,5 +1,8 @@
 Changelog
 
+[r4 - 10/10/2012 - 5.0.5]
+DBM Updated.
+
 [r2 - 09/10/2012 - 5.0.5]
 Added some infos in the readme.
 
