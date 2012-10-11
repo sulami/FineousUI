@@ -2,10 +2,10 @@
 ## Title: Shadowed Unit Frames
 ## Notes: As with every other SUF note, this isn't telling you something useful. You should probably not be reading it still.
 ## Author: Shadowed
-## Version: v3.7
+## Version: v3.7.1
 ## SavedVariables: ShadowedUFDB
 ## OptionalDeps: Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, Clique
-## X-Curse-Packaged-Version: v3.7
+## X-Curse-Packaged-Version: v3.7.1
 ## X-Curse-Project-Name: Shadowed Unit Frames
 ## X-Curse-Project-ID: shadowed-unit-frames
 ## X-Curse-Repository-ID: wow/shadowed-unit-frames/mainline

@@ -19,6 +19,9 @@ MapsterDB = {
 						["DIREHORNPOST"] = 181838066967,
 						["WITCHHILL"] = 449152270,
 					},
+					["TheHiddenPass"] = {
+						["TheHiddenCliffs"] = 454258982,
+					},
 					["TwilightHighlands_terrain1"] = {
 						["VermillionRedoubt"] = 17254588740,
 						["GlopgutsHollow"] = 95868352686,
@@ -60,9 +63,9 @@ MapsterDB = {
 				["scale"] = 1.486124396324158,
 				["alpha"] = 1,
 			},
-			["x"] = 11.06188432393719,
+			["x"] = 0.06186890866183248,
 			["questObjectives"] = 1,
-			["y"] = -13.68712970748311,
+			["y"] = 0.3130121114081703,
 		},
 	},
 }

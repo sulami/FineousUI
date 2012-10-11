@@ -4,7 +4,7 @@
 
 ShadowUF = select(2, ...)
 local L = ShadowUF.L
-ShadowUF.dbRevision = 27
+ShadowUF.dbRevision = 28
 ShadowUF.playerUnit = "player"
 ShadowUF.enabledUnits = {}
 ShadowUF.modules = {}
@@ -85,6 +85,10 @@ end
 
 function ShadowUF:CheckUpgrade()
 	local revision = self.db.profile.revision or self.dbRevision
+
+	if( revision <= 27 ) then
+		self.db.profile.healthColors.aggro = CopyTable(self.db.profile.healthColors.hostile)
+	end
 
 	if( revision <= 26 ) then
 		for _, unit in pairs(self.unitList) do
@@ -298,7 +302,7 @@ function ShadowUF:LoadUnitDefaults()
 			self.defaults.profile.units[unit].combatText = {enabled = true, anchorTo = "$parent", anchorPoint = "C", x = 0, y = 0}
 
 			if( unit ~= "battleground" and unit ~= "battlegroundpet" and unit ~= "arena" and unit ~= "arenapet" ) then
-				self.defaults.profile.units[unit].incHeal = {enabled = false, cap = 1.30}
+				self.defaults.profile.units[unit].incHeal = {enabled = true, cap = 1.30}
 			end
 		end
 		
@@ -529,24 +533,36 @@ end
 
 ShadowUF.noop = function() end
 
+local rehideFrame = function(self)
+	if( not InCombatLockdown() ) then
+		self:Hide()
+	end
+end
+
+local function hideBlizzardFrames(taint, ...)
+	for i=1, select("#", ...) do
+		local frame = select(i, ...)
+		frame:UnregisterAllEvents()
+		frame:Hide()
+
+		if( taint ) then
+			frame.Show = ShadowUF.noop
+		else
+			frame:HookScript("OnShow", rehideFrame)
+		end
+	end
+end
+
 local active_hiddens = {}
 function ShadowUF:HideBlizzardFrames()
 	if( ShadowUF.db.profile.hidden.cast and not active_hiddens.cast ) then
-		CastingBarFrame:UnregisterAllEvents()
-		PetCastingBarFrame:UnregisterAllEvents()
+		hideBlizzardFrames(true, CastingBarFrame, PetCastingBarFrame)
 	end
 
 	if( ShadowUF.db.profile.hidden.party and not active_hiddens.party ) then
 		for i=1, MAX_PARTY_MEMBERS do
 			local name = "PartyMemberFrame" .. i
-			local frame = _G[name]
-
-			frame:UnregisterAllEvents()
-			frame.Show = self.noop
-			frame:Hide()
-
-			_G[name .. "HealthBar"]:UnregisterAllEvents()
-			_G[name .. "ManaBar"]:UnregisterAllEvents()
+			hideBlizzardFrames(true, _G[name], _G[name .. "HealthBar"], _G[name .. "ManaBar"])
 		end
 		
 		-- This stops the compact party frame from being shown		
@@ -554,8 +570,7 @@ function ShadowUF:HideBlizzardFrames()
 
 		-- This just makes sure
 		if( CompactPartyFrame ) then
-			CompactPartyFrame:UnregisterAllEvents()
-			CompactPartyFrame:Hide()
+			hideBlizzardFrames(false, CompactPartyFrame)
 		end
 	end
 
@@ -566,8 +581,9 @@ function ShadowUF:HideBlizzardFrames()
 			local function hideRaid()
 				CompactRaidFrameManager:UnregisterAllEvents()
 				CompactRaidFrameContainer:UnregisterAllEvents()
-				if( not InCombatLockdown() ) then CompactRaidFrameManager:Hide() end
+				if( InCombatLockdown() ) then return end
 		
+				CompactRaidFrameManager:Hide()
 				local shown = CompactRaidFrameManager_GetSetting("IsShown")
 				if( shown and shown ~= "0" ) then
 					CompactRaidFrameManager_SetSetting("IsShown", "0")
@@ -581,81 +597,48 @@ function ShadowUF:HideBlizzardFrames()
 			end)
 			
 			hideRaid()
+			CompactRaidFrameContainer:SetScript("OnShow", hideRaid)
+			CompactRaidFrameManager:SetScript("OnShow", hideRaid)
+
 		elseif( not ShadowUF.db.profile.hidden.raid ) then
 			CompactRaidFrameManager:SetFrameStrata("DIALOG")
 		end
 	end
 
 	if( ShadowUF.db.profile.hidden.buffs and not active_hiddens.buffs ) then
-		BuffFrame:UnregisterAllEvents()
-		BuffFrame:Hide()
-		TemporaryEnchantFrame:Hide()
-		ConsolidatedBuffs:Hide()
+		hideBlizzardFrames(false, BuffFrame, TemporaryEnchantFrame, ConsolidatedBuffs)
 	end
 	
 	if( ShadowUF.db.profile.hidden.player and not active_hiddens.player ) then
-		PlayerFrame:UnregisterAllEvents()
-		PlayerFrame:Hide()
+		hideBlizzardFrames(false, PlayerFrame, PlayerFrameHealthBar, PlayerFrameManaBar, PlayerFrameAlternateManaBar)
 			
 		-- We keep these in case someone is still using the default auras, otherwise it messes up vehicle stuff
 		PlayerFrame:RegisterEvent("UNIT_ENTERING_VEHICLE")
 		PlayerFrame:RegisterEvent("UNIT_ENTERED_VEHICLE")
 		PlayerFrame:RegisterEvent("UNIT_EXITING_VEHICLE")
 		PlayerFrame:RegisterEvent("UNIT_EXITED_VEHICLE")
-
-		PlayerFrameHealthBar:UnregisterAllEvents()
-		PlayerFrameManaBar:UnregisterAllEvents()
-		PlayerFrameAlternateManaBar:UnregisterAllEvents()
 	end
 
-
 	if( ShadowUF.db.profile.hidden.playerPower and not active_hiddens.playerPower ) then
-		for _, frame in pairs({EclipseBarFrame, ShardBarFrame, RuneFrame, TotemFrame, PaladinPowerBar, MonkHarmonyBar, PriestBarFrame, WarlockPowerFrame}) do
-			frame:UnregisterAllEvents()
-			frame:Hide()
-			frame.Show = self.noop
-		end
+		hideBlizzardFrames(true, EclipseBarFrame, ShardBarFrame, RuneFrame, TotemFrame, PaladinPowerBar, MonkHarmonyBar, PriestBarFrame, WarlockPowerFrame)
 	end
 
 	if( ShadowUF.db.profile.hidden.pet and not active_hiddens.pet ) then
-		PetFrame:UnregisterAllEvents()
-		PetFrame:Hide()
-
-		PetFrameHealthBar:UnregisterAllEvents()
-		PetFrameManaBar:UnregisterAllEvents()
+		hideBlizzardFrames(false, PetFrame, PetFrameHealthBar, PetFrameManaBar)
 	end
 	
 	if( ShadowUF.db.profile.hidden.target and not active_hiddens.target ) then
-		TargetFrame:UnregisterAllEvents()
-		TargetFrame:Hide()
-
-		TargetFrameHealthBar:UnregisterAllEvents()
-		TargetFrameManaBar:UnregisterAllEvents()
-		TargetFrameSpellBar:UnregisterAllEvents()
-
-		ComboFrame:UnregisterAllEvents()
-		ComboFrame:Hide()
+		hideBlizzardFrames(false, TargetFrame, TargetFrameHealthBar, TargetFrameManaBar, TargetFrameSpellBar, ComboFrame, TargetFrameToT)
 	end
 	
 	if( ShadowUF.db.profile.hidden.focus and not active_hiddens.focus ) then
-		FocusFrame:UnregisterAllEvents()
-		FocusFrame:Hide()
-
-		FocusFrameHealthBar:UnregisterAllEvents()
-		FocusFrameManaBar:UnregisterAllEvents()
-		FocusFrameSpellBar:UnregisterAllEvents()
+		hideBlizzardFrames(false, FocusFrame, FocusFrameHealthBar, FocusFrameManaBar, FocusFrameSpellBar, FocusFrameToT)
 	end
 		
 	if( ShadowUF.db.profile.hidden.boss and not active_hiddens.boss ) then
 		for i=1, MAX_BOSS_FRAMES do
 			local name = "Boss" .. i .. "TargetFrame"
-			local frame = _G[name]
-
-			frame:UnregisterAllEvents()
-			frame:Hide()
-
-			_G[name .. "HealthBar"]:UnregisterAllEvents()
-			_G[name .. "ManaBar"]:UnregisterAllEvents()
+			hideBlizzardFrames(false, _G[name], _G[name .. "HealthBar"], _G[name .. "ManaBar"])
 		end
 	end
 
@@ -668,10 +651,7 @@ function ShadowUF:HideBlizzardFrames()
 	end
 
 	if( ShadowUF.db.profile.hidden.playerAltPower and not active_hiddens.playerAltPower ) then
-		PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_SHOW")
-		PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_HIDE")
-		PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
-		PlayerPowerBarAlt:Hide()
+		hideBlizzardFrames(false, PlayerPowerBarAlt)
 	end
 
 	-- fix LFD Cooldown Frame

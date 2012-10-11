@@ -96,9 +96,10 @@ Quartz3DB = {
 			["modules"] = {
 				["Swing"] = false,
 				["Buff"] = false,
-				["Timer"] = false,
-				["Pet"] = false,
+				["Target"] = false,
 				["Mirror"] = false,
+				["Pet"] = false,
+				["Timer"] = false,
 			},
 			["castingcolor"] = {
 				0, -- [1]

@@ -1018,6 +1018,13 @@ local function loadGeneralOptions()
 								desc = L["Health bar color for hostile units."],
 								arg = "healthColors.hostile",
 							},
+							aggro = {
+								order = 6.5,
+								type = "color",
+								name = L["Has Aggro"],
+								desc = L["Health bar color for units with aggro."],
+								arg = "healthColors.aggro",
+							},
 							static = {
 								order = 7,
 								type = "color",
@@ -3895,6 +3902,7 @@ local function loadUnitOptions()
 								order = 3.5,
 								type = "description",
 								name = "",
+								hidden = function(info) return info[2] == "player" or info[2] == "pet" end,
 							},
 							healthColor = {
 								order = 4,

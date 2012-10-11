@@ -5,7 +5,7 @@ DBM_SavedOptions = {
 	["HPFramePoint"] = "RIGHT",
 	["UseMasterVolume"] = true,
 	["StatusEnabled"] = true,
-	["InfoFrameX"] = 75,
+	["InfoFrameX"] = 424.0000915527344,
 	["AprilFools"] = true,
 	["RangeFrameX"] = 50,
 	["DisableCinematicsOutside"] = true,
@@ -41,7 +41,7 @@ DBM_SavedOptions = {
 	["DontSetIcons"] = false,
 	["BigBrotherAnnounceToRaid"] = false,
 	["CountdownVoice"] = "Corsica",
-	["InfoFrameY"] = -75,
+	["InfoFrameY"] = -258.0000610351563,
 	["SpecialWarningSound"] = "Sound\\Spells\\PVPFlagTaken.wav",
 	["WarningIconRight"] = true,
 	["HealthFrameGrowUp"] = false,
@@ -63,7 +63,7 @@ DBM_SavedOptions = {
 		1, -- [3]
 	},
 	["DontSendBossWhispers"] = false,
-	["LastRevision"] = 7846,
+	["LastRevision"] = 7916,
 	["WarningColors"] = {
 		{
 			["r"] = 0.4117647058823529,

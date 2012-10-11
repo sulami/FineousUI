@@ -9,6 +9,6 @@ TradeSkillDW_QueueSettings = {
 	["Enchanting"] = {
 		["queueList"] = {
 		},
-		["selectedIdx"] = 0,
+		["selectedIdx"] = 1,
 	},
 }

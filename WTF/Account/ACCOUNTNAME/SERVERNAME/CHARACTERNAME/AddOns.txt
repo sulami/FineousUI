@@ -71,3 +71,4 @@ Bartender4: enabled
 Forte_Cooldown: disabled
 Forte_Soulstone: disabled
 Forte_Healthstone: disabled
+TradeSkillDW: enabled

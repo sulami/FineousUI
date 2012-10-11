@@ -2,7 +2,7 @@ BINDINGMODE 0
 bind BUTTON3 CLICK BindPadKey:SPELL Soulburn
 bind W MOVEFORWARD
 bind UP NONE
-bind S MOVEBACKWARD
+bind S STOPCASTING
 bind DOWN NONE
 bind A TURNLEFT
 bind LEFT NONE
@@ -12,7 +12,7 @@ bind Q CLICK BindPadKey:SPELL Soul Swap
 bind E CLICK BindPadKey:SPELL Shadow Bolt
 bind NUMPAD0 CLICK BindPadKey:SPELL Create Soulwell
 bind X CLICK BindPadKey:SPELL Unending Resolve
-bind Z CLICK BindPadKey:SPELL Drain Life
+bind Z NONE
 bind NUMLOCK TOGGLEAUTORUN
 bind BUTTON4 CAMERAZOOMOUT
 bind PAGEUP NONE
@@ -28,7 +28,7 @@ bind 2 CLICK BindPadKey:SPELL Unstable Affliction
 bind 3 CLICK BindPadKey:SPELL Corruption
 bind 4 CLICK BindPadKey:SPELL Agony
 bind 5 CLICK BindPadKey:SPELL Mortal Coil
-bind 6 NONE
+bind 6 CLICK BindPadKey:SPELL Drain Life
 bind 7 NONE
 bind 8 NONE
 bind 9 NONE

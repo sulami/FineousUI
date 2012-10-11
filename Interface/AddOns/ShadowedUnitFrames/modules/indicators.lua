@@ -1,5 +1,4 @@
 local Indicators = {list = {"status", "pvp", "leader", "resurrect", "masterLoot", "raidTarget", "ready", "role", "lfdRole", "class", "phase", "questBoss", "petBattle"}}
-local leavingWorld
 
 ShadowUF:RegisterModule(Indicators, "indicators", ShadowUF.L["Indicators"])
 
@@ -20,7 +19,7 @@ end
 function Indicators:UpdatePhase(frame)
     if( not frame.indicators.phase or not frame.indicators.phase.enabled ) then return end
 
-    if( UnitInOtherParty(frame.unit) ) then
+    if( not select(2, UnitInOtherParty(frame.unit)) ) then
 	    frame.indicators.phase:SetTexture("Interface\\PlayerFrame\\whisper-only")
         frame.indicators.phase:Show()
     elseif( UnitExists(frame.unit) and not UnitInPhase(frame.unit) ) then
@@ -96,7 +95,7 @@ end
 function Indicators:UpdateRole(frame, event)
 	if( not frame.indicators.role or not frame.indicators.role.enabled ) then return end
 	
-	if( leavingWorld or not UnitInRaid(frame.unit) and not UnitInParty(frame.unit) ) then
+	if( not UnitInRaid(frame.unit) and not UnitInParty(frame.unit) ) then
 		frame.indicators.role:Hide()
 	elseif( GetPartyAssignment("MAINTANK", frame.unit) ) then
 		frame.indicators.role:SetTexture("Interface\\GroupFrame\\UI-Group-MainTankIcon")
@@ -358,10 +357,9 @@ function Indicators:OnEnable(frame)
 	end
 		
 	if( config.indicators.lfdRole and config.indicators.lfdRole.enabled ) then
-		if( frame.unit == "player" ) then
-			frame:RegisterNormalEvent("PLAYER_ROLES_ASSIGNED", self, "UpdateLFDRole")
-		end
-		
+		frame:RegisterNormalEvent("PLAYER_ROLES_ASSIGNED", self, "UpdateLFDRole")
+		frame:RegisterUpdateFunc(self, "UpdateLFDRole")
+
 		frame.indicators.lfdRole = frame.indicators.lfdRole or frame.indicators:CreateTexture(nil, "OVERLAY")
 		frame.indicators.lfdRole:SetTexture("Interface\\LFGFrame\\UI-LFG-ICON-PORTRAITROLES")
 	end

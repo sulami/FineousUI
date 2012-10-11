@@ -91,9 +91,9 @@ Prat3DB = {
 		["Prat_CopyChat"] = {
 			["profiles"] = {
 				["Default"] = {
+					["buttonpos"] = "TOPRIGHT",
 					["showbutton"] = {
 						["ChatFrame2"] = false,
-						["ChatFrame1"] = false,
 						["ChatFrame3"] = false,
 					},
 				},

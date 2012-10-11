@@ -6,7 +6,6 @@ FX_Saved = {
 	},
 	["Healthstone"] = {
 		["Fineous"] = 0,
-		["Sulami"] = 0,
 	},
 	["Exceptions"] = {
 		["Hellfire Channeler"] = 0,
@@ -18,7 +17,7 @@ FX_Saved = {
 		["Master Engineer Telonicus"] = 1,
 		["Fathom-Guard Sharkkis"] = 1,
 	},
-	["Update"] = 299503.755,
+	["Update"] = 40568.995,
 	["Profiles"] = {
 		["Active"] = 1,
 		["Characters"] = {
@@ -342,7 +341,7 @@ FX_Saved = {
 								},
 							},
 							["GroupOverride"] = true,
-							["Warn"] = true,
+							["Flip"] = false,
 							["Height"] = 40,
 							["Detail"] = true,
 							["Enchant"] = {
@@ -352,7 +351,7 @@ FX_Saved = {
 								[0] = true,
 							},
 							["Swing"] = false,
-							["Flip"] = false,
+							["Warn"] = true,
 							["Buff"] = {
 								1, -- [1]
 								1, -- [2]
@@ -607,18 +606,14 @@ FX_Saved = {
 					0.1, -- [4]
 					[0] = true,
 				},
-				["RAStart"] = {
-					">>> Raise Ally on %s <<<", -- [1]
-					[0] = 1,
+				["TimerSmartSpace"] = {
+					30, -- [1]
+					[0] = true,
 				},
 				["SoulstoneTexture"] = "Interface\\AddOns\\Forte_Core\\Textures\\Aluminium",
-				["OptionsBackdrop"] = {
-					"Interface\\AddOns\\Forte_Core\\Textures\\Background", -- [1]
-					"Interface\\AddOns\\Forte_Core\\Textures\\Border", -- [2]
-					false, -- [3]
-					16, -- [4]
-					5, -- [5]
-					5, -- [6]
+				["BloodPact"] = {
+					"warrior self", -- [1]
+					[0] = false,
 				},
 				["LinkClone"] = true,
 				["LoadExpandSubcats"] = true,
@@ -650,9 +645,9 @@ FX_Saved = {
 					0.21, -- [2]
 					0.9300000000000001, -- [3]
 				},
-				["DevourMagicFailed"] = {
-					">> Devour Magic Failed! <<", -- [1]
-					[0] = 0,
+				["SummonFont"] = {
+					"Interface\\AddOns\\Forte_Core\\Fonts\\GOTHIC.TTF", -- [1]
+					11, -- [2]
 				},
 				["Mix"] = 0.5,
 				["IBFStart"] = {
@@ -694,7 +689,10 @@ FX_Saved = {
 					1, -- [3]
 					[0] = true,
 				},
-				["SoulstoneAuto"] = false,
+				["SeduceStart"] = {
+					"Seducing >> %s << Now", -- [1]
+					[0] = 0,
+				},
 				["FWSUFrame"] = {
 					["y"] = 609.4223044514656,
 					["x"] = 1327.644476592541,
@@ -703,7 +701,7 @@ FX_Saved = {
 					["alpha"] = 1,
 				},
 				["Strata"] = "MEDIUM",
-				["HealthstoneUnknown"] = true,
+				["SoulstoneAuto"] = false,
 				["SpellLockFailed"] = {
 					">> Spell Lock Failed! <<", -- [1]
 					[0] = 0,
@@ -733,10 +731,7 @@ FX_Saved = {
 					"+++ Lichborne (10 sec) +++", -- [1]
 					[0] = 1,
 				},
-				["SeduceStart"] = {
-					"Seducing >> %s << Now", -- [1]
-					[0] = 0,
-				},
+				["HealthstoneUnknown"] = true,
 				["PetTargetDelay"] = 0.5,
 				["SoulstoneExpand"] = false,
 				["EnslaveBreak"] = {
@@ -760,12 +755,9 @@ FX_Saved = {
 					">> %s is fading in %s <<", -- [1]
 					[0] = 1,
 				},
-				["Chill"] = 0.05,
 				["SummonSpace"] = 1,
-				["Output"] = {
-					"MyProChannel", -- [1]
-					[0] = true,
-				},
+				["Chill"] = 0.05,
+				["SummonHeight"] = 12,
 				["HealthstoneMinColor"] = {
 					0.9300000000000001, -- [1]
 					1, -- [2]
@@ -778,7 +770,10 @@ FX_Saved = {
 					[0] = true,
 				},
 				["HealthstoneWidth"] = 100,
-				["SummonHeight"] = 12,
+				["Output"] = {
+					"MyProChannel", -- [1]
+					[0] = true,
+				},
 				["SoulstoneStartWhisper"] = {
 					">> Soulstoning you now <<", -- [1]
 					[0] = false,
@@ -820,9 +815,9 @@ FX_Saved = {
 					"Want to end it all? Clicky clicky!", -- [1]
 					[0] = 0,
 				},
-				["SummonFont"] = {
-					"Interface\\AddOns\\Forte_Core\\Fonts\\GOTHIC.TTF", -- [1]
-					11, -- [2]
+				["DevourMagicFailed"] = {
+					">> Devour Magic Failed! <<", -- [1]
+					[0] = 0,
 				},
 				["SplashStrata"] = "MEDIUM",
 				["Splash"] = {
@@ -832,9 +827,9 @@ FX_Saved = {
 						{
 							["SplashGlow"] = true,
 							["SecondSplashMax"] = 4,
-							["scale"] = 2,
-							["lock"] = false,
 							["Enable"] = false,
+							["lock"] = false,
+							["scale"] = 2,
 							["y"] = 383.9999658955458,
 							["alpha"] = 0.7,
 							["x"] = 682.6666831970215,
@@ -864,14 +859,18 @@ FX_Saved = {
 					1, -- [2]
 					[0] = true,
 				},
-				["BloodPact"] = {
-					"warrior self", -- [1]
-					[0] = false,
+				["OptionsBackdrop"] = {
+					"Interface\\AddOns\\Forte_Core\\Textures\\Background", -- [1]
+					"Interface\\AddOns\\Forte_Core\\Textures\\Border", -- [2]
+					false, -- [3]
+					16, -- [4]
+					5, -- [5]
+					5, -- [6]
 				},
 				["OptionsColums"] = 2,
-				["TimerSmartSpace"] = {
-					30, -- [1]
-					[0] = true,
+				["RAStart"] = {
+					">>> Raise Ally on %s <<<", -- [1]
+					[0] = 1,
 				},
 				["BanishFade"] = {
 					">> Banish on %s Fading in 3 seconds! <<", -- [1]
@@ -1040,18 +1039,18 @@ FX_Saved = {
 								[0] = true,
 							},
 							["CastSparkGCD"] = false,
-							["NormalBgColor"] = {
-								0, -- [1]
-								0, -- [2]
-								0, -- [3]
-								0.5, -- [4]
-							},
 							["ExpiredColor"] = {
 								0.5, -- [1]
 								0.5, -- [2]
 								0.5, -- [3]
 								1, -- [4]
 								[0] = false,
+							},
+							["NormalBgColor"] = {
+								0, -- [1]
+								0, -- [2]
+								0, -- [3]
+								0.5, -- [4]
 							},
 							["Icon"] = true,
 							["SparkDamage"] = {
@@ -1267,7 +1266,7 @@ FX_Saved = {
 			},
 		},
 		["Cooldown Timer"] = {
-			["My Cooldowns"] = {
+			["Buffs/Debuffs (on me only)"] = {
 				["expand"] = false,
 			},
 			["Splash Icons"] = {
@@ -1276,19 +1275,19 @@ FX_Saved = {
 			["Spell Coloring/Filtering"] = {
 				["expand"] = false,
 			},
-			["Frame Sizing"] = {
+			["Specifics"] = {
 				["expand"] = false,
 			},
 			["Time Range"] = {
 				["expand"] = false,
 			},
-			["Buffs/Debuffs (on me only)"] = {
+			["My Cooldowns"] = {
 				["expand"] = false,
 			},
 			["Frame Appearance"] = {
 				["expand"] = false,
 			},
-			["Specifics"] = {
+			["Frame Sizing"] = {
 				["expand"] = false,
 			},
 		},
@@ -1296,24 +1295,9 @@ FX_Saved = {
 	["RaidStatus"] = {
 		["Fineous"] = {
 			0, -- [1]
-			299503.755, -- [2]
+			40568.995, -- [2]
 			"WARLOCK", -- [3]
 			"v1.980.8", -- [4]
-		},
-		["Sulami"] = {
-			-2, -- [1]
-			298354.381, -- [2]
-			"DEATHKNIGHT", -- [3]
-			"v1.980.8", -- [4]
-		},
-		["Unknown"] = {
-			-2, -- [1]
-			297521.814, -- [2]
-		},
-		["Grungnír-Area52"] = {
-			-2, -- [1]
-			298354.381, -- [2]
-			"HUNTER", -- [3]
 		},
 	},
 	["GROUPED"] = false,
