@@ -8,6 +8,12 @@ MapsterDB = {
 		["FogClear"] = {
 			["global"] = {
 				["errata"] = {
+					["TwilightHighlands_terrain1"] = {
+						["VermillionRedoubt"] = 17254588740,
+						["DragonmawPort"] = 263728610555,
+						["Bloodgulch"] = 220553442519,
+						["GlopgutsHollow"] = 95868352686,
+					},
 					["Dustwallow_terrain1"] = {
 						["BRACKENWLLVILLAGE"] = 63490483584,
 						["THERAMOREISLE"] = 240013008177,
@@ -19,14 +25,14 @@ MapsterDB = {
 						["DIREHORNPOST"] = 181838066967,
 						["WITCHHILL"] = 449152270,
 					},
+					["STVDiamondMineBG"] = {
+						["17467"] = 185973492097,
+						["17468"] = 103513553258,
+						["17469"] = 310904028324,
+						["17470"] = 135884178645,
+					},
 					["TheHiddenPass"] = {
 						["TheHiddenCliffs"] = 454258982,
-					},
-					["TwilightHighlands_terrain1"] = {
-						["VermillionRedoubt"] = 17254588740,
-						["GlopgutsHollow"] = 95868352686,
-						["Bloodgulch"] = 220553442519,
-						["DragonmawPort"] = 263728610555,
 					},
 				},
 			},
@@ -47,10 +53,10 @@ MapsterDB = {
 		["Sulami - Area 52"] = "Default",
 		["Enuresia - Area 52"] = "Default",
 		["Scripe - Area 52"] = "Default",
-		["Sarutori - Alleria"] = "Default",
+		["Sulami - Laughing Skull"] = "Default",
 		["Saizew - Area 52"] = "Default",
 		["Dumpfy - Alleria"] = "Default",
-		["Sulami - Laughing Skull"] = "Default",
+		["Sarutori - Alleria"] = "Default",
 		["Suilami - Blackrock"] = "Default",
 	},
 	["profiles"] = {

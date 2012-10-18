@@ -28,6 +28,7 @@ Step 6:	Login and have a look at the Interface. You might have to copy some addo
 	Actionbars: /bt
 	Keybinds: /bp
 	Castbars: /quartz
+	Tooltips: /tiptac
 	Chat: /prat
 	Nameplates: /tidyplates
 	Damage-/Healmeter: /skada config

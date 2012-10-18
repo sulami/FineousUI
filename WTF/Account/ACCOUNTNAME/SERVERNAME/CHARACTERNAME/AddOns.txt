@@ -72,3 +72,4 @@ Forte_Cooldown: disabled
 Forte_Soulstone: disabled
 Forte_Healthstone: disabled
 TradeSkillDW: enabled
+Skada: enabled

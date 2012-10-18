@@ -1,3 +1,13 @@
+MACRO 16777303 "DOT" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Soulburn
+/cast Soul Swap
+END
+MACRO 16777302 "Heal" "INV_MISC_QUESTIONMARK"
+/showtooltip
+/cast Dark Regeneration
+/use Healthstone
+END
 MACRO 16777301 "Pet" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [mod: ctrl] Summon Infernal; Summon Doomguard

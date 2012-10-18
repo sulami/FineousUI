@@ -72,9 +72,9 @@ SkadaDB = {
 				}, -- [1]
 			},
 			["report"] = {
-				["chantype"] = "whisper",
-				["channel"] = "whisper",
-				["target"] = "toscar",
+				["number"] = 7,
+				["channel"] = "raid",
+				["target"] = "",
 			},
 		},
 	},

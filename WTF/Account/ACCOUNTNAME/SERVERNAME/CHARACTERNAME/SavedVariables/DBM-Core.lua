@@ -5,7 +5,7 @@ DBM_SavedOptions = {
 	["HPFramePoint"] = "RIGHT",
 	["UseMasterVolume"] = true,
 	["StatusEnabled"] = true,
-	["InfoFrameX"] = 424.0000915527344,
+	["InfoFrameX"] = -360.0599365234375,
 	["AprilFools"] = true,
 	["RangeFrameX"] = 50,
 	["DisableCinematicsOutside"] = true,
@@ -15,7 +15,7 @@ DBM_SavedOptions = {
 	["ArrowPoint"] = "TOP",
 	["ModelSoundValue"] = "Short",
 	["SpecialWarningSound2"] = "Sound\\Creature\\AlgalonTheObserver\\UR_Algalon_BHole01.wav",
-	["InfoFramePoint"] = "CENTER",
+	["InfoFramePoint"] = "BOTTOMRIGHT",
 	["RangeFrameRadarPoint"] = "BOTTOM",
 	["SpecialWarningY"] = 75,
 	["RangeFrameUpdates"] = "Average",
@@ -41,7 +41,7 @@ DBM_SavedOptions = {
 	["DontSetIcons"] = false,
 	["BigBrotherAnnounceToRaid"] = false,
 	["CountdownVoice"] = "Corsica",
-	["InfoFrameY"] = -258.0000610351563,
+	["InfoFrameY"] = 137.7599487304688,
 	["SpecialWarningSound"] = "Sound\\Spells\\PVPFlagTaken.wav",
 	["WarningIconRight"] = true,
 	["HealthFrameGrowUp"] = false,
@@ -63,7 +63,7 @@ DBM_SavedOptions = {
 		1, -- [3]
 	},
 	["DontSendBossWhispers"] = false,
-	["LastRevision"] = 7916,
+	["LastRevision"] = 7956,
 	["WarningColors"] = {
 		{
 			["r"] = 0.4117647058823529,

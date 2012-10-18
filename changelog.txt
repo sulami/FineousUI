@@ -1,5 +1,16 @@
 Changelog
 
+[r5 - 18/10/2012 - 5.0.5b]
+Added custom mouse-anchored tooltips by TipTac.
+Extended the Cooldown-Bar from 10 to 12 Buttons / resized / realigned it.
+Increased the Pet-Bar's opacity to 75%.
+Increased Column offset for Raidframes.
+Added Combattext next to Raidframes.
+Optimized Dottimers (now just target, focus and important buffs).
+Removed Omen, but kept the config, just in case.
+Addons updated.
+Readme updated.
+
 [r4 - 10/10/2012 - 5.0.5b]
 Shadowed Unitframes updated.
 Skada Updated.
