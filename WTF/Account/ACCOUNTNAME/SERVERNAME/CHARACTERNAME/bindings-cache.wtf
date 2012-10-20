@@ -12,7 +12,7 @@ bind Q CLICK BindPadKey:SPELL Soul Swap
 bind E CLICK BindPadKey:SPELL Shadow Bolt
 bind NUMPAD0 CLICK BindPadKey:SPELL Create Soulwell
 bind X CLICK BindPadKey:SPELL Unending Resolve
-bind Z CLICK BindPadKey:SPELL Unbound Will
+bind Z NONE
 bind NUMLOCK NONE
 bind BUTTON4 NONE
 bind NUMPADDIVIDE NONE
@@ -78,7 +78,7 @@ bind END NONE
 bind HOME NONE
 bind CTRL-R RAIDTARGET8
 bind CTRL-Y CLICK BindPadMacro:Azure Netherwing Drake
-bind CTRL-Q CLICK BindPadKey:MACRO DOT
+bind CTRL-Q CLICK BindPadKey:SPELL Metamorphosis
 bind NUMPAD5 CLICK BindPadKey:SPELL Fel Flame
 bind NUMPAD1 CLICK BindPadKey:SPELL Demonic Circle: Summon
 bind NUMPAD3 CLICK BindPadKey:SPELL Demonic Gateway
@@ -90,7 +90,7 @@ bind � NONE
 bind ß NONE
 bind ´ NONE
 bind ^ CLICK BindPadKey:SPELL Dark Intent
-bind < CLICK BindPadKey:SPELL Dark Bargain
+bind < CLICK BindPadKey:SPELL Unbound Will
 bind BUTTON5 TOGGLEAUTORUN
 bind SHIFT-Q NONE
 bind SHIFT-E NONE
@@ -113,3 +113,4 @@ bind CTRL-F CLICK BindPadKey:SPELL Fear
 bind ALT-D NONE
 bind CTRL-C CLICK BindPadMacro:Dreadsteed
 bind CTRL-G CLICK BindPadKey:MACRO EAB1
+bind CTRL-BUTTON3 CLICK BindPadKey:MACRO DOT

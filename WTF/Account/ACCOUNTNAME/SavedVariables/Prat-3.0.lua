@@ -45,8 +45,8 @@ Prat3DB = {
 			["profiles"] = {
 				["Default"] = {
 					["textfade"] = {
-						["ChatFrame3"] = false,
 						["ChatFrame1"] = false,
+						["ChatFrame3"] = false,
 					},
 				},
 			},
@@ -58,8 +58,8 @@ Prat3DB = {
 					["size"] = {
 						["ChatFrame2"] = 14,
 						["ChatFrame11"] = 14,
-						["ChatFrame3"] = 14,
 						["ChatFrame1"] = 14,
+						["ChatFrame3"] = 14,
 					},
 				},
 			},
@@ -68,7 +68,7 @@ Prat3DB = {
 		},
 		["Prat_Scroll"] = {
 		},
-		["Prat_Bubbles"] = {
+		["Prat_ChannelNames"] = {
 		},
 		["Prat_Paragraph"] = {
 		},
@@ -82,17 +82,7 @@ Prat3DB = {
 		},
 		["Prat_ChannelSticky"] = {
 		},
-		["Prat_Timestamps"] = {
-			["profiles"] = {
-				["Default"] = {
-					["show"] = {
-						["ChatFrame3"] = false,
-						["ChatFrame1"] = false,
-					},
-					["formatcode"] = "%H:%M",
-					["localtime"] = false,
-				},
-			},
+		["Prat_ChatLog"] = {
 		},
 		["Prat_History"] = {
 		},
@@ -109,7 +99,17 @@ Prat3DB = {
 				},
 			},
 		},
-		["Prat_ChatLog"] = {
+		["Prat_Timestamps"] = {
+			["profiles"] = {
+				["Default"] = {
+					["show"] = {
+						["ChatFrame1"] = false,
+						["ChatFrame3"] = false,
+					},
+					["formatcode"] = "%H:%M",
+					["localtime"] = false,
+				},
+			},
 		},
 		["Prat_Search"] = {
 		},
@@ -117,7 +117,7 @@ Prat3DB = {
 		},
 		["Prat_ServerNames"] = {
 		},
-		["Prat_ChannelNames"] = {
+		["Prat_Bubbles"] = {
 		},
 	},
 	["profileKeys"] = {
@@ -132,14 +132,14 @@ Prat3DB = {
 	["profiles"] = {
 		["Default"] = {
 			["modules"] = {
-				["ChatLog"] = 2,
+				["Alias"] = 2,
 				["AltNames"] = 2,
 				["Sounds"] = 2,
 				["Paragraph"] = 2,
 				["KeyBindings"] = 2,
 				["PopupMessage"] = 2,
 				["OriginalButtons"] = 2,
-				["Alias"] = 2,
+				["ChatLog"] = 2,
 			},
 		},
 	},

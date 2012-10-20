@@ -8,6 +8,11 @@ MACRO 16777302 "Heal" "INV_MISC_QUESTIONMARK"
 /cast Dark Regeneration
 /use Healthstone
 END
+MACRO 16777304 "pa" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Shadow Bolt
+/petattack
+END
 MACRO 16777301 "Pet" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [mod: ctrl] Summon Infernal; Summon Doomguard

@@ -1,5 +1,9 @@
 Changelog
 
+[r6 - 20/10/2012 - 5.0.5b]
+Anchored most Tooltips to a fixed Anchor, Mouse-Anchor keeps bugging.
+Addons updated.
+
 [r5 - 18/10/2012 - 5.0.5b]
 Added custom mouse-anchored tooltips by TipTac.
 Extended the Cooldown-Bar from 10 to 12 Buttons / resized / realigned it.

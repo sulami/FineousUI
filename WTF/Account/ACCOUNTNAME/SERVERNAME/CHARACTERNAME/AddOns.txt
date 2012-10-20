@@ -73,3 +73,14 @@ Forte_Soulstone: disabled
 Forte_Healthstone: disabled
 TradeSkillDW: enabled
 Skada: enabled
+RaidAchievement: enabled
+RaidAchievement_AchieveReminder: enabled
+RaidAchievement_CataHeroics: enabled
+RaidAchievement_CataRaids: enabled
+RaidAchievement_Icecrown: enabled
+RaidAchievement_Naxxramas: enabled
+RaidAchievement_PandaHeroics: enabled
+RaidAchievement_PandaRaids: enabled
+RaidAchievement_PandaScenarios: enabled
+RaidAchievement_Ulduar: enabled
+RaidAchievement_WotlkHeroics: enabled

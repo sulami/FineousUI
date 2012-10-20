@@ -23,14 +23,7 @@ H: 30
 Frame: TipTac
 FrameLevel: 8
 Anchor: BOTTOMRIGHT
-X: 0
-Y: 217
+X: -10
+Y: 216
 W: 114
 H: 24
-Frame: AchievementFrame
-FrameLevel: 79
-Anchor: TOPLEFT
-X: 97
-Y: -119
-W: 768
-H: 500
