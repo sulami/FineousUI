@@ -2,6 +2,12 @@ Lightweight tradeskill double wide window with profession's tabs. Reuses origina
 
 Changes:
 
+v1.84
+processing independent from browsing queue
+
+v1.83
+queue: count text added to icon
+
 v1.82
 custom.lua added to customize tabs
 

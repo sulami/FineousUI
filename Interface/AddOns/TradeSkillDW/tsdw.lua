@@ -428,7 +428,6 @@ local function controlOnEvent(self, event, ...)
 	end
 	if (event == "TRADE_SKILL_SHOW") then
 		Update()
-		--TradeSkillDWQueue_Init()
 	elseif (event == "TRADE_SKILL_UPDATE") then
 		TradeSkillDWQueue_Init()
 	end

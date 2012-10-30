@@ -176,7 +176,7 @@
 								</Anchors>
 								<Layers>
 									<Layer level="ARTWORK">
-										<FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="false">
+										<FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="false" parentKey="countText">
 											<Anchors>
 												<Anchor point="BOTTOMRIGHT">
 													<Offset>
@@ -191,9 +191,6 @@
 									<OnLoad>
 										self.hasItem = 1;
 									</OnLoad>
-									<!--OnClick>
-										HandleModifiedItemClick(GetTradeSkillItemLink(TradeSkillFrame.selectedSkill));
-									</OnClick-->
 									<OnEnter function="TradeSkillDW_QueueButtonEnter"/>
 									<OnLeave function="GameTooltip_HideResetCursor"/>
 									<OnUpdate>

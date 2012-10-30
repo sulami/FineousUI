@@ -5,7 +5,7 @@ FX_Saved = {
 	["Timers"] = {
 	},
 	["Healthstone"] = {
-		["Fineous"] = 1,
+		["Fineous"] = 0,
 	},
 	["Exceptions"] = {
 		["Hellfire Channeler"] = 0,
@@ -17,7 +17,7 @@ FX_Saved = {
 		["Master Engineer Telonicus"] = 1,
 		["Fathom-Guard Sharkkis"] = 1,
 	},
-	["Update"] = 772100.183,
+	["Update"] = 248543.591,
 	["Profiles"] = {
 		["Active"] = 1,
 		["Characters"] = {
@@ -693,16 +693,19 @@ FX_Saved = {
 					1, -- [3]
 					[0] = true,
 				},
-				["SoulstoneAuto"] = false,
+				["SeduceStart"] = {
+					"Seducing >> %s << Now", -- [1]
+					[0] = 0,
+				},
 				["FWSUFrame"] = {
-					["y"] = 609.4222803817866,
-					["x"] = 1327.644389786983,
+					["y"] = 611.5555704938051,
+					["x"] = 1327.644476592541,
 					["lock"] = false,
 					["scale"] = 1,
 					["alpha"] = 1,
 				},
 				["Strata"] = "MEDIUM",
-				["HealthstoneUnknown"] = true,
+				["SoulstoneAuto"] = false,
 				["SpellLockFailed"] = {
 					">> Spell Lock Failed! <<", -- [1]
 					[0] = 0,
@@ -732,10 +735,7 @@ FX_Saved = {
 					"+++ Lichborne (10 sec) +++", -- [1]
 					[0] = 1,
 				},
-				["SeduceStart"] = {
-					"Seducing >> %s << Now", -- [1]
-					[0] = 0,
-				},
+				["HealthstoneUnknown"] = true,
 				["PetTargetDelay"] = 0.5,
 				["SoulstoneExpand"] = false,
 				["EnslaveBreak"] = {
@@ -1214,7 +1214,7 @@ FX_Saved = {
 		["Links"] = {
 		},
 	},
-	["RAID"] = true,
+	["RAID"] = false,
 	["VERSION"] = "v1.980.8",
 	["Cooldowns"] = {
 	},
@@ -1304,57 +1304,12 @@ FX_Saved = {
 		},
 	},
 	["RaidStatus"] = {
-		["Toscar"] = {
-			-2, -- [1]
-			769216.079, -- [2]
-			"SHAMAN", -- [3]
-		},
 		["Fineous"] = {
 			0, -- [1]
-			772100.183, -- [2]
+			248543.591, -- [2]
 			"WARLOCK", -- [3]
 			"v1.980.8", -- [4]
 		},
-		["Scripè"] = {
-			-2, -- [1]
-			769390.188, -- [2]
-			"PRIEST", -- [3]
-		},
-		["Typhria"] = {
-			-2, -- [1]
-			769174.576, -- [2]
-			"ROGUE", -- [3]
-		},
-		["Hayek"] = {
-			-1, -- [1]
-			770732.684, -- [2]
-			"WARRIOR", -- [3]
-		},
-		["Calemist"] = {
-			-1, -- [1]
-			769205.0770000001, -- [2]
-			"HUNTER", -- [3]
-		},
-		["Graivs"] = {
-			-2, -- [1]
-			769398.6900000001, -- [2]
-			"DRUID", -- [3]
-		},
-		["Ctpaxa"] = {
-			-2, -- [1]
-			770331.1750000001, -- [2]
-			"SHAMAN", -- [3]
-		},
-		["Alyns"] = {
-			-2, -- [1]
-			769196.0770000001, -- [2]
-			"DEATHKNIGHT", -- [3]
-		},
-		["Crymlink"] = {
-			-2, -- [1]
-			769297.6800000001, -- [2]
-			"PALADIN", -- [3]
-		},
 	},
-	["GROUPED"] = true,
+	["GROUPED"] = false,
 }

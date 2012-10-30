@@ -1,0 +1,12 @@
+tag v2.6
+2e6ec16f2b7f6f1b174563ef2e462d5832ba0729
+iceeagle <ciprianmihai.coman@gmail.com>
+2012-10-21 09:25:12 +0300
+
+Tagging as v2.6
+
+
+--------------------
+
+iceeagle:
+	- Add throttle functionality

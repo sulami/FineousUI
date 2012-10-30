@@ -12,7 +12,7 @@ bind Q CLICK BindPadKey:SPELL Soul Swap
 bind E CLICK BindPadKey:SPELL Shadow Bolt
 bind NUMPAD0 CLICK BindPadKey:SPELL Create Soulwell
 bind X CLICK BindPadKey:SPELL Unending Resolve
-bind Z NONE
+bind Z CLICK BindPadKey:ITEM Healthstone
 bind NUMLOCK NONE
 bind BUTTON4 NONE
 bind NUMPADDIVIDE NONE
@@ -24,12 +24,12 @@ bind CTRL-PAGEDOWN NONE
 bind CTRL-SHIFT-PAGEDOWN NONE
 bind R CLICK BindPadKey:SPELL Drain Soul
 bind SHIFT-R NONE
-bind 1 CLICK BindPadKey:SPELL Haunt
-bind 2 CLICK BindPadKey:SPELL Unstable Affliction
-bind 3 CLICK BindPadKey:SPELL Corruption
-bind 4 CLICK BindPadKey:SPELL Agony
-bind 5 CLICK BindPadKey:SPELL Mortal Coil
-bind 6 CLICK BindPadKey:SPELL Drain Life
+bind 1 CLICK BindPadMacro:Haunt
+bind 2 CLICK BindPadMacro:Unstable Affliction
+bind 3 CLICK BindPadMacro:Corruption
+bind 4 CLICK BindPadMacro:Agony
+bind 5 CLICK BindPadMacro:Mortal Coil
+bind 6 CLICK BindPadMacro:Curse of Exhaustion
 bind 7 NONE
 bind 8 NONE
 bind 9 NONE
@@ -66,7 +66,7 @@ bind F11 NONE
 bind F12 NONE
 bind SHIFT-SPACE NONE
 bind K CLICK BT4Button59:LeftButton
-bind Y CLICK BindPadKey:ITEM Healthstone
+bind Y CLICK BindPadKey:SPELL Dark Regeneration
 bind SHIFT-Y NONE
 bind SHIFT-C TOGGLECHARACTER0
 bind ESCAPE TOGGLEGAMEMENU
@@ -78,7 +78,7 @@ bind END NONE
 bind HOME NONE
 bind CTRL-R RAIDTARGET8
 bind CTRL-Y CLICK BindPadMacro:Azure Netherwing Drake
-bind CTRL-Q CLICK BindPadKey:SPELL Metamorphosis
+bind CTRL-Q NONE
 bind NUMPAD5 CLICK BindPadKey:SPELL Fel Flame
 bind NUMPAD1 CLICK BindPadKey:SPELL Demonic Circle: Summon
 bind NUMPAD3 CLICK BindPadKey:SPELL Demonic Gateway
@@ -90,7 +90,7 @@ bind � NONE
 bind ß NONE
 bind ´ NONE
 bind ^ CLICK BindPadKey:SPELL Dark Intent
-bind < CLICK BindPadKey:SPELL Unbound Will
+bind < CLICK BindPadKey:SPELL Dark Bargain
 bind BUTTON5 TOGGLEAUTORUN
 bind SHIFT-Q NONE
 bind SHIFT-E NONE
@@ -103,7 +103,7 @@ bind ALT-X NONE
 bind NUMPAD2 CLICK BindPadKey:SPELL Demonic Circle: Teleport
 bind NUMPAD4 CLICK BindPadKey:SPELL Curse of the Elements
 bind NUMPAD6 CLICK BindPadKey:SPELL Soulstone
-bind NUMPAD7 CLICK BindPadKey:SPELL Banish
+bind NUMPAD7 CLICK BindPadKey:SPELL Burning Rush
 bind NUMPAD8 CLICK BindPadKey:ITEM Potion of the Jade Serpent
 bind NUMPAD9 CLICK BindPadKey:SPELL Summon Voidwalker
 bind CTRL-X CLICK BindPadMacro:Mechano-Hog

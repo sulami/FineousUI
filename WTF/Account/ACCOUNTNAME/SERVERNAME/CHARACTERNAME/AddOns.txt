@@ -84,3 +84,4 @@ RaidAchievement_PandaRaids: enabled
 RaidAchievement_PandaScenarios: enabled
 RaidAchievement_Ulduar: enabled
 RaidAchievement_WotlkHeroics: enabled
+epgp: enabled

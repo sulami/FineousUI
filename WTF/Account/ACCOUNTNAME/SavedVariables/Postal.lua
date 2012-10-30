@@ -19,7 +19,7 @@ Postal3DB = {
 				"Suilami|Blackrock|Horde|3|SHAMAN", -- [14]
 				"Sulami|Area 52|Horde|51|PRIEST", -- [15]
 				"Sulami|Laughing Skull|Horde|85|ROGUE", -- [16]
-				"Sulami|Stormscale|Horde|86|DEATHKNIGHT", -- [17]
+				"Sulami|Stormscale|Horde|87|DEATHKNIGHT", -- [17]
 				"Sulamy|Stormscale|Horde|85|ROGUE", -- [18]
 				"Thanata|Area 52|Horde|85|DEATHKNIGHT", -- [19]
 				"Tluffallo|Blackrock|Horde|1|ROGUE", -- [20]
@@ -109,8 +109,9 @@ Postal3DB = {
 		["Sulami - Stormscale"] = {
 			["BlackBook"] = {
 				["recent"] = {
-					"Balneator|Stormscale|Horde", -- [1]
-					"Sulamy|Stormscale|Horde", -- [2]
+					"Fineous|Stormscale|Horde", -- [1]
+					"Balneator|Stormscale|Horde", -- [2]
+					"Sulamy|Stormscale|Horde", -- [3]
 				},
 			},
 		},

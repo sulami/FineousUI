@@ -6,8 +6,7 @@ local queueList
 local skillLine
 local name2idx = {}
 local version = 1.70
-local processing
-local processingCount
+local processing = {}
 
 --local SIGN_SPELL_FAILED_REAGENTS = strsplit(":", SPELL_FAILED_REAGENTS)
 --local SIGN_SPELL_FAILED_REQUIRES_SPELL_FOCUS = strsplit(" ", SPELL_FAILED_REQUIRES_SPELL_FOCUS)
@@ -89,6 +88,12 @@ local function FillSkillIndexByName()
 		local skillName = GetTradeSkillInfo(i)
 		name2idx[skillName] = i
 	end
+end
+
+local function ClearProcessingState(self)
+	UnregisterEvents(self)
+	processing.active = nil
+	processing.count = 0
 end
 
 function TradeSkillDW_QueueButtonEnter(self)
@@ -209,6 +214,14 @@ end
 
 function TradeSkillDWQueue_RemoveClick(self)
 	local idx = self:GetParent():GetID()
+	if processing.active then
+		if processing.idx > idx then
+			processing.idx = processing.idx - 1
+		elseif processing.idx == idx then
+			--stop processing
+			ClearProcessingState(queueFrame)
+		end
+	end
 	RemoveIdx(idx)
 end
 
@@ -219,7 +232,7 @@ function TradeSkillDWQueue_ClearClick()
 end
 
 local function UpdateButtons()
-	if processing then
+	if processing.active then
 		queueFrame.UpButton:Disable()
 		queueFrame.DownButton:Disable()
 		queueFrame.ClearButton:Disable()
@@ -290,6 +303,19 @@ local function UpdateDetails()
 	queueFrame.df.cf.Icon:SetNormalTexture(GetTradeSkillIcon(tidx))
 	queueFrame.df.cf.Icon:Show()
 	queueFrame.df.cf.HeaderLeft:Show()
+	local minMade, maxMade = GetTradeSkillNumMade(tidx)
+	if ( maxMade > 1 ) then
+		if ( minMade == maxMade ) then
+			queueFrame.df.cf.Icon.countText:SetText(minMade);
+		else
+			queueFrame.df.cf.Icon.countText:SetText(minMade.."-"..maxMade)
+		end
+		if ( queueFrame.df.cf.Icon.countText:GetWidth() > 39 ) then
+			queueFrame.df.cf.Icon.countText:SetText("~"..floor((minMade + maxMade)/2))
+		end
+	else
+		queueFrame.df.cf.Icon.countText:SetText("")
+	end 
 
 	-- Reagents
 	local numReagents = GetTradeSkillNumReagents(tidx)
@@ -368,19 +394,20 @@ function TradeSkillDWQueue_DoClick()
 	
 	local tidx = GetSkillIndexByName(v[1])
 	if tidx then
+		processing.idx = queueFrame.selectedIdx
 		local skillName, skillType, numAvailable = GetTradeSkillInfo(tidx)
-		processingCount = v[2]
-		if processingCount > numAvailable then
-			processingCount = numAvailable
+		processing.count = v[2]
+		if processing.count > numAvailable then
+			processing.count = numAvailable
 		end
 		TradeSkillFrame_SetSelection(tidx)
 		TradeSkillFrame_Update()
-		TradeSkillInputBox:SetNumber(processingCount)
+		TradeSkillInputBox:SetNumber(processing.count)
 
-		processing = true
+		processing.active = true
 		RegisterEvents(queueFrame)
 		UpdateButtons()
-		DoTradeSkill(tidx, processingCount)
+		DoTradeSkill(tidx, processing.count)
 		TradeSkillInputBox:ClearFocus()
 	end
 end
@@ -388,6 +415,10 @@ end
 function TradeSkillDWQueue_UpClick()
 	local idx = queueFrame.selectedIdx
 	if idx > 1 then
+		if processing.active and processing.idx == idx then
+			processing.idx = processing.idx - 1
+		end
+		
 		local temp = queueList[idx - 1]
 		queueList[idx - 1] = queueList[idx]
 		queueList[idx] = temp
@@ -406,6 +437,10 @@ end
 function TradeSkillDWQueue_DownClick()
 	local idx = queueFrame.selectedIdx
 	if idx < #queueList then
+		if processing.active and processing.idx == idx then
+			processing.idx = processing.idx + 1
+		end
+		
 		local temp = queueList[idx + 1]
 		queueList[idx + 1] = queueList[idx]
 		queueList[idx] = temp
@@ -540,23 +575,18 @@ local function LoadSettings()
 	queueFrame.selectedIdx = TradeSkillDW_QueueSettings[skillLine].selectedIdx or 0
 end
 
-local function ClearProcessingState(self)
-	UnregisterEvents(self)
-	processing = nil
-	processingCount = 0
-end
-
 local function SpellcastStop(self)
-	--decrease amount	
-	processingCount = processingCount - 1
-	queueList[queueFrame.selectedIdx][2] = queueList[queueFrame.selectedIdx][2] - 1
-	--print(processingCount, queueList[queueFrame.selectedIdx][2])
-	if queueList[queueFrame.selectedIdx][2] <= 0 then
-		RemoveIdx(queueFrame.selectedIdx)
+	--decrease amount
+	--print(processing.active, processing.idx, processing.count)
+	processing.count = processing.count - 1
+	queueList[processing.idx][2] = queueList[processing.idx][2] - 1
+	--print(processing.count, queueList[processing.idx][2])
+	if queueList[processing.idx][2] <= 0 then
+		RemoveIdx(processing.idx)
 	else
 		TradeSkillDWQueue_Update()
 	end
-	if processingCount <= 0 then
+	if processing.count <= 0 then
 		ClearProcessingState(self)
 	end
 end
@@ -605,15 +635,6 @@ local function OnEvent(self, event, ...)
 	elseif (event == "UI_ERROR_MESSAGE") then
 		--print(arg1)
 		SpellcastInterrupted(self)
-		--[[if (arg1 == INVENTORY_FULL) then
-			SpellcastInterrupted(self)
-		end
-		if string.find(arg1, SIGN_SPELL_FAILED_REAGENTS, 1, true) then
-			SpellcastInterrupted(self)
-		end
-		if string.find(arg1, SIGN_SPELL_FAILED_REQUIRES_SPELL_FOCUS, 1, true) then
-			SpellcastInterrupted(self)
-		end]]
 	end
 end
 
