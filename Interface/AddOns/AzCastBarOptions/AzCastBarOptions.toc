@@ -1,0 +1,12 @@
+## Interface: 50001
+## Version: 12.09.05
+## Title: AzCastBarOptions
+## Author: Aezay (Earthen Ring EU)
+## Notes: Option Dialog for AzCastBar
+## SavedVariables: AzCastBar_Profiles
+## Dependencies: AzCastBar
+## LoadOnDemand: 1
+Libs\AzDropDown.lua
+Libs\AzOptionsFactory.lua
+DropDowns.lua
+Options.lua

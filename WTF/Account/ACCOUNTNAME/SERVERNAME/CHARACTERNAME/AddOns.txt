@@ -19,10 +19,10 @@ PitBull4_CombatFader: disabled
 PitBull4_CombatText: disabled
 PitBull4_Aggro: disabled
 PitBull4_BlankSpace: disabled
-acb_CastBar: disabled
+acb_CastBar: enabled
 acb_GlobalCooldown: disabled
-AzCastBar: disabled
-AzCastBarOptions: disabled
+AzCastBar: enabled
+AzCastBarOptions: enabled
 Quartz: enabled
 PitBull4: disabled
 PitBull4_AltPowerBar: disabled
@@ -85,3 +85,5 @@ RaidAchievement_PandaScenarios: enabled
 RaidAchievement_Ulduar: enabled
 RaidAchievement_WotlkHeroics: enabled
 epgp: enabled
+TidyPlates_ThreatPlates: enabled
+Auctionator: enabled

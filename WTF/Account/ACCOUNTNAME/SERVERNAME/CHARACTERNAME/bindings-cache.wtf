@@ -29,7 +29,7 @@ bind 2 CLICK BindPadMacro:Unstable Affliction
 bind 3 CLICK BindPadMacro:Corruption
 bind 4 CLICK BindPadMacro:Agony
 bind 5 CLICK BindPadMacro:Mortal Coil
-bind 6 CLICK BindPadMacro:Curse of Exhaustion
+bind 6 CLICK BindPadKey:SPELL Drain Life
 bind 7 NONE
 bind 8 NONE
 bind 9 NONE

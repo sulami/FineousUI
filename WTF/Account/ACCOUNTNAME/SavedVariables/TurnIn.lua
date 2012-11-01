@@ -1,13 +1,13 @@
 
 TI_status = {
-	["state"] = false,
+	["state"] = true,
 	["debugstate"] = false,
 	["version"] = "2.0",
 	["usedefault"] = true,
 	["autoadd"] = false,
 	["options"] = {
 		{
-			["state"] = false,
+			["state"] = true,
 			["type"] = "availquest",
 			["name"] = "Available Quests",
 		}, -- [1]
@@ -37,7 +37,7 @@ TI_status = {
 			["name"] = "Spirit Healer",
 		}, -- [6]
 		{
-			["state"] = false,
+			["state"] = true,
 			["type"] = "activequest",
 			["name"] = "Active Quests",
 		}, -- [7]

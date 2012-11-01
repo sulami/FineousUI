@@ -27,13 +27,15 @@ Step 6:	Login and have a look at the Interface. You might have to copy some addo
 	Unitframes: /suf
 	Actionbars: /bt
 	Keybinds: /bp
-	Castbars: /quartz
+	Castbars: /acb
 	Tooltips: /tiptac
 	Chat: /prat
 	Nameplates: /tidyplates
 	Damage-/Healmeter: /skada config
 	Bossmod: /dbm
 	Map: /mapster
+	Spelltimer: /fx
+	Special Power Bar: /cppba
 	Just look out for Profile-Options, choose Fineous-Stormscale and press copy.
 	In case you want to reorganize something, you can toggle a grid by typing "/align".
 Step 7: Profit!

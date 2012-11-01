@@ -1,5 +1,15 @@
 Changelog
 
+v2.0.2
+Rebuilt Unitframes, Castbars, Spelltimer and more.
+Overall cleaner and more compact design.
+Swapped Quartz for AzCastbar.
+Added Arkinventory.
+Added CumstomPlayerPowerBarAlt (Boss-specific Powerbar).
+Changed TidyPlates theme fro Quatre to ThreatPlates.
+Added Turn In, Quest automatation.
+Minor fixes.
+
 [r6 - 20/10/2012 - 5.0.5b]
 Anchored most Tooltips to a fixed Anchor, Mouse-Anchor keeps bugging.
 Addons updated.

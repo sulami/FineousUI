@@ -9,12 +9,11 @@ ACP_Data = {
 		["MinimapButtonFrame"] = true,
 		["Blizzard Addons"] = true,
 		["DBM"] = true,
-		["Skada"] = true,
 		["Forte"] = true,
 		["AtlasLoot"] = true,
 		["ShadowedUnitFrames"] = true,
+		["Skada"] = true,
 		["OmniCC"] = true,
-		["TidyPlates"] = true,
 		["RaidAchievement"] = true,
 	},
 	["ProtectedAddons"] = {

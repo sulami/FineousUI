@@ -1,0 +1,7 @@
+## Interface: 50001
+## Version: 12.09.05
+## Title: ACB Mirror
+## Author: Aezay (Earthen Ring EU)
+## Notes: Mirror Plugin for AzCastBar
+## Dependencies: AzCastBar
+core.lua

@@ -1,0 +1,17 @@
+## Interface: 50001
+## Title: CustomPlayerPowerBarAlt
+## Author: Caleb
+## Version: 1.4.4
+## SavedVariables: CustomPlayerPowerBarAltDB
+## OptionalDeps: Ace3, LibSharedMedia-3.0
+## X-Curse-Packaged-Version: 1.4.4
+## X-Curse-Project-Name: CustomPlayerPowerBarAlt
+## X-Curse-Project-ID: customplayerpowerbaralt
+## X-Curse-Repository-ID: wow/customplayerpowerbaralt/mainline
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+Locales\locales.xml
+CustomPlayerPowerBarAlt.lua
