@@ -1,5 +1,8 @@
 Changelog
 
+v2.0.3
+Added Incoming Combat Text via MSBT.
+
 v2.0.2
 Rebuilt Unitframes, Castbars, Spelltimer and more.
 Overall cleaner and more compact design.

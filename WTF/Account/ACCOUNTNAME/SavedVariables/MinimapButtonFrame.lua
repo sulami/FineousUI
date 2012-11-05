@@ -16,11 +16,11 @@ MBFDB = {
 		["Sarutori - Alleria"] = "Default",
 		["Sulami - Area 52"] = "Default",
 		["Enuresia - Area 52"] = "Default",
-		["Balneator - Stormscale"] = "Default",
+		["Sulami - Stormscale"] = "Default",
 		["Sulami - Laughing Skull"] = "Default",
 		["Oompaloom - Stormscale"] = "Default",
 		["Dumpfy - Alleria"] = "Default",
-		["Sulami - Stormscale"] = "Default",
+		["Balneator - Stormscale"] = "Default",
 		["Suilami - Blackrock"] = "Default",
 	},
 	["profiles"] = {

@@ -36,6 +36,7 @@ Step 6:	Login and have a look at the Interface. You might have to copy some addo
 	Map: /mapster
 	Spelltimer: /fx
 	Special Power Bar: /cppba
+	Combattext: /msbt
 	Just look out for Profile-Options, choose Fineous-Stormscale and press copy.
 	In case you want to reorganize something, you can toggle a grid by typing "/align".
 Step 7: Profit!

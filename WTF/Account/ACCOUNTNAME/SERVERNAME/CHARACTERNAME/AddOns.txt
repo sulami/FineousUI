@@ -87,3 +87,5 @@ RaidAchievement_WotlkHeroics: enabled
 epgp: enabled
 TidyPlates_ThreatPlates: enabled
 Auctionator: enabled
+WebDKP: disabled
+ArkInventory: enabled

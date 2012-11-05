@@ -2,7 +2,6 @@
 ThreatPlatesDB = {
 	["char"] = {
 		["Fineous - Stormscale"] = {
-			["welcome"] = true,
 			["specInfo"] = {
 				{
 					["name"] = "Affliction",
@@ -13,26 +12,27 @@ ThreatPlatesDB = {
 					["role"] = "DAMAGER",
 				}, -- [2]
 			},
+			["welcome"] = true,
 			["spec"] = {
 				["primary"] = false,
 			},
 		},
 	},
-	["profileKeys"] = {
-		["Fineous - Stormscale"] = "Default",
-	},
 	["global"] = {
 		["version"] = "6.007",
+	},
+	["profileKeys"] = {
+		["Fineous - Stormscale"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
 			["nameplate"] = {
+				["toggle"] = {
+					["Totem"] = false,
+				},
 				["scale"] = {
 					["Elite"] = 1.050000071525574,
 					["Boss"] = 1.100000023841858,
-				},
-				["toggle"] = {
-					["Totem"] = false,
 				},
 			},
 			["comboWidget"] = {
@@ -111,6 +111,18 @@ ThreatPlatesDB = {
 					"", -- [50]
 				},
 			},
+			["debuffWidget"] = {
+				["filter"] = {
+					"Corruption", -- [1]
+					"Unstable Affliction", -- [2]
+					"Agony", -- [3]
+					"Seed of Corruption", -- [4]
+					"Fear", -- [5]
+					"Shadowflame", -- [6]
+					"Immolate", -- [7]
+				},
+				["mode"] = "whitelistMine",
+			},
 			["cache"] = {
 			},
 			["settings"] = {
@@ -126,14 +138,14 @@ ThreatPlatesDB = {
 				["healthbar"] = {
 					["texture"] = "TukTex",
 				},
-				["castbar"] = {
-					["texture"] = "TukTex",
+				["healthborder"] = {
+					["texture"] = "TP_HealthBarOverlayThin",
 				},
 				["skullicon"] = {
 					["show"] = false,
 				},
-				["healthborder"] = {
-					["texture"] = "TP_HealthBarOverlayThin",
+				["castbar"] = {
+					["texture"] = "TukTex",
 				},
 				["raidicon"] = {
 					["hpColor"] = false,
@@ -155,18 +167,6 @@ ThreatPlatesDB = {
 			},
 			["text"] = {
 				["amount"] = false,
-			},
-			["debuffWidget"] = {
-				["filter"] = {
-					"Corruption", -- [1]
-					"Unstable Affliction", -- [2]
-					"Agony", -- [3]
-					"Seed of Corruption", -- [4]
-					"Fear", -- [5]
-					"Shadowflame", -- [6]
-					"Immolate", -- [7]
-				},
-				["mode"] = "whitelistMine",
 			},
 		},
 	},

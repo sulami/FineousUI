@@ -56,58 +56,58 @@ DBM_SavedOptions = {
 	["ShowLoadMessage"] = true,
 	["DontShowBossAnnounces"] = false,
 	["RangeFramePoint"] = "CENTER",
-	["ShowEngageMessage"] = true,
-	["ShowRecoveryMessage"] = true,
+	["BlockVersionUpdateNotice"] = false,
+	["SpecialWarningFontColor"] = {
+		0, -- [1]
+		0, -- [2]
+		1, -- [3]
+	},
 	["DontSendBossWhispers"] = false,
-	["AutoRespond"] = true,
+	["LastRevision"] = 7956,
 	["WarningColors"] = {
 		{
-			["b"] = 0.9411764705882353,
-			["g"] = 0.8,
 			["r"] = 0.4117647058823529,
+			["g"] = 0.8,
+			["b"] = 0.9411764705882353,
 		}, -- [1]
 		{
-			["b"] = 0,
-			["g"] = 0.9490196078431372,
 			["r"] = 0.9490196078431372,
+			["g"] = 0.9490196078431372,
+			["b"] = 0,
 		}, -- [2]
 		{
-			["b"] = 0,
-			["g"] = 0.5019607843137255,
 			["r"] = 1,
+			["g"] = 0.5019607843137255,
+			["b"] = 0,
 		}, -- [3]
 		{
-			["b"] = 0.1019607843137255,
-			["g"] = 0.1019607843137255,
 			["r"] = 1,
+			["g"] = 0.1019607843137255,
+			["b"] = 0.1019607843137255,
 		}, -- [4]
 	},
 	["ShowPizzaMessage"] = false,
 	["RangeFrameSound2"] = "none",
 	["ShowLHFrame"] = true,
 	["DontSendBossAnnounces"] = false,
-	["ShowSpecialWarnings"] = true,
+	["HPFrameMaxEntries"] = 5,
 	["Enabled"] = true,
-	["RangeFrameFrames"] = "radar",
-	["RangeFrameLocked"] = false,
+	["ArrowPosY"] = -150,
+	["HealthFrameLocked"] = false,
 	["DisableCinematics"] = true,
 	["MovieFilters"] = {
 	},
 	["RangeFrameRadarY"] = -178.0003814697266,
 	["ShowWipeMessage"] = true,
-	["HealthFrameLocked"] = false,
-	["ArrowPosY"] = -150,
-	["HPFrameMaxEntries"] = 5,
+	["RangeFrameLocked"] = false,
+	["RangeFrameFrames"] = "radar",
+	["ShowSpecialWarnings"] = true,
 	["AlwaysShowHealthFrame"] = false,
 	["HPFrameX"] = -421.0001220703125,
-	["LastRevision"] = 7956,
+	["AutoRespond"] = true,
 	["SpamBlockBossWhispers"] = false,
-	["SpecialWarningFontColor"] = {
-		0, -- [1]
-		0, -- [2]
-		1, -- [3]
-	},
-	["BlockVersionUpdateNotice"] = false,
+	["ShowRecoveryMessage"] = true,
+	["ShowEngageMessage"] = true,
 }
 DBT_SavedOptions = {
 	["DBM"] = {
@@ -125,16 +125,16 @@ DBT_SavedOptions = {
 		["ExpandUpwards"] = true,
 		["TimerPoint"] = "CENTER",
 		["StartColorG"] = 0.7019607843137254,
-		["HugeBarYOffset"] = 0,
-		["HugeTimerX"] = 6.999920845031738,
+		["TimerY"] = -259.5001831054688,
+		["StartColorB"] = 0,
 		["EndColorR"] = 1,
 		["Width"] = 254,
 		["HugeTimerPoint"] = "CENTER",
-		["FontSize"] = 10,
-		["HugeScale"] = 1.049999952316284,
 		["TimerX"] = -128.500244140625,
-		["StartColorB"] = 0,
-		["TimerY"] = -259.5001831054688,
+		["HugeScale"] = 1.049999952316284,
+		["FontSize"] = 10,
+		["HugeTimerX"] = 6.999920845031738,
+		["HugeBarYOffset"] = 0,
 		["BarXOffset"] = 0,
 		["EndColorB"] = 0,
 	},
