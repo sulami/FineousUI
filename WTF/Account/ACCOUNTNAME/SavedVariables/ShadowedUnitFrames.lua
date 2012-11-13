@@ -1411,21 +1411,19 @@ ShadowedUFDB = {
 					},
 				},
 				["focus"] = {
-					["portrait"] = {
-						["type"] = "3D",
-						["alignment"] = "LEFT",
-						["fullAfter"] = 50,
-						["height"] = 0.5,
-						["fullBefore"] = 0,
-						["order"] = 15,
-						["width"] = 0.22,
+					["highlight"] = {
+						["size"] = 10,
 					},
 					["auras"] = {
 						["debuffs"] = {
-							["y"] = 0,
-							["anchorPoint"] = "BL",
+							["enabled"] = true,
+							["y"] = 5,
+							["maxRows"] = 1,
+							["perRow"] = 8,
+							["enlargeSelf"] = false,
 							["x"] = 0,
-							["size"] = 16,
+							["anchorPoint"] = "TR",
+							["size"] = 30,
 						},
 						["buffs"] = {
 							["y"] = 0,
@@ -1485,6 +1483,29 @@ ShadowedUFDB = {
 						["height"] = 1.5,
 					},
 					["width"] = 256,
+					["portrait"] = {
+						["type"] = "3D",
+						["alignment"] = "LEFT",
+						["fullAfter"] = 50,
+						["height"] = 0.5,
+						["fullBefore"] = 0,
+						["order"] = 15,
+						["width"] = 0.22,
+					},
+					["altPowerBar"] = {
+						["height"] = 0.4,
+						["background"] = true,
+						["order"] = 100,
+					},
+					["combatText"] = {
+						["enabled"] = false,
+					},
+					["incHeal"] = {
+						["enabled"] = false,
+						["heals"] = false,
+						["cap"] = 1,
+					},
+					["height"] = 30,
 					["indicators"] = {
 						["raidTarget"] = {
 							["y"] = -10,
@@ -1568,23 +1589,6 @@ ShadowedUFDB = {
 							["anchorPoint"] = "TR",
 							["size"] = 22,
 						},
-					},
-					["altPowerBar"] = {
-						["height"] = 0.4,
-						["background"] = true,
-						["order"] = 100,
-					},
-					["combatText"] = {
-						["enabled"] = false,
-					},
-					["incHeal"] = {
-						["enabled"] = false,
-						["heals"] = false,
-						["cap"] = 1,
-					},
-					["height"] = 30,
-					["highlight"] = {
-						["size"] = 10,
 					},
 					["text"] = {
 						{
@@ -2138,10 +2142,14 @@ ShadowedUFDB = {
 					},
 					["auras"] = {
 						["debuffs"] = {
-							["y"] = 0,
-							["anchorPoint"] = "BL",
+							["enabled"] = true,
+							["y"] = 1,
+							["maxRows"] = 3,
+							["perRow"] = 1,
+							["enlargeSelf"] = false,
 							["x"] = 0,
-							["size"] = 16,
+							["anchorPoint"] = "RT",
+							["size"] = 20,
 						},
 						["buffs"] = {
 							["y"] = 0,
@@ -2171,7 +2179,7 @@ ShadowedUFDB = {
 						["vertical"] = false,
 					},
 					["enabled"] = true,
-					["columnSpacing"] = 20,
+					["columnSpacing"] = 65,
 					["healthBar"] = {
 						["colorAggro"] = false,
 						["order"] = 10,
@@ -2959,14 +2967,14 @@ ShadowedUFDB = {
 					},
 				},
 				["partypet"] = {
-					["portrait"] = {
-						["type"] = "3D",
-						["alignment"] = "LEFT",
-						["fullAfter"] = 100,
-						["height"] = 0.5,
-						["fullBefore"] = 0,
-						["order"] = 15,
-						["width"] = 0.22,
+					["indicators"] = {
+						["raidTarget"] = {
+							["y"] = 0,
+							["x"] = 0,
+							["anchorTo"] = "$parent",
+							["anchorPoint"] = "C",
+							["size"] = 20,
+						},
 					},
 					["auras"] = {
 						["debuffs"] = {
@@ -3079,18 +3087,18 @@ ShadowedUFDB = {
 					["incHeal"] = {
 						["heals"] = false,
 					},
-					["highlight"] = {
-						["size"] = 10,
+					["portrait"] = {
+						["type"] = "3D",
+						["alignment"] = "LEFT",
+						["fullAfter"] = 100,
+						["height"] = 0.5,
+						["fullBefore"] = 0,
+						["order"] = 15,
+						["width"] = 0.22,
 					},
 					["height"] = 25,
-					["indicators"] = {
-						["raidTarget"] = {
-							["y"] = 0,
-							["x"] = 0,
-							["anchorTo"] = "$parent",
-							["anchorPoint"] = "C",
-							["size"] = 20,
-						},
+					["highlight"] = {
+						["size"] = 10,
 					},
 				},
 				["pettarget"] = {
@@ -3448,7 +3456,7 @@ ShadowedUFDB = {
 						{
 							["enabled"] = true,
 							["anchorTo"] = "$healthBar",
-							["text"] = "[(()afk() > )][sshards]",
+							["text"] = "[(()afk() > )][( )warlock:demonic:curpp] / [( )sshards]",
 							["width"] = 0.5,
 							["y"] = 0,
 							["x"] = 0,
@@ -3725,8 +3733,15 @@ ShadowedUFDB = {
 						["background"] = true,
 						["order"] = 55,
 					},
-					["highlight"] = {
-						["size"] = 10,
+					["portrait"] = {
+						["type"] = "3D",
+						["fullAfter"] = 50,
+						["order"] = 15,
+						["isBar"] = false,
+						["width"] = 0.22,
+						["alignment"] = "LEFT",
+						["height"] = 0.5,
+						["fullBefore"] = 0,
 					},
 					["auras"] = {
 						["debuffs"] = {
@@ -3847,6 +3862,14 @@ ShadowedUFDB = {
 						["enabled"] = false,
 					},
 					["height"] = 15,
+					["highlight"] = {
+						["size"] = 10,
+					},
+					["incHeal"] = {
+						["enabled"] = false,
+						["heals"] = false,
+						["cap"] = 1,
+					},
 					["indicators"] = {
 						["raidTarget"] = {
 							["y"] = -10,
@@ -3856,21 +3879,6 @@ ShadowedUFDB = {
 							["anchorPoint"] = "TC",
 							["size"] = 20,
 						},
-					},
-					["incHeal"] = {
-						["enabled"] = false,
-						["heals"] = false,
-						["cap"] = 1,
-					},
-					["portrait"] = {
-						["type"] = "3D",
-						["fullAfter"] = 50,
-						["order"] = 15,
-						["isBar"] = false,
-						["width"] = 0.22,
-						["alignment"] = "LEFT",
-						["height"] = 0.5,
-						["fullBefore"] = 0,
 					},
 				},
 				["boss"] = {

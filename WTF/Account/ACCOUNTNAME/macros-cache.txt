@@ -1,6 +1,14 @@
 MACRO 18 "Avoidance" "ABILITY_DUALWIELD"
 /run ChatFrame1:AddMessage(format("Total avoidance: %.2f%%", GetDodgeChance() + GetParryChance() + 5 + 1/(0.0625 + 0.956/(GetCombatRating(CR_DEFENSE_SKILL)/4.91850*0.04)))) 
 END
+MACRO 24 "ca" "INV_MISC_QUESTIONMARK"
+/cancelaura Lifebloom
+/cancelaura Renewing Mist
+/cancelaura Regrowth
+/cancelaura Rejuvenation
+/cancelaura Wild Growth
+/cancelaura Living Seed
+END
 MACRO 21 "EAB1" "Ability_Druid_Eclipse"
 /click ExtraActionButton1
 END

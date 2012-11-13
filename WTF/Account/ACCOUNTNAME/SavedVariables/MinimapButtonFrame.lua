@@ -62,6 +62,8 @@ MBFDB = {
 				"ZygorGuidesViewerMapIcon", -- [22]
 				"LibDBIcon10_PitBull4", -- [23]
 				"WebDKP_MinimapButton", -- [24]
+				"LibDBIcon10_Reforgenator", -- [25]
+				"LibDBIcon10_BigWigs", -- [26]
 			},
 			["padding"] = 0,
 		},

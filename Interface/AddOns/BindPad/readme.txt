@@ -109,7 +109,7 @@ Druid example: /cast [stance:1] Bash; [nostance:1] Healing Touch
 4.  "You want to convert this icon into a BINDPAD MACRO?"... What?
 -------------------------------------------------------------------------
 
-"BindPad Macro" is a new feature from BidPad version 1.8.0 ;
+"BindPad Macro" is a new feature from BindPad version 1.8.0 ;
 which allow you to make almost unlimited number of virtual macro icons.
 
 Older versions of BindPad just let you save your limited action bar slots.
@@ -179,13 +179,23 @@ http://www.wowinterface.com/downloads/fileinfo.php?id=6385
 
 Or from Curse:
 
-http://wow.curse.com/downloads/wow-addons/details/bind-pad.aspx
+http://www.curse.com/addons/wow/bind-pad
 
 
 
 -------------------------------------------------------------------------
 7.  CHANGES
 -------------------------------------------------------------------------
+
+Version 2.6.1
+- Added optional support for AdvancedIconSelector (or LibAdvancedIconSelector-1.0)
+  when choosing an icon for BindPadMacro.
+  (You can get AdvancedIconSelector from:
+   http://www.curse.com/addons/wow/advancediconselector)
+- Re-adjusted hotkey size and position.
+- Replaced text font for BindPad Macro editbox
+  from GameFontHighlightSmall to ChatFontNormal.
+
 
 Version 2.6.0
 - Added "Show more slots" button, "Show less slots" button and a scroll bar

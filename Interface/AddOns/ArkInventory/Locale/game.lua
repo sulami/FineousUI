@@ -1,4 +1,4 @@
-local L = LibStub( "AceLocale-3.0" ):NewLocale( "ArkInventory", "enUS", true, false )
+﻿local L = LibStub( "AceLocale-3.0" ):NewLocale( "ArkInventory", "enUS", true, false )
 if not L then return end
 
 -- game client based localisations and internal stuff
@@ -115,10 +115,11 @@ L["CHARACTER"] = CHARACTER or true
 
 
 local function ConvertToCapture( text )
-	text = string.gsub( text, "%(", "%%%(", 1 ) -- replace ( with %(
-	text = string.gsub( text, "%)", "%%%)", 1 ) -- replace ) with %)
-	text = string.gsub( text, "%%s", "(.+)", 1 ) -- replace %s with (.+)
-	text = string.gsub( text, "%%d", "%(%%d+%)", 1 ) -- replace %d with (%d+)
+	text = string.gsub( text, "%d%$", "" ) -- remove 1$ / 2$
+	text = string.gsub( text, "%(", "%%%(" ) -- replace ( with %(
+	text = string.gsub( text, "%)", "%%%)" ) -- replace ) with %)
+	text = string.gsub( text, "%%s", "(.+)" ) -- replace %s with (.+)
+	text = string.gsub( text, "%%d", "%(%%d+%)" ) -- replace %d with (%d+)
 	return string.format( "^%s$", text )
 end
 

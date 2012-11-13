@@ -1,5 +1,5 @@
 BINDINGMODE 0
-bind BUTTON3 CLICK BindPadKey:SPELL Soulburn
+bind BUTTON3 CLICK BindPadKey:SPELL Imp Swarm
 bind W MOVEFORWARD
 bind UP NONE
 bind S STOPCASTING
@@ -8,8 +8,8 @@ bind A TURNLEFT
 bind LEFT NONE
 bind D TURNRIGHT
 bind RIGHT NONE
-bind Q CLICK BindPadKey:SPELL Soul Swap
-bind E CLICK BindPadKey:SPELL Shadow Bolt
+bind Q CLICK BindPadKey:SPELL Metamorphosis
+bind E CLICK BindPadKey:MACRO pa
 bind NUMPAD0 NONE
 bind X CLICK BindPadKey:SPELL Unending Resolve
 bind Z CLICK BindPadKey:ITEM Healthstone
@@ -22,14 +22,14 @@ bind SHIFT-PAGEDOWN NONE
 bind CTRL-PAGEUP NONE
 bind CTRL-PAGEDOWN NONE
 bind CTRL-SHIFT-PAGEDOWN NONE
-bind R CLICK BindPadKey:SPELL Drain Soul
+bind R CLICK BindPadKey:SPELL Soul Fire
 bind SHIFT-R NONE
-bind 1 CLICK BindPadMacro:Haunt
-bind 2 CLICK BindPadMacro:Unstable Affliction
+bind 1 CLICK BindPadMacro:Drain Life
+bind 2 CLICK BindPadMacro:Hand of Gul'dan
 bind 3 CLICK BindPadMacro:Corruption
-bind 4 CLICK BindPadMacro:Agony
-bind 5 CLICK BindPadMacro:Mortal Coil
-bind 6 CLICK BindPadKey:SPELL Drain Life
+bind 4 CLICK BindPadMacro:Demonic Leap
+bind 5 CLICK BindPadMacro:Shadowfury
+bind 6 CLICK BindPadMacro:Grimoire: Felguard
 bind 7 NONE
 bind 8 NONE
 bind 9 NONE
@@ -39,7 +39,17 @@ bind = NONE
 bind CTRL-F1 NONE
 bind CTRL-F2 NONE
 bind CTRL-F3 NONE
+bind CTRL-1 NONE
+bind CTRL-2 NONE
+bind CTRL-3 NONE
+bind CTRL-4 NONE
 bind CTRL-5 NONE
+bind SHIFT-1 CLICK BT4Button1:LeftButton
+bind SHIFT-2 CLICK BT4Button2:LeftButton
+bind SHIFT-3 CLICK BT4Button3:LeftButton
+bind SHIFT-4 CLICK BT4Button4:LeftButton
+bind SHIFT-5 CLICK BT4Button5:LeftButton
+bind SHIFT-6 CLICK BT4Button6:LeftButton
 bind SHIFT-UP NONE
 bind SHIFT-MOUSEWHEELUP NONE
 bind SHIFT-DOWN NONE
@@ -52,11 +62,11 @@ bind F3 NONE
 bind F4 NONE
 bind F5 NONE
 bind G CLICK BindPadKey:SPELL Command Demon
-bind F CLICK BindPadKey:SPELL Dark Soul
+bind F CLICK BindPadMacro:Dark Soul
 bind V CLICK BindPadKey:MACRO Pet
 bind SHIFT-V NONE
 bind CTRL-V NONE
-bind T CLICK BindPadKey:SPELL Seed of Corruption
+bind T CLICK BindPadKey:SPELL Hellfire
 bind SHIFT-T NONE
 bind C CLICK BindPadKey:SPELL Twilight Ward
 bind B CLICK BindPadKey:SPELL Demonic Circle: Summon
@@ -66,7 +76,7 @@ bind F9 NONE
 bind F10 NONE
 bind F11 NONE
 bind F12 NONE
-bind P CLICK BindPadKey:SPELL Summon Felhunter
+bind P CLICK BindPadKey:SPELL Summon Felguard
 bind SHIFT-I TOGGLELFGPARENT
 bind SHIFT-P TOGGLESPELLBOOK
 bind SHIFT-SPACE NONE
@@ -80,12 +90,12 @@ bind O CLICK BindPadKey:SPELL Summon Voidwalker
 bind L CLICK BindPadKey:SPELL Grimoire of Sacrifice
 bind I CLICK BindPadKey:SPELL Soulstone
 bind CTRL-I NONE
-bind Y CLICK BindPadKey:SPELL Dark Regeneration
+bind Y CLICK BindPadKey:MACRO Heal
 bind J CLICK BindPadKey:SPELL Fel Flame
 bind SHIFT-Y NONE
 bind SHIFT-C TOGGLECHARACTER0
 bind ESCAPE TOGGLEGAMEMENU
-bind M CLICK BindPadKey:SPELL Burning Rush
+bind M CLICK BindPadKey:SPELL Unbound Will
 bind NUMPADPLUS NONE
 bind NUMPADMINUS NONE
 bind MOUSEWHEELUP CLICK BindPadKey:SPELL Life Tap
@@ -96,8 +106,8 @@ bind CTRL-R FOCUSTARGET
 bind CTRL-Y CLICK BindPadMacro:Azure Netherwing Drake
 bind CTRL-Q NONE
 bind CTRL-T TARGETFOCUS
-bind NUMPAD5 NONE
-bind NUMPAD1 NONE
+bind NUMPAD5 CLICK BindPadKey:SPELL Fel Flame
+bind NUMPAD1 CLICK BindPadKey:SPELL Demonic Circle: Summon
 bind NUMPAD3 NONE
 bind CTRL-MOUSEWHEELUP CAMERAZOOMIN
 bind CTRL-MOUSEWHEELDOWN CAMERAZOOMOUT
@@ -118,8 +128,8 @@ bind SHIFT-^ NONE
 bind SHIFT-X NONE
 bind NUMPADMULTIPLY TOGGLESHEATH
 bind ALT-X NONE
-bind NUMPAD2 NONE
-bind NUMPAD4 NONE
+bind NUMPAD2 CLICK BindPadKey:SPELL Demonic Circle: Teleport
+bind NUMPAD4 CLICK BindPadKey:SPELL Curse of the Elements
 bind NUMPAD6 NONE
 bind NUMPAD7 NONE
 bind NUMPAD8 NONE

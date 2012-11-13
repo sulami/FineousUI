@@ -5,6 +5,7 @@ ACP_Data = {
 	["NoChildren"] = true,
 	["collapsed"] = {
 		["MikScrollingBattleText"] = true,
+		["BigWigs"] = true,
 		["PitBull4"] = true,
 		["MinimapButtonFrame"] = true,
 		["Blizzard Addons"] = true,

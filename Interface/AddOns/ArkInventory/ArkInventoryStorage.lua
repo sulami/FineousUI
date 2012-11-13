@@ -273,7 +273,12 @@ function ArkInventory.PlayerInfoSet( )
 			
 			g.level = GetGuildLevel( )
 			
-			g.money = GetGuildBankMoney( )
+			g.money = g.money or 0
+			
+			if ArkInventory.Global.Mode.Vault then
+				-- only update when actually at the guild bank
+				g.money = GetGuildBankMoney( ) or 0
+			end
 			
 		end
 		
@@ -597,22 +602,22 @@ end
 
 
 function ArkInventory:LISTEN_VAULT_ENTER( )
-
+	
 	--ArkInventory.Output( "LISTEN_VAULT_ENTER" )
-
+	
 	local loc_id = ArkInventory.Const.Location.Vault
 
 	ArkInventory.Global.Mode.Vault = true
 	ArkInventory.Global.Location[loc_id].isOffline = false
 	
 	ArkInventory.PlayerInfoSet( )
-
+	
 	ArkInventory.ScanVaultHeader( )
 	
 	QueryGuildBankTab( GetCurrentGuildBankTab( ) or 1 )
 	
 	local cp = ArkInventory.Global.Me
-
+	
 	ArkInventory.Frame_Main_DrawStatus( loc_id, ArkInventory.Const.Window.Draw.Refresh )
 	
 	if ArkInventory.LocationIsControlled( loc_id ) then
@@ -1130,7 +1135,8 @@ function ArkInventory:LISTEN_PET_BATTLE_OPENING_DONE( event )
 				
 			else
 				
-				count = ( count["!ACCOUNT"] and count["!ACCOUNT"].location and count["!ACCOUNT"].location[ArkInventory.Const.Location.Pet] ) or 0
+				local acn = ArkInventory.PlayerIDAccount( ) 
+				count = ( count[acn] and count[acn].location and count[acn].location[ArkInventory.Const.Location.Pet] ) or 0
 				
 				if count >= ArkInventory.Const.MAX_PET_SAVED_SPECIES then
 					owned = string.format( "[%s]", ArkInventory.Localise["STATUS_FULL"] )
@@ -2394,12 +2400,12 @@ function ArkInventory.ScanBattlePet( )
 	
 	local slot_id = 0
 	local old_level
-	local speciesID, customName, level, xp, maxXp, displayID, name, icon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique
+	local speciesID, customName, level, xp, maxXp, displayID, petName, petIcon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique
 	
 	for _, petID in ArkInventory.Lib.Pet:IteratePetIDs( ) do
 		
-		speciesID, customName, level, xp, maxXp, displayID, name, icon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique = C_PetJournal.GetPetInfoByPetID( petID )
-		--ArkInventory.Output( "petid[", petID, "], [", speciesID, " / ", customName, " / ", level, " / ", xp, " / ", maxXp, " / ", displayID, " / ", name, " / ", petType, "]" )
+		speciesID, customName, level, xp, maxXp, displayID, petName, petIcon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique = C_PetJournal.GetPetInfoByPetID( petID )
+		--ArkInventory.Output( "petid[", petID, "], [", speciesID, " / ", customName, " / ", level, " / ", xp, " / ", maxXp, " / ", displayID, " / ", petName, " / ", petType, "]" )
 		
 		companionData[petID] = true
 		
@@ -2423,7 +2429,7 @@ function ArkInventory.ScanBattlePet( )
 		
 		local health, maxHealth, attack, speed, quality = C_PetJournal.GetPetStats( petID )
 
-		--ArkInventory.Output( "petid[", petID, "], name=[", name, "], [", speciesID, " / ", level, " / ", quality, " / ", maxHealth, " / ", attack, " / ", speed, " / ", customName, "]" )
+		--ArkInventory.Output( "petid[", petID, "], name=[", petName, "], [", speciesID, " / ", level, " / ", quality, " / ", maxHealth, " / ", attack, " / ", speed, " / ", customName, "]" )
 		
 		if isWild then
 			quality = quality and ( quality - 1 )
@@ -2598,7 +2604,7 @@ function ArkInventory.ScanVoidStorage( )
 	
 	local bag = cp.location[loc_id].bag[bag_id]
 	
-	bag.count = 80
+	bag.count = ArkInventory.Const.VOID_STORAGE_MAX
 	bag.empty = 0
 	bag.type = ArkInventory.BagType( blizzard_id )
 	bag.status = ArkInventory.Const.Bag.Status.Active
@@ -2753,6 +2759,8 @@ function ArkInventory.ScanCleanupCount( h, loc_id )
 end
 
 function ArkInventory.ScanCleanup( cp, loc_id, bag_id, bag, old_bag_count )
+	
+	local old_bag_count = old_bag_count or bag.count
 	
 	-- remove unwanted slots
 	if old_bag_count > bag.count then
@@ -3561,6 +3569,7 @@ function ArkInventory.ObjectCountGet( search_id, just_me, ignore_vaults, ignore_
 --			["vault"] = boolean,
 --			["tabs"] = string ("1, 2, 3, 4, 5, 6, 7, 8")
 --			["faction"] = string (english),
+--			["class"] = string (english),
 --		},
 	}
 	end
@@ -3665,17 +3674,17 @@ function ArkInventory.ObjectCountGet( search_id, just_me, ignore_vaults, ignore_
 	local cp = ArkInventory.Global.Me
 	d = ArkInventory.Global.Cache.ItemCount[search_id]
 	
-	for pn, pd in pairs( ArkInventory.Global.Cache.ItemCountRaw[search_id] ) do
+	for rcn, rcd in pairs( ArkInventory.Global.Cache.ItemCountRaw[search_id] ) do
 		
-		if ( not ignore_other_faction ) or ( ignore_other_faction and ( ( pd.info.class == "ACCOUNT" ) or ( pd.faction == cp.info.faction ) ) ) then
+		if ( not ignore_other_faction ) or ( ignore_other_faction and ( ( rcd.faction == cp.info.faction ) or ( rcn == ArkInventory.PlayerIDAccount( ) ) ) ) then
 			
-			if ( not just_me ) or ( just_me and ( ( pd.info.class == "ACCOUNT" ) or ( pn == cp.info.name ) ) ) then
+			if ( not just_me ) or ( just_me and ( ( rcn == cp.info.name ) or ( rcn == ArkInventory.PlayerIDAccount( ) ) ) ) then
 				
-				for l, c in pairs( pd.location ) do
+				for l, c in pairs( rcd.location ) do
 					
 					local ok = true
 					
-					if ignore_vaults and pd.vault then
+					if ignore_vaults and rcd.vault then
 						ok = false
 					end
 					
@@ -3683,12 +3692,12 @@ function ArkInventory.ObjectCountGet( search_id, just_me, ignore_vaults, ignore_
 						
 						if c > 0 then
 							
-							if not d[pn] then
-								d[pn] = { ["vault"] = pd.vault, ["tabs"] = pd.tabs, ["location"] = { }, ["total"] = 0, ["faction"] = pd.faction }
+							if not d[rcn] then
+								d[rcn] = { ["vault"] = rcd.vault, ["tabs"] = rcd.tabs, ["location"] = { }, ["total"] = 0, ["faction"] = rcd.faction, ["class"] = rcd.class }
 							end
 							
-							d[pn].location[l] = c
-							d[pn].total = d[pn].total + c
+							d[rcn].location[l] = c
+							d[rcn].total = d[rcn].total + c
 							
 						end
 						

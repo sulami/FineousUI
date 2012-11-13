@@ -141,7 +141,6 @@ AzCastBar_Config = {
 		},
 		["texture"] = "Interface\\Addons\\Skada\\statusbar\\normTex",
 	},
-	["optionsBottom"] = 519,
 	["Pet"] = {
 		["enabled"] = false,
 		["colInterrupt"] = {
@@ -165,8 +164,9 @@ AzCastBar_Config = {
 			0.82, -- [2]
 			0.86, -- [3]
 		},
-		["left"] = 835,
 		["showRank"] = false,
+		["left"] = 835,
 	},
-	["optionsLeft"] = 1217.000366210938,
+	["optionsBottom"] = 465.9999694824219,
+	["optionsLeft"] = 1396.00048828125,
 }

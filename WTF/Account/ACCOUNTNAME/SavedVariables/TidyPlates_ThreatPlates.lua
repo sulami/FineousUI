@@ -111,6 +111,9 @@ ThreatPlatesDB = {
 					"", -- [50]
 				},
 			},
+			["text"] = {
+				["amount"] = false,
+			},
 			["debuffWidget"] = {
 				["filter"] = {
 					"Corruption", -- [1]
@@ -120,6 +123,8 @@ ThreatPlatesDB = {
 					"Fear", -- [5]
 					"Shadowflame", -- [6]
 					"Immolate", -- [7]
+					"Doom", -- [8]
+					"", -- [9]
 				},
 				["mode"] = "whitelistMine",
 			},
@@ -151,11 +156,11 @@ ThreatPlatesDB = {
 					["hpColor"] = false,
 				},
 			},
-			["targetWidget"] = {
-				["theme"] = "arrows",
-			},
 			["castbarColorShield"] = {
 				["g"] = 0.2745098039215687,
+			},
+			["blizzFade"] = {
+				["amount"] = -0.5,
 			},
 			["castbarColor"] = {
 				["r"] = 0,
@@ -165,8 +170,25 @@ ThreatPlatesDB = {
 			["totemSettings"] = {
 				["hideHealthbar"] = true,
 			},
-			["text"] = {
-				["amount"] = false,
+			["threat"] = {
+				["scaleType"] = {
+					["Normal"] = 0,
+				},
+				["dps"] = {
+					["scale"] = {
+						["LOW"] = 1,
+						["MEDIUM"] = 1,
+						["HIGH"] = 1,
+					},
+				},
+				["useScale"] = false,
+				["tank"] = {
+					["scale"] = {
+						["LOW"] = 1,
+						["MEDIUM"] = 1,
+						["HIGH"] = 1,
+					},
+				},
 			},
 		},
 	},

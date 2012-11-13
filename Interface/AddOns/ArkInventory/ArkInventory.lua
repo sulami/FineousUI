@@ -1,6 +1,6 @@
 -- (c) 2006-2012, all rights reserved.
--- $Revision: 1035 $
--- $Date: 2012-11-05 20:13:56 +1100 (Mon, 05 Nov 2012) $
+-- $Revision: 1037 $
+-- $Date: 2012-11-08 20:53:33 +1100 (Thu, 08 Nov 2012) $
 
 
 local _G = _G
@@ -54,6 +54,7 @@ ArkInventory.Const = { -- constants
 	MAX_PET_LEVEL = 25,
 	MAX_ACTIVE_PETS = 3,
 	MAX_PET_SAVED_SPECIES = 3,
+	VOID_STORAGE_MAX = 80,
 	
 	Frame = {
 		Main = {

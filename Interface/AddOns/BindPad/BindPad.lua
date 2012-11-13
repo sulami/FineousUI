@@ -191,9 +191,7 @@ function BindPadFrame_OnShow()
 end
 
 function BindPadFrame_OnHide(self)
-   BindPadBindFrame:Hide();
-   BindPadMacroPopupFrame:Hide();
-   HideUIPanel(BindPadMacroFrame);
+   BindPadCore.HideSubFrames();
 end
 
 function BindPadFrameTab_OnClick(self)
@@ -406,8 +404,7 @@ function BindPadSlot_OnClick(self, button, down)
    else
       -- Otherwise open dialog window to set keybinding.
       if BindPadCore.GetSlotInfo(self:GetID()) then
-	 BindPadMacroPopupFrame:Hide();
-	 HideUIPanel(BindPadMacroFrame);
+	 BindPadCore.HideSubFrames();
 	 BindPadCore.selectedSlot = BindPadCore.GetSlotInfo(self:GetID());
 	 BindPadCore.selectedSlotButton = self;
 	 BindPadBindFrame_Update();
@@ -426,9 +423,7 @@ end
 
 function BindPadSlot_OnReceiveDrag(self)
    if self == BindPadCore.selectedSlotButton then
-      BindPadMacroPopupFrame:Hide();
-      HideUIPanel(BindPadMacroFrame);
-      BindPadBindFrame:Hide();
+      BindPadCore.HideSubFrames();
    end
    if not BindPadCore.CanPickupSlot(self) then
       return;
@@ -576,12 +571,14 @@ function BindPadMacroPopupFrame_Open(self)
    if TYPE_BPMACRO == padSlot.type then
       BindPadCore.selectedSlot = padSlot;
       BindPadCore.selectedSlotButton = self;
-      
+
+      -- Use AdvancedIconSelector if available.
+      BindPadCore.ReplaceMacroPopup()
+
       BindPadMacroPopupEditBox:SetText(padSlot.name);
       BindPadMacroPopupFrame.selectedIconTexture = padSlot.texture;
       BindPadMacroPopupFrame.selectedIcon = nil;
-      BindPadBindFrame:Hide();
-      HideUIPanel(BindPadMacroFrame);
+      BindPadCore.HideSubFrames();
       BindPadMacroPopupFrame:Show();
       if newFlag then
 	 BindPadMacroPopupEditBox:HighlightText();
@@ -594,7 +591,7 @@ function BindPadMacroAddButton_OnClick(self)
       BindPadSlot_OnReceiveDrag(self);
       
    else
-      HideUIPanel(BindPadMacroFrame);
+      BindPadCore.HideSubFrames();
       
       PlaySound("gsTitleOptionOK");
       BindPadMacroPopupFrame_Open(self);
@@ -653,7 +650,7 @@ end
 function BindPadMacroPopupEditBox_OnTextChanged(self)
    if InCombatLockdown() then
       BindPadFrame_OutputText(BINDPAD_TEXT_ERR_BINDPADMACRO_INCOMBAT);
-      BindPadMacroPopupFrame:Hide();
+      BindPadCore.HidePopup();
       return;
    end
    
@@ -673,7 +670,7 @@ function BindPadMacroPopupFrame_CancelEdit()
    if padSlot == nil then
       return;
    end
-   BindPadMacroPopupFrame:Hide();
+   BindPadCore.HidePopup();
    
    if InCombatLockdown() then
       BindPadFrame_OutputText(BINDPAD_TEXT_ERR_BINDPADMACRO_INCOMBAT);
@@ -696,13 +693,10 @@ function BindPadMacroPopupFrame_CancelEdit()
 end
 
 function BindPadMacroPopupOkayButton_Update(self)
-   if ( (strlen(BindPadMacroPopupEditBox:GetText()) > 0) and BindPadMacroPopupFrame.selectedIcon ) then
+   if (strlen(BindPadMacroPopupEditBox:GetText()) > 0) then
       BindPadMacroPopupOkayButton:Enable();
    else
       BindPadMacroPopupOkayButton:Disable();
-   end
-   if (strlen(BindPadMacroPopupEditBox:GetText()) > 0) then
-      BindPadMacroPopupOkayButton:Enable();
    end
 end
 
@@ -719,13 +713,13 @@ function BindPadMacroPopupButton_OnClick(self)
 end
 
 function BindPadMacroPopupOkayButton_OnClick()
-   BindPadMacroPopupFrame:Hide();
+   BindPadCore.HidePopup();
    BindPadSlot_UpdateState(BindPadCore.selectedSlotButton);
    BindPadMacroFrame_Open(BindPadCore.selectedSlotButton);
 end
 
 function BindPadMacroFrame_Open(self)
-   HideUIPanel(BindPadMacroFrame);
+   BindPadCore.HideSubFrames();
    
    local id = self:GetID();
    local padSlot = BindPadCore.GetSlotInfo(id);
@@ -755,9 +749,8 @@ function BindPadMacroFrame_Open(self)
    if not InCombatLockdown() then
       BindPadMacroFrameTestButton:SetAttribute("macrotext", padSlot.macrotext);
    end
-   
-   BindPadBindFrame:Hide()
-   BindPadMacroPopupFrame:Hide();
+
+   BindPadCore.HidePopup();   
    ShowUIPanel(BindPadMacroFrame);
 end
 
@@ -766,7 +759,7 @@ function BindPadMacroFrameEditButton_OnClick(self)
 end
 
 function BindPadMacroDeleteButton_OnClick(self)
-   HideUIPanel(self:GetParent());
+   BindPadCore.HideSubFrames();
    
    local padSlot = BindPadCore.GetSlotInfo(BindPadCore.selectedSlotButton:GetID());
    if padSlot == nil then
@@ -1097,9 +1090,7 @@ function BindPadCore.SwitchProfile(newProfileNum, force)
    end
    
    -- Close any optional frames.
-   BindPadMacroPopupFrame:Hide();
-   HideUIPanel(BindPadMacroFrame);
-   BindPadBindFrame:Hide();
+   BindPadCore.HideSubFrames();
    
    local character = BindPadCore.character;
    if nil == character then
@@ -1152,9 +1143,7 @@ function BindPadCore.PickupSlot(self, id, isOnDragStart)
       return;
    end
    if self == BindPadCore.selectedSlotButton then
-      BindPadMacroPopupFrame:Hide();
-      HideUIPanel(BindPadMacroFrame);
-      BindPadBindFrame:Hide();
+      BindPadCore.HideSubFrames();
    end
       
    if TYPE_ITEM == padSlot.type then
@@ -1975,8 +1964,8 @@ function BindPadCore.AddHotKey(name, GetAction)
 
    info.bphotkey = button:CreateFontString(name.."BPHotKey", "ARTWORK", "NumberFontNormalSmallGray");
    info.bphotkey:SetJustifyH("RIGHT")
-   info.bphotkey:SetSize(40, 10)
-   info.bphotkey:SetPoint("TOPLEFT", button, "TOPLEFT", -1, -3)
+   info.bphotkey:SetSize(button:GetWidth(), 10)
+   info.bphotkey:SetPoint("TOPRIGHT", button, "TOPRIGHT", 0, -3)
    info.bphotkey:Show();
 
    -- Copying the range indicator color change.
@@ -2210,4 +2199,125 @@ function BindPadCore.AllSlotInfoIter()
       end
    end
    return coroutine.wrap(f);
+end
+
+function BindPadCore.HidePopup()
+   BindPadMacroPopupFrame:Hide();
+   BindPadBindFrame:Hide();
+end
+
+function BindPadCore.HideSubFrames()
+   BindPadCore.HidePopup();
+   HideUIPanel(BindPadMacroFrame);
+end
+
+
+BindPadCore.replaced = false
+-- Replaces the icon selection for BindPad Macro with LibAdvancedIconSelector-1.0.
+function BindPadCore.ReplaceMacroPopup()
+   if BindPadCore.replaced then
+      return
+   end
+   BindPadCore.replaced = true
+
+   if not LibStub then
+      return
+   end
+   
+   local libname = "LibAdvancedIconSelector-1.0"
+   local silent = true
+   local libAIS = LibStub(libname, silent)
+   if not libAIS then
+      if LoadAddOn("LibAdvancedIconSelector-1.0") or LoadAddOn("AdvancedIconSelector") then
+	 libAIS = LibStub(libname, silent)
+      end
+   end
+   if not libAIS then
+      return
+   end
+   
+   local customFrame = CreateFrame("Frame", nil, nil)
+   customFrame:SetHeight(60)
+   
+   local options = {
+      customFrame = customFrame,
+      headerWidth = 320,
+      headerText = BINDPAD_MACRO_TITLE,
+   }
+   
+   local popup = libAIS:CreateIconSelectorWindow("BindPadMacroPopupFrame", nil, options)
+   BindPadMacroPopupFrame = popup
+   
+   popup.nameText = customFrame:CreateFontString()
+   popup.nameText:SetFontObject("GameFontHighlightSmall")
+   popup.nameText:SetText(MACRO_POPUP_TEXT)
+   popup.nameText:SetPoint("TOPLEFT", 0, 0)
+   
+   popup.chooseIconText = customFrame:CreateFontString()
+   popup.chooseIconText:SetFontObject("GameFontHighlightSmall")
+   popup.chooseIconText:SetText(MACRO_POPUP_CHOOSE_ICON)
+   popup.chooseIconText:SetPoint("TOPLEFT", 0, -48)
+   
+   popup.editBox = CreateFrame("EditBox", "BindPadMacroPopupEditBox", customFrame, "InputBoxTemplate")
+   popup.editBox:SetAutoFocus(true)
+   popup.editBox:SetMaxLetters(16)
+   popup.editBox:SetFontObject("ChatFontNormal")
+   popup.editBox:SetSize(182, 20)
+   popup.editBox:SetPoint("TOPLEFT", 5, -14)
+   BindPadMacroPopupEditBox = popup.editBox
+   
+   local function BindPadMacroPopupOkayButton_Update()
+      if (strlen(popup.editBox:GetText()) > 0) then
+	 popup.okButton:Enable()
+      else
+	 popup.okButton:Disable()
+      end
+   end
+   
+   local function OnTextChanged(self)
+      BindPadMacroPopupEditBox_OnTextChanged(self)
+      BindPadMacroPopupOkayButton_Update()
+   end
+   popup.editBox:SetScript("OnTextChanged", OnTextChanged)
+   popup.editBox:SetScript("OnEscapePressed", BindPadMacroPopupFrame_CancelEdit)
+   local function OnEnterPressed(self)
+      if popup.okButton:IsEnabled() then
+	 popup.okButton:Click()
+      end
+   end
+   popup.editBox:SetScript("OnEnterPressed", OnEnterPressed)
+   
+   local originalWidth = popup:GetWidth()
+   local function OnShow(self)
+      -- Size to match the macro frame by default.
+      popup:SetPoint("TOPLEFT", BindPadFrame, "TOPRIGHT", 0, 0)
+      popup:SetPoint("BOTTOM", BindPadFrame, "BOTTOM", 0, 0)
+      popup:SetWidth(originalWidth)
+      
+      -- Clear text selection and move cursor to the end of existing name (when edit-mode)
+      popup.editBox:HighlightText(0,0)
+      popup.editBox:SetCursorPosition(strlen(popup.editBox:GetText()))
+      
+      -- Set the initial selection by texture.
+      if popup.selectedIconTexture then
+	 popup.iconsFrame:SetSelectionByName(gsub(strupper(popup.selectedIconTexture), "INTERFACE\\ICONS\\", ""))
+      end
+   end
+   popup:SetScript("OnShow", OnShow)
+   
+   popup:SetScript("OnHide", BindPadMacroPopupFrame_OnHide)
+   popup:SetScript("OnOkayClicked", function(...) PlaySound("gsTitleOptionOK"); BindPadMacroPopupOkayButton_OnClick(...) end)
+   popup:SetScript("OnCancelClicked", function(...) PlaySound("gsTitleOptionOK"); BindPadMacroPopupFrame_CancelEdit(...) end)
+   
+   local function OnSelectedIconChanged()
+      popup.selectedIcon = popup.iconsFrame:GetSelectedIcon()
+      popup.selectedIconTexture = nil
+      local _, _, texture = popup.iconsFrame:GetIconInfo(popup.selectedIcon);
+      if texture then
+	 BindPadCore.selectedSlot.texture = "INTERFACE\\ICONS\\"..texture
+	 BindPadSlot_UpdateState(BindPadCore.selectedSlotButton)
+	 BindPadMacroPopupOkayButton_Update()
+      end
+   end
+   popup.iconsFrame:SetScript("OnSelectedIconChanged", OnSelectedIconChanged)
 end

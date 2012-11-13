@@ -1607,6 +1607,8 @@ function ArkInventory.MenuChangerVaultActionOpen( frame )
 							end
 						)
 						
+						ArkInventory.Lib.Dewdrop:AddLine( )
+						
 					end
 					
 					ArkInventory.Lib.Dewdrop:AddLine(

@@ -1433,7 +1433,8 @@
 		ScrollingEdit_OnUpdate(self, elapsed, self:GetParent());
 	      </OnUpdate>
             </Scripts>
-            <FontString inherits="GameFontHighlightSmall"/>
+            <!--<FontString inherits="GameFontHighlightSmall"/>-->
+	    <FontString inherits="ChatFontNormal"/>
           </EditBox>
         </ScrollChild>
       </ScrollFrame>

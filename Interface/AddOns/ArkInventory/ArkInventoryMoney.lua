@@ -474,7 +474,7 @@ function ArkInventory.MoneyFrame_Tooltip( tooltip )
 	tooltip:AddDoubleLine( ArkInventory.Localise["CHARACTER"], ArkInventory.Localise["TOOLTIP_GOLD_AMOUNT"] )
 	for pn, pd in ArkInventory.spairs( ArkInventory.db.realm.player.data ) do
 		
-		if pd.info.name and pd.info.faction and pd.info.class ~= "GUILD" then
+		if ( pd.info.name ) and ( pd.info.faction ) and ( not ( ( pd.info.class == "GUILD" ) or ( pd.info.class == "ACCOUNT" ) ) ) then
 			
 			if ( not ArkInventory.db.global.option.tooltip.faction ) or ( ArkInventory.db.global.option.tooltip.faction and f == pd.info.faction ) then
 				
@@ -532,6 +532,8 @@ function ArkInventory.MoneyFrame_Tooltip( tooltip )
 						if ( not ArkInventory.db.global.option.tooltip.me ) or ( ArkInventory.db.global.option.tooltip.me and pn == player ) then
 							
 							if pd.info.class == "GUILD" then
+								
+								--ArkInventory.Output( pd.info )
 								
 								local name = pd.info.name
 								if paint then

@@ -5,12 +5,17 @@ TradeSkillDW_QueueSettings = {
 		},
 		["selectedIdx"] = 0,
 	},
+	["version"] = 1.7,
 	["Jewelcrafting"] = {
 		["queueList"] = {
 		},
 		["selectedIdx"] = 0,
 	},
-	["version"] = 1.7,
+	["Inscription"] = {
+		["queueList"] = {
+		},
+		["selectedIdx"] = 0,
+	},
 	["Enchanting"] = {
 		["queueList"] = {
 		},
