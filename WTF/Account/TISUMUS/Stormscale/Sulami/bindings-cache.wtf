@@ -1,0 +1,115 @@
+BINDINGMODE 0
+bind BUTTON3 CLICK BindPadKey:SPELL Soulburn
+bind W MOVEFORWARD
+bind UP NONE
+bind S MOVEBACKWARD
+bind DOWN NONE
+bind A TURNLEFT
+bind LEFT NONE
+bind D TURNRIGHT
+bind RIGHT NONE
+bind Q CLICK BindPadKey:SPELL Blood Boil
+bind E CLICK BindPadKey:SPELL Outbreak
+bind NUMPAD0 CLICK BindPadKey:SPELL Create Soulwell
+bind X CLICK BindPadKey:SPELL Icebound Fortitude
+bind Z CLICK BindPadKey:SPELL Lichborne
+bind NUMLOCK NONE
+bind BUTTON4 NONE
+bind NUMPADDIVIDE NONE
+bind PAGEUP NONE
+bind PAGEDOWN NONE
+bind SHIFT-PAGEDOWN NONE
+bind CTRL-PAGEUP NONE
+bind CTRL-PAGEDOWN NONE
+bind CTRL-SHIFT-PAGEDOWN NONE
+bind R CLICK BindPadKey:SPELL Death and Decay
+bind SHIFT-R NONE
+bind 1 CLICK BindPadKey:SPELL Blood Strike
+bind 2 CLICK BindPadKey:SPELL Death Strike
+bind 3 CLICK BindPadKey:SPELL Rune Strike
+bind 4 CLICK BindPadKey:SPELL Plague Strike
+bind 5 CLICK BindPadKey:SPELL Icy Touch
+bind 6 CLICK BindPadKey:SPELL Drain Life
+bind 7 NONE
+bind 8 NONE
+bind 9 NONE
+bind 0 NONE
+bind - NONE
+bind = NONE
+bind CTRL-F1 NONE
+bind CTRL-F2 NONE
+bind CTRL-F3 NONE
+bind CTRL-5 NONE
+bind SHIFT-UP NONE
+bind SHIFT-MOUSEWHEELUP NONE
+bind SHIFT-DOWN NONE
+bind SHIFT-MOUSEWHEELDOWN NONE
+bind TAB TARGETNEARESTENEMY
+bind SHIFT-TAB TARGETNEARESTENEMYPLAYER
+bind F1 NONE
+bind F2 NONE
+bind F3 NONE
+bind F4 NONE
+bind F5 NONE
+bind G CLICK BindPadKey:SPELL Chains of Ice
+bind F CLICK BindPadKey:SPELL Dancing Rune Weapon
+bind V CLICK BindPadKey:SPELL Army of the Dead
+bind SHIFT-V NONE
+bind CTRL-V CLICK BindPadKey:SPELL Survey
+bind T CLICK BindPadKey:SPELL Bone Shield
+bind SHIFT-T NONE
+bind C CLICK BindPadKey:SPELL Anti-Magic Shell
+bind B NONE
+bind SHIFT-B OPENALLBAGS
+bind F8 NONE
+bind F9 NONE
+bind F10 NONE
+bind F11 NONE
+bind F12 NONE
+bind SHIFT-SPACE NONE
+bind K CLICK BT4Button59:LeftButton
+bind Y CLICK BindPadKey:SPELL Vampiric Blood
+bind SHIFT-Y NONE
+bind SHIFT-C TOGGLECHARACTER0
+bind ESCAPE TOGGLEGAMEMENU
+bind NUMPADPLUS CLICK BindPadKey:SPELL Raise Dead
+bind NUMPADMINUS CLICK BindPadKey:SPELL Death Pact
+bind MOUSEWHEELUP CLICK BindPadKey:SPELL Mind Freeze
+bind MOUSEWHEELDOWN CLICK BindPadMacro:Death Coil
+bind END NONE
+bind HOME NONE
+bind CTRL-R RAIDTARGET8
+bind CTRL-Y CLICK BindPadMacro:Azure Netherwing Drake
+bind NUMPAD5 CLICK BindPadKey:SPELL Death Coil
+bind NUMPAD1 CLICK BindPadKey:SPELL Death Grip
+bind NUMPAD3 CLICK BindPadKey:SPELL Strangulate
+bind CTRL-MOUSEWHEELUP CAMERAZOOMIN
+bind CTRL-MOUSEWHEELDOWN CAMERAZOOMOUT
+bind SHIFT-G NONE
+bind ß NONE
+bind ´ NONE
+bind ÃŸ NONE
+bind Â´ NONE
+bind ^ CLICK BindPadKey:SPELL Horn of Winter
+bind < CLICK BindPadKey:SPELL Rune Tap
+bind BUTTON5 TOGGLEAUTORUN
+bind SHIFT-Q NONE
+bind SHIFT-E NONE
+bind SHIFT-F NONE
+bind SHIFT-< NONE
+bind SHIFT-^ NONE
+bind SHIFT-X NONE
+bind NUMPADMULTIPLY TOGGLESHEATH
+bind ALT-X NONE
+bind NUMPAD2 CLICK BindPadKey:SPELL Dark Command
+bind NUMPAD4 CLICK BindPadKey:SPELL Soul Reaper
+bind NUMPAD6 CLICK BindPadKey:SPELL Raise Ally
+bind NUMPAD7 CLICK BindPadKey:SPELL Banish
+bind NUMPAD8 CLICK BindPadKey:SPELL Enslave Demon
+bind NUMPAD9 CLICK BindPadKey:SPELL Arcane Torrent
+bind CTRL-X CLICK BindPadMacro:Mechano-Hog
+bind F6 NONE
+bind F7 NONE
+bind CTRL-F CLICK BindPadKey:SPELL Fear
+bind ALT-D NONE
+bind CTRL-C CLICK BindPadMacro:Dreadsteed

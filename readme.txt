@@ -16,35 +16,21 @@ Step 3: Rename the Subfolders "ACCOUNTNAME", "SERVERNAME" and "CHARACTERNAME" to
 	accountname is.)
 	There is standard support for Warlocks (obviously) but it may work for most
 	other classes, too.
-Step 4: Organize your keybinds. I use nearly no visible actionbar, everything is bound and
-	invisible (Commands below).
-Step 5: Organize your CDs. I use Bartenders Bar 1 for cooldowns status. Disable "click-trough"
-	in the options, drag your spells in and enable "click-through" again.
-	The other bar on the right appears when pressing alt.
-Step 6:	Login and have a look at the Interface. You might have to copy some addon-profiles
-	from "Fineous", Server Stormscale.
+Step 4: Login and type "/reflux switch FineousUI".
+Step 6:	Maybe you have to configure some Addons on your own.
 	To help you, here is a short list of chat-commands:
 	Unitframes: /suf
-	Actionbars: /bt
-	Keybinds: /bp
+	Actionbars: /dom
 	Castbars: /acb
 	Tooltips: /tiptac
-	Chat: /prat
-	Nameplates: /tidyplates
-	Damage-/Healmeter: /skada config
-	Bossmod: /dbm
-	Map: /mapster
-	Spelltimer: /fx
+	Nameplates: /pp
+	Damage-/Healmeter: /skada config (Disabled in my config)
+	Bossmod: /bigwigs
 	Special Power Bar: /cppba
 	Combattext: /msbt
+	Timer Bars: /ntk (Important if you do not play (Affliction-) Warlock)
 	Just look out for Profile-Options, choose Fineous-Stormscale and press copy.
-	In case you want to reorganize something, you can toggle a grid by typing "/align".
 Step 7: Profit!
-
-(Optional) There is an Addon that changes the Damage Font (FontDamageChanger). If you want
-to change the font, get a .ttf-file at dafont.com (or anywhere else), place it in
-[WoW-Folder]\Interface\Addons\Fontdamagechanger\fontgoeshere and rename it to
-FDCFONT.ttf. Should work with everyfont. If you're curious, I'm using Neuropol X.
 
 New versions will be pushed to GitHub first, so be sure to bookmark it, or check regularly.
 You can also update the Addons by yourself, in case something breaks.
@@ -52,4 +38,4 @@ You can also update the Addons by yourself, in case something breaks.
 Oh, and by the way:
 If you're either playing on EU-Stormscale, or planning on transfering there,
 <Rapid Eye Movement> is looking for Players.
-Contact me (Fineous), Graivs or Crymlink if you're interested.
+Contact me (Fineous), Graivs, Hayek or Crymlink if you're interested.

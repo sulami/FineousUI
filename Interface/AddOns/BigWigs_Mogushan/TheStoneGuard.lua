@@ -7,6 +7,8 @@ local mod, CL = BigWigs:NewBoss("The Stone Guard", 896, 679)
 if not mod then return end
 mod:RegisterEnableMob(60051, 60047, 60043, 59915) -- Cobalt, Amethyst, Jade, Jasper
 
+local cobaltTimer = 10.7
+
 --------------------------------------------------------------------------------
 -- Localization
 --
@@ -31,7 +33,7 @@ function mod:GetOptions()
 	return {
 		{"ej:5772", "SAY"},
 		130774,
-		{130395, "FLASHSHAKE", "PROXIMITY", "SAY"},
+		{130395, "FLASHSHAKE", "PROXIMITY"},
 		"overload", "petrifications", "berserk", "bosskill",
 	}, {
 		["ej:5772"] = "ej:5771",
@@ -54,6 +56,11 @@ function mod:OnBossEnable()
 end
 
 function mod:OnEngage(diff)
+	if diff == 3 or diff == 5 then
+		cobaltTimer = 8.7 -- 10 man
+	else
+		cobaltTimer = 10.7
+	end
 	self:Berserk(480)
 end
 
@@ -66,24 +73,22 @@ function mod:Overload(msg, boss)
 end
 
 do
-	local scheduled = nil
 	local jasperChainsTargets = mod:NewTargetList()
-	local function jasperChains(spellName)
-		mod:TargetMessage(130395, spellName, jasperChainsTargets, "Attention", 130395, "Info")
-		scheduled = nil
-	end
+	local prevPlayer = nil
 	function mod:JasperChainsApplied(player, spellId, _, _, spellName)
-		jasperChainsTargets[#jasperChainsTargets + 1] = player
-		if UnitIsUnit(player, "player") then
-			self:FlashShake(spellId)
-			self:LocalMessage(spellId, CL["you"]:format(spellName), "Personal", spellId)
-			self:Say(spellId, CL["say"]:format(spellName))
-			-- this is kind of a reverse proximity now, it should help to know when you are actually close as you are supposed to be
-			self:OpenProximity(10, spellId)
-		end
-		if not scheduled then
-			scheduled = true
-			self:ScheduleTimer(jasperChains, 0.2, spellName)
+		if not prevPlayer then
+			prevPlayer = player
+			jasperChainsTargets[1] = player
+		elseif prevPlayer then
+			jasperChainsTargets[2] = player
+			if UnitIsUnit(player, "player") or UnitIsUnit(prevPlayer, "player") then
+				self:FlashShake(spellId)
+				self:LocalMessage(spellId, CL["you"]:format(spellName), "Personal", spellId)
+				self:OpenProximity(10, spellId, UnitIsUnit(prevPlayer, "player") and player or prevPlayer, true)
+			else
+				self:TargetMessage(spellId, spellName, jasperChainsTargets, "Attention", spellId)
+			end
+			prevPlayer = nil
 		end
 	end
 	function mod:JasperChainsRemoved(player, spellId, _, _, spellName)
@@ -150,7 +155,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, unitId, spellName, _, _, spellId)
 	elseif spellId == 116057 then -- amethyst
 		self:Message("petrifications", ("|c00FF44FF%s|r"):format(spellName), nil, spellId, "Alert") -- purple
 	elseif spellId == 129424 then
-		self:Bar("ej:5772", spellName, 10.7, spellId)
+		self:Bar("ej:5772", spellName, cobaltTimer, spellId)
 		self:CobaltMine(unitId)
 	end
 end

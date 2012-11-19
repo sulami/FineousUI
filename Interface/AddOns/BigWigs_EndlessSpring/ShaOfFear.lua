@@ -65,7 +65,7 @@ end
 
 function mod:OnEngage(diff)
 	self:Bar(119414, breathOfFear, 33.3, 119414)
-	self:Berserk(480) -- assume
+	self:Berserk(900) -- needs testing 
 	swingCounter = 0
 	atSha = true
 end
@@ -105,7 +105,7 @@ function mod:Fearless(player, _, _, _, spellName)
 	if UnitIsUnit("player", player) then
 		atSha = true
 		self:Bar(118977, spellName, 30, 118977)
-		self:DelayedMessage(118977, 22, L["fading_shoon"]:format(spellName), "Attention", 118977)
+		self:DelayedMessage(118977, 22, L["fading_soon"]:format(spellName), "Attention", 118977)
 	end
 end
 

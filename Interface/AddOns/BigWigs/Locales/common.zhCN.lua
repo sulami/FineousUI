@@ -8,6 +8,7 @@ L.underyou = ">你<脚下：%s！"
 L.other = "%s：>%s<！"
 L.onboss = "%s on BOSS!"
 L.say = ">我< %s！"
+L.stack = "%2$dx %3$s on %1$s"
 L.cast = "<正在施放：%s>"
 L.soon = "即将 >%s<！"
 
@@ -20,8 +21,8 @@ L.general = "通用" -- General settings, i.e. things that apply to both normal 
 L.duration = ">%s< %s秒"
 L.over = "%s 结束！"
 
-L.add_spawned = "Add Spawned!"
-L.next_add = "Next Add"
+L.add_spawned = "小怪刷新!"
+L.next_add = "下一波小怪"
 
 -- Localizers note:
 -- The default mod:Berserk(600) uses spell ID 26662 to get the Berserk name

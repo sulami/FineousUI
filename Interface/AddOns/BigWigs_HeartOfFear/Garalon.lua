@@ -5,13 +5,14 @@
 
 local mod, CL = BigWigs:NewBoss("Garalon", 897, 713)
 if not mod then return end
-mod:RegisterEnableMob(62164, 63191) -- 63191 you interact with, 62164 casts all the abilities
+mod:RegisterEnableMob(62164, 63191, 63053) -- 62164 casts all the abilities, 63191 you interact with, 63053 the legs
 
 -----------------------------------------------------------------------------------------
 -- Locals
 --
 
 local legCounter, mendLegTimerRunning = 4, nil
+local crushCounter = 0
 
 --------------------------------------------------------------------------------
 -- Localization
@@ -19,10 +20,7 @@ local legCounter, mendLegTimerRunning = 4, nil
 
 local L = mod:NewLocale("enUS", true)
 if L then
-	L.crush_stun = "Crush stun"
-	L.crush_trigger1 = "Garalon prepares to"
-	L.crush_trigger2 = "Garalon senses" --Garalon senses the passage of Pheromones and begins to cast [Crush]!
-	L.crush_trigger3 = "Garalon detects" --Garalon detects Baddie under him and begins to cast [Crush]!
+	L.removed = "%s removed!"
 end
 L = mod:GetLocale()
 
@@ -40,7 +38,8 @@ function mod:GetOptions()
 end
 
 function mod:OnBossEnable()
-	self:Emote("Crush", L["crush_trigger1"], L["crush_trigger2"], L["crush_trigger3"])
+	self:Emote("Crush", "spell:122774")
+	self:Emote("MassiveCrush", "spell:128555")
 
 	self:Log("SPELL_AURA_APPLIED", "PheromonesApplied", 122835)
 	self:Log("SPELL_AURA_REMOVED", "PheromonesRemoved", 122835)
@@ -59,10 +58,14 @@ end
 
 function mod:OnEngage(diff)
 	legCounter, mendLegTimerRunning = 4, nil
-	self:Berserk(420)
+	crushCounter = 0
+	if not self:LFR() then
+		self:Berserk(420)
+	end
 	self:Bar(122735, 122735, 11, 122735) --Furious Swipe
 	if self:Heroic() then
 		self:RegisterEvent("UNIT_HEALTH_FREQUENT")
+		self:Bar(122774, ("%s (%d)"):format(self:SpellName(122774), 1), 28, 122082) -- Crush
 	end
 end
 
@@ -83,17 +86,24 @@ do
 end
 
 function mod:Crush()
-	self:Message(122774, CL["soon"]:format(self:SpellName(122774)), "Important", 122774, "Alarm") -- Crush
-	--self:Bar(122774, L["crush_stun"], 4, 122774)
+	crushCounter = crushCounter + 1
+	self:Message(122774, CL["soon"]:format(("%s (%d)"):format(self:SpellName(122774), crushCounter)), "Important", 122774, "Alarm") -- Crush
 	self:Bar(122774, CL["cast"]:format(self:SpellName(122774)), 3.6, 122774) --Crush
+	if self:Heroic() then
+		self:Bar(122774, ("%s (%d)"):format(self:SpellName(122774), crushCounter+1), 36, 122082) -- crush
+	end
 
 	self:Bar(122735, 122735, 9, 122735) --Furious Swipe
+end
+
+function mod:MassiveCrush()
+	self:Bar("berserk", CL["cast"]:format(self:SpellName(128555)), 3.6, 128555) --Massive Crush (no message, happens at berserk)
 end
 
 function mod:Fury(_, spellId, _, _, spellName, buffStack, _, _, _, dGUID)
 	--Garalon-62164 gains the buff, then casts Fury, which gives the buff to Garalon-63191
 	if self:GetCID(dGUID) == 62164 then
-		self:Bar(spellId, spellName, 30, 119622) --Rage like icon (swipe and fury have the same)
+		self:Bar(spellId, spellName, self:LFR() and 15 or 30, 119622) --Rage like icon (swipe and fury have the same)
 		self:Message(spellId, ("%s (%d)"):format(spellName, buffStack or 1), "Urgent", 119622)
 	end
 end
@@ -104,20 +114,20 @@ function mod:PheromonesApplied(player, spellId, _, _, spellName)
 		-- Local message with personal and info for when you gain the debuff, others don't care that you got it
 		self:LocalMessage(spellId, CL["you"]:format(spellName), "Personal", spellId, "Info")
 	elseif self:Healer() then
-		selt:LocalMessage(spellId, spellName, "Attention", spellId, nil, player)
+		self:LocalMessage(spellId, spellName, "Attention", spellId, nil, player)
 	end
 end
 
 function mod:PheromonesRemoved(player, spellId, _, _, spellName)
 	if UnitIsUnit("player", player) then
 		-- Local message with important and alarm for when you loose the debuff, others don't care that you lost it
-		self:LocalMessage(spellId, CL["other"]:format(spellName, player), "Important", spellId, "Alarm")
+		self:LocalMessage(spellId, L["removed"]:format(spellName), "Important", spellId, "Alarm")
 	end
 end
 
 function mod:Pungency(player, spellId, _, _, spellName, buffStack)
-	if buffStack > (self:Heroic() and 3 or 7) and buffStack % 2 == 0 then
-		self:TargetMessage(spellId, ("%s (%d)"):format(spellName, buffStack), player, "Attention", spellId)
+	if buffStack > ((self:LFR() and 13) or (self:Heroic() and 3) or 7) and buffStack % 2 == 0 then
+		self:TargetMessage(spellId, CL["stack"], player, "Attention", spellId, nil, buffStack, spellName)
 	end
 end
 
@@ -136,8 +146,8 @@ function mod:BrokenLeg()
 	legCounter = legCounter - 1
 	-- this is just a way to start the bar after 1st legs death
 	if not mendLegTimerRunning then
-		self:Bar(123495, "~"..self:SpellName(123495), 30, 123495)
-		mendLegTimerRunning = nil
+		self:Bar(123495, "~"..self:SpellName(123495), 30, 123495) --Mend Leg
+		mendLegTimerRunning = true
 	end
 end
 
@@ -150,18 +160,6 @@ do
 		--delay the bar so it ends when the damage occurs
 		self:ScheduleTimer(nextSwipe, 2.5, spellName)
 	end
-
-	--[[
-	--another idea is we have one bar for the cd and one bar for the cast, but they're both pretty short
-	local function nextSwipe(spellName)
-		self:Bar(122735, spellName, 5.5, 122735)
-	end
-	function mod:FuriousSwipe(_, spellId, _, _, spellName)
-		self:StopBar(spellName)
-		self:Bar(122735, CL["cast"]:format(spellName), 2.5, spellId) --use "cast" to help distinguish the two bars
-		self:ScheduleTimer(nextSwipe, 2.5, spellName)
-	end
-	--]]
 end
 
 function mod:UNIT_HEALTH_FREQUENT(_, unitId)

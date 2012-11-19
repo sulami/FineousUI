@@ -147,6 +147,7 @@ do
 					func(player, spellId, source, secSpellId, spellName, buffStack, event, sFlags, dFlags, dGUID, sGUID)
 				else
 					self[func](self, player, spellId, source, secSpellId, spellName, buffStack, event, sFlags, dFlags, dGUID, sGUID)
+					if debug then dbg(self, "Firing func: "..func) end
 				end
 			end
 		end
@@ -485,9 +486,9 @@ end
 
 -- XXX the monitor should probably also get a button to turn off the proximity bitflag
 -- XXX for the given key.
-function boss:OpenProximity(range, key)
+function boss:OpenProximity(range, key, player, isReverse)
 	if not checkFlag(self, key or "proximity", C.PROXIMITY) then return end
-	self:SendMessage("BigWigs_ShowProximity", self, range, key or "proximity")
+	self:SendMessage("BigWigs_ShowProximity", self, range, key or "proximity", player, isReverse)
 end
 function boss:CloseProximity(key)
 	if not checkFlag(self, key or "proximity", C.PROXIMITY) then return end
@@ -535,12 +536,15 @@ do
 			else
 				text = format(L["other"], text, coloredNames[player])
 			end
+		elseif type(text) == "number" then
+			text = spells[text]
 		end
 		self:SendMessage("BigWigs_Message", self, key, text, color, true, sound, nil, icon and icons[icon])
 	end
 
 	function boss:TargetMessage(key, spellName, player, color, icon, sound, ...)
 		if not checkFlag(self, key, C.MESSAGE) then return end
+		if type(spellName) == "number" then spellName = spells[spellName] end
 		if type(player) == "table" then
 			local list = table.concat(player, ", ")
 			wipe(player)

@@ -17,9 +17,11 @@ mod:RegisterEnableMob(62543)
 
 local L = mod:NewLocale("enUS", true)
 if L then
+	L.engage_yell = "On your guard, invaders. I, Ta'yak, Lord of Blades, will be your opponent."
+
 	L.unseenstrike, L.unseenstrike_desc = EJ_GetSectionInfo(6346)
 	L.unseenstrike_icon = 122994
-	L.unseenstrike_cone = "Cone of Unseen Strike" --maybe should be something like "Knockback Incoming!" ?
+	L.unseenstrike_inc = "Incoming Strike!"
 
 	L.assault, L.assault_desc = EJ_GetSectionInfo(6349)
 	L.assault_icon = 123474
@@ -38,8 +40,8 @@ L.assault_desc = CL.tank..L.assault_desc
 
 function mod:GetOptions()
 	return {
-		{125310, "FLASHSHAKE"}, 
-		122842, {"unseenstrike", "ICON"}, 123175, "assault", "storm",
+		{125310, "FLASHSHAKE"},
+		122842, {"unseenstrike", "ICON", "SAY", "PROXIMITY"}, {123175, "PROXIMITY"}, "assault", "storm",
 		"proximity", "berserk", "bosskill",
 	}, {
 		[125310] = "heroic",
@@ -60,15 +62,17 @@ function mod:OnBossEnable()
 	self:Death("Win", 62543)
 end
 
-function mod:OnEngage(diff)
+function mod:OnEngage()
 	if self:Heroic() then
 		self:Bar(125310, 125310, 60, 125310) --Blade Tempest
 	end
 	self:Bar(123175, "~"..self:SpellName(123175), 20.5, 123175) --Wind Step
 	self:Bar("unseenstrike", 122994, 30, 122994) --Unseen Strike
-	self:OpenProximity(8, 123175)
+	self:OpenProximity(8, 123175) -- close this in last phase
 	self:RegisterEvent("UNIT_HEALTH_FREQUENT")
-	self:Berserk(480)
+	if not self:LFR() then
+		self:Berserk(480)
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -86,17 +90,42 @@ function mod:WindStep(_, spellId, _, _, spellName)
 end
 
 do
-	local function warnStrike(spellName)
-		local player = UnitName("boss1target") -- because this event does not supply destName with UNIT_SPELLCAST_SUCCEEDED
-		mod:TargetMessage("unseenstrike", spellName, player, "Urgent", L["unseenstrike_icon"], "Alarm")
-		mod:PrimaryIcon("unseenstrike", player)
+	local timer = nil
+	local strike = mod:SpellName(122949)
+	local function removeIcon()
+		mod:OpenProximity(8, 123175) -- Re-open normal proximity
+		mod:PrimaryIcon("unseenstrike")
+		mod:CancelTimer(timer, true) -- Should never last this long, but no harm in it
+	end
+	local function warnStrike()
+		local player = UnitDebuff("boss1target", strike) and "boss1target"
+		if not player then -- Most of the time this won't run as boss1target works
+			for i=1, GetNumGroupMembers() do
+				local id = ("raid%d"):format(i)
+				player = UnitDebuff(id, strike) and id
+				if player then break end
+			end
+		end
+		if player then
+			mod:CancelTimer(timer, true)
+			local name, server = UnitName(player)
+			if server then name = name .."-".. server end
+			if UnitIsUnit(player, "player") then
+				mod:Say("unseenstrike", CL["say"]:format(strike))
+			else
+				mod:OpenProximity(5, "unseenstrike", name, true)
+			end
+			mod:TargetMessage("unseenstrike", strike, name, "Urgent", L.unseenstrike_icon, "Alarm")
+			mod:PrimaryIcon("unseenstrike", name)
+		end
 	end
 	function mod:UNIT_SPELLCAST_SUCCEEDED(_, unit, spellName, _, _, spellId)
 		if unit == "boss1" then
 			if spellId == 122949 then --Unseen Strike
-				self:Bar("unseenstrike", L["unseenstrike_cone"], 5, L["unseenstrike_icon"])
-				self:Bar("unseenstrike", "~"..spellName, 60, L["unseenstrike_icon"])
-				self:ScheduleTimer(warnStrike, 0.5, spellName) -- still faster than using boss emote (0.4 needs testing)
+				self:Bar("unseenstrike", L["unseenstrike_inc"], 6, L.unseenstrike_icon)
+				self:Bar("unseenstrike", "~"..spellName, 60, L.unseenstrike_icon)
+				timer = self:ScheduleRepeatingTimer(warnStrike, 0.05) -- ~1s faster than boss emote
+				self:ScheduleTimer(removeIcon, 7)
 			elseif spellId == 122839 then --Tempest Slash
 				self:Bar(122842, "~"..spellName, self:Heroic() and 15.6 or 20.5, 122842)
 			elseif spellId == 123814 then --Storm Unleashed (Phase 2)
@@ -105,6 +134,7 @@ do
 				self:StopBar("~"..self:SpellName(122839)) --Tempest Slash
 				self:StopBar("~"..self:SpellName(122949)) --Unseen Strike
 				self:StopBar("~"..self:SpellName(123175)) --Wind Step
+				self:CloseProximity(123175)
 			end
 		end
 	end

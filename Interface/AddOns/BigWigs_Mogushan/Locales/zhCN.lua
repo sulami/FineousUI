@@ -1,11 +1,11 @@
 local L = BigWigs:NewBossLocale("The Stone Guard", "zhCN")
 if not L then return end
 if L then
-	L.petrifications = "Petrification"
-	L.petrifications_desc = "Warning for when bosses start petrification"
+	L.petrifications = "石化"
+	L.petrifications_desc = "守卫试图将自己的敌人转化为各色晶石，使其受到的相应伤害降低90%，但是会逐渐降低其移动速度。身上石化效果达到100层的敌人将变成石头，无法移动或执行任何动作。"
 
-	L.overload = "Overload" -- maybe should use a spellId that says exactly "Overload"
-	L.overload_desc = "Warning for all types of overloads."
+	L.overload = "过载" -- maybe should use a spellId that says exactly "Overload"
+	L.overload_desc = "能量值全满时守卫会过载，对所有敌人造成250000点伤害，并中断相应石化。过载不会释放被完全石化的敌人。"
 end
 
 L = BigWigs:NewBossLocale("Feng the Accursed", "zhCN")
@@ -15,36 +15,36 @@ if L then
 	L.phase_lightning_trigger = "噢，伟大的神灵！赐予我大地的力量！"
 	L.phase_flame_trigger = "噢，至高的神！借我之手融化他们的血肉吧！"
 	L.phase_arcane_trigger = "噢，上古的贤者！赐予我魔法的智慧吧！"
-	L.phase_shadow_trigger = "Great soul of champions past! Bear to me your shield!"
+	L.phase_shadow_trigger = "先烈的英灵！用你的盾保护我吧！"
 
-	L.phase_lightning = "Lightning phase!"
-	L.phase_flame = "Flame phase!"
-	L.phase_arcane = "Arcane phase!"
-	L.phase_shadow = "(Heroic) Shadow phase!"
+	L.phase_lightning = "闪电阶段！"
+	L.phase_flame = "火焰阶段！"
+	L.phase_arcane = "奥术阶段！"
+	L.phase_shadow = "（英雄模式）暗影阶段！"
 
-	L.phase_message = "New phase soon!"
-	L.shroud_message = "%2$s cast Shroud on %1$s"
-	L.barrier_message = "Barrier UP!"
-	L.barrier_cooldown = "Barrier cooldown"
-	L.can_interrupt_epicenter = "%s can interrupt %s"
-	L.epicenter_interrupted = "%s interrupted!"
+	L.phase_message = "即将下一阶段！"
+	L.shroud_message = "%2$s 对 %1$s 施放反射罩"
+	L.barrier_message = "废灵壁垒！"
+	L.barrier_cooldown = "废灵壁垒冷却"
+	L.can_interrupt_epicenter = "%s 可打断 %s"
+	L.epicenter_interrupted = "%s 已打断！"
 
 	-- Tanks
-	L.tank = "Tank Alerts"
-	L.tank_desc = "Count the stacks of Lightning Lash, Flaming Spear, Arcane Shock & Shadowburn (Heroic)."
-	L.lash_message = "%2$dx Lash on %1$s"
-	L.spear_message = "%2$dx Spear on %1$s"
-	L.shock_message = "%2$dx Shock on %1$s"
-	L.burn_message = "%2$dx Burn on %1$s"
+	L.tank = "坦克警报"
+	L.tank_desc = "闪电之拳、野性火花、奥术震击、暗影灼烧（英雄模式）的计数"
+	L.lash_message = "%2$dx 闪电之拳 %1$s"
+	L.spear_message = "%2$dx 野性火花 %1$s"
+	L.shock_message = "%2$dx 奥术震击 %1$s"
+	L.burn_message = "%2$dx 暗影灼烧 %1$s"
 end
 
 L = BigWigs:NewBossLocale("Gara'jal the Spiritbinder", "zhCN")
 if L then
 	L.engage_yell = "死亡时间到！"
 
-	L.totem = "Totem (%d)"
-	L.shadowy_message = "Attack (%d)"
-	L.banish_message = "Tank Banished"
+	L.totem = "图腾 (%d)"
+	L.shadowy_message = "暗影攻击 (%d)"
+	L.banish_message = "坦克已被放逐"
 end
 
 L = BigWigs:NewBossLocale("The Spirit Kings", "zhCN")
@@ -56,17 +56,17 @@ end
 
 L = BigWigs:NewBossLocale("Elegon", "zhCN")
 if L then
-	L.engage_yell = "Entering defensive mode.  Disabling output failsafes."
+	L.engage_yell = "进入防御模式。禁用输出保险。"
 
-	L.last_phase = "Last Phase"
-	L.overcharged_total_annihilation = "Overcharge %d! A bit much?"
+	L.last_phase = "最后阶段"
+	L.overcharged_total_annihilation = "超载 %d! 太多了？"
 
-	L.floor = "Floor Despawn"
-	L.floor_desc = "Warnings for when the floor is about to despawn."
-	L.floor_message = "The floor is falling!"
+	L.floor = "平台消失"
+	L.floor_desc = "当平台即将消失时进行提示。"
+	L.floor_message = "平台即将消失！"
 
-	L.adds = "Adds"
-	L.adds_desc = "Warnings for when a Celestial Protector is about to spawn."
+	L.adds = "星界保护者"
+	L.adds_desc = "星界保护者刷新时提示。"
 end
 
 L = BigWigs:NewBossLocale("Will of the Emperor", "zhCN")
@@ -74,16 +74,16 @@ if L then
 	L.enable_zone = "无尽熔炉"
 
 	L.heroic_start_trigger = "Destroying the pipes" -- Destroying the pipes leaks |cFFFF0000|Hspell:116779|h[Titan Gas]|h|r into the room!
-	L.normal_start_trigger = "The machine hums" -- The machine hums to life!  Get to the lower level!
+	L.normal_start_trigger = "机器开始嗡嗡作响了！到下层去！" -- The machine hums to life!  Get to the lower level!
 
-	L.rage_trigger = "The Emperor's Rage echoes through the hills."
-	L.strength_trigger = "The Emperor's Strength appears in the alcoves!"
-	L.courage_trigger = "The Emperor's Courage appears in the alcoves!"
-	L.bosses_trigger = "Two titanic constructs appear in the large alcoves!"
-	L.gas_trigger = "The Ancient Mogu Machine breaks down!"
-	L.gas_overdrive_trigger = "The Ancient Mogu Machine goes into overdrive!"
+	L.rage_trigger = "皇帝之怒响彻群山。"
+	L.strength_trigger = "皇帝的力量出现在壁龛中！"
+	L.courage_trigger = "皇帝的勇气出现在壁龛中！"
+	L.bosses_trigger = "两个巨型构造体出现在大型的壁龛中！"
+	L.gas_trigger = "上古魔古机器损坏了！"
+	L.gas_overdrive_trigger = "皇帝之息渐灭。"
 
-	L.target_only = "|cFFFF0000This warning will only show for the boss you're targeting.|r "
-	L.combo_message = "%s: Combo soon!"
+	L.target_only = "|cFFFF0000该提示信息仅在你为首领目标时显示。|r "
+	L.combo_message = "%s: 即将连击！"
 end
 

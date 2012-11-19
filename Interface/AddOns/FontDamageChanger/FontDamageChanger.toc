@@ -1,7 +1,0 @@
-## Interface: 40300
-## Title: FontDamageChanger
-## Author: Fishingrod
-## Notes: Quick and Easy way to change the default blizzard font to something more snazzzy
-## Future Release: Multiple font changing within game using /commands or a frame, whichever is easier
-
-FontDamageChanger.lua 

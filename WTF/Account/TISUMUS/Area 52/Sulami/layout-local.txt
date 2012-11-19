@@ -1,0 +1,15 @@
+Version: 1
+Frame: LootFrame
+FrameLevel: 6
+Anchor: RIGHT
+X: 0
+Y: -67
+W: 170
+H: 240
+Frame: DBMMinimapButton
+FrameLevel: 3
+Anchor: TOPRIGHT
+X: -171
+Y: -262
+W: 32
+H: 32

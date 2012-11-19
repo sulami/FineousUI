@@ -1,0 +1,4 @@
+MACRO 16777217 "DC" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@player] Death Coil
+END

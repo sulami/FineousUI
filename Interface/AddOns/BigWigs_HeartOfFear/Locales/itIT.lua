@@ -1,31 +1,35 @@
 local L = BigWigs:NewBossLocale("Imperial Vizier Zor'lok", "itIT")
 if not L then return end
 if L then
+	L.engage_yell = "The Divine chose us to give mortal voice to Her divine will. We are but the vessel that enacts Her will."
+
 	L.force_message = "AoE Pulse"
 
 	L.attenuation = EJ_GetSectionInfo(6426) .. " (Discs)"
-	L.attenuation_message = "Incoming Discs, Dance!"
+	L.attenuation_bar = "Dischi... Corri!"
+	L.attenuation_message = "%s Dancing %s"
+	L.echo = "|c001cc986Echo|r"
+	L.zorlok = "|c00ed1ffaZor'lok|r"
+	L.left = "|c00008000<- Left <-|r"
+	L.right = "|c00FF0000-> Right ->|r"
 
-	L.platform_emote = "platforms" -- Imperial Vizier Zor'lok flies to one of his platforms!
-	L.platform_emote_final = "inhales"-- Imperial Vizier Zor'lok inhales the Pheromones of Zeal!
-	L.platform_message = "Swapping Platform"
+	L.platform_emote = "piattaforme" -- Imperial Vizier Zor'lok flies to one of his platforms!
+	L.platform_emote_final = "inala"-- Imperial Vizier Zor'lok inhales the Pheromones of Zeal!
+	L.platform_message = "Cambio Piattaforma"
 end
 
 L = BigWigs:NewBossLocale("Blade Lord Ta'yak", "itIT")
 if L then
+	L.engage_yell = "On your guard, invaders. I, Ta'yak, Lord of Blades, will be your opponent."
 
-	L.unseenstrike_cone = "Cono dell'Assalto Invisibile!"
+	L.unseenstrike_inc = "Incoming Strike!"
+
 	L.assault_message = "%2$dx Assalto su %1$s"
-	L.assault = "Assalto Opprimente"
-	L.assault_desc = "Avviso solo per i Difensori. L'attacco lascia il Difensore esposto ai danni dei prossimi Attacchi Opprimenti del 100% per 45 secondi."
 end
 
 L = BigWigs:NewBossLocale("Garalon", "itIT")
 if L then
-	L.crush_stun = "Crush stun"
-	L.crush_trigger1 = "Garalon si prepara a "
-	L.crush_trigger2 = "Garalon senses" --Garalon senses the passage of Pheromones and begins to cast [Crush]! -- DA TRADURRE
-	L.crush_trigger3 = "Garalon detects" --Garalon detects Baddie under him and begins to cast [Crush]! -- DA TRADURRE
+	L.removed = "%s Rimosso!"
 end
 
 L = BigWigs:NewBossLocale("Wind Lord Mel'jarak", "itIT")

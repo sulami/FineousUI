@@ -1,0 +1,112 @@
+BINDINGMODE 0
+bind BUTTON3 CLICK BindPadKey:SPELL Soulburn
+bind W MOVEFORWARD
+bind UP NONE
+bind S MOVEBACKWARD
+bind DOWN NONE
+bind A TURNLEFT
+bind LEFT NONE
+bind D TURNRIGHT
+bind RIGHT NONE
+bind Q CLICK BindPadKey:SPELL Prayer of Healing
+bind E CLICK BindPadKey:SPELL Power Word: Shield
+bind NUMPAD0 CLICK BindPadKey:SPELL Create Soulwell
+bind X CLICK BindPadKey:SPELL Unending Resolve
+bind Z NONE
+bind NUMLOCK TOGGLEAUTORUN
+bind BUTTON4 CAMERAZOOMOUT
+bind PAGEUP NONE
+bind PAGEDOWN NONE
+bind SHIFT-PAGEDOWN NONE
+bind CTRL-PAGEUP NONE
+bind CTRL-PAGEDOWN NONE
+bind CTRL-SHIFT-PAGEDOWN NONE
+bind R CLICK BindPadKey:SPELL Resurrection
+bind SHIFT-R NONE
+bind 1 CLICK BindPadKey:SPELL Flash Heal
+bind 2 CLICK BindPadKey:SPELL Heal
+bind 3 CLICK BindPadKey:SPELL Greater Heal
+bind 4 CLICK BindPadKey:SPELL Renew
+bind 5 CLICK BindPadKey:SPELL Shadow Word: Death
+bind 6 CLICK BindPadKey:SPELL Holy Fire
+bind 7 NONE
+bind 8 NONE
+bind 9 NONE
+bind 0 NONE
+bind - NONE
+bind = NONE
+bind CTRL-F1 NONE
+bind CTRL-F2 NONE
+bind CTRL-F3 NONE
+bind CTRL-5 NONE
+bind SHIFT-UP NONE
+bind SHIFT-MOUSEWHEELUP NONE
+bind SHIFT-DOWN NONE
+bind SHIFT-MOUSEWHEELDOWN NONE
+bind TAB TARGETNEARESTENEMY
+bind SHIFT-TAB TARGETNEARESTENEMYPLAYER
+bind F1 NONE
+bind F2 NONE
+bind F3 NONE
+bind F4 NONE
+bind F5 NONE
+bind G CLICK BindPadKey:SPELL Lightwell
+bind F CLICK BindPadKey:SPELL Purify
+bind V CLICK BindPadKey:SPELL Circle of Healing
+bind SHIFT-V NONE
+bind CTRL-V NONE
+bind T CLICK BindPadKey:SPELL Seed of Corruption
+bind SHIFT-T NONE
+bind C CLICK BindPadKey:SPELL Psychic Scream
+bind F8 NONE
+bind F9 NONE
+bind F10 NONE
+bind F11 NONE
+bind F12 NONE
+bind SHIFT-SPACE NONE
+bind K CLICK BT4Button59:LeftButton
+bind Y CLICK BindPadKey:SPELL Fade
+bind SHIFT-Y NONE
+bind SHIFT-C TOGGLECHARACTER0
+bind ESCAPE TOGGLEGAMEMENU
+bind NUMPADPLUS CLICK BindPadKey:SPELL Inner Fire
+bind NUMPADMINUS CLICK BindPadKey:SPELL Grimoire of Sacrifice
+bind MOUSEWHEELUP CLICK BindPadKey:SPELL Life Tap
+bind MOUSEWHEELDOWN CLICK BindPadKey:SPELL Soulshatter
+bind END NONE
+bind HOME NONE
+bind CTRL-R RAIDTARGET8
+bind CTRL-Y NONE
+bind NUMPAD5 CLICK BindPadKey:SPELL Dark Soul
+bind NUMPAD1 CLICK BindPadKey:SPELL Holy Word: Chastise
+bind NUMPAD3 CLICK BindPadKey:SPELL Demonic Gateway
+bind CTRL-MOUSEWHEELUP NONE
+bind CTRL-MOUSEWHEELDOWN NONE
+bind SHIFT-G NONE
+bind ß NONE
+bind ´ NONE
+bind ÃŸ NONE
+bind Â´ NONE
+bind ^ CLICK BindPadKey:SPELL Power Word: Fortitude
+bind < CLICK BindPadKey:SPELL Shadowfiend
+bind BUTTON5 CAMERAZOOMIN
+bind SHIFT-Q NONE
+bind SHIFT-E NONE
+bind SHIFT-F NONE
+bind SHIFT-< NONE
+bind SHIFT-^ NONE
+bind SHIFT-X NONE
+bind NUMPADMULTIPLY TOGGLESHEATH
+bind ALT-X NONE
+bind NUMPAD2 CLICK BindPadKey:SPELL Binding Heal
+bind NUMPAD4 CLICK BindPadKey:SPELL Curse of the Elements
+bind NUMPAD6 CLICK BindPadKey:SPELL Soulstone
+bind NUMPAD7 CLICK BindPadKey:SPELL Banish
+bind NUMPAD8 CLICK BindPadKey:SPELL Enslave Demon
+bind NUMPAD9 CLICK BindPadKey:SPELL Arcane Torrent
+bind CTRL-X NONE
+bind F6 NONE
+bind F7 NONE
+bind CTRL-F CLICK BindPadKey:SPELL Fear
+bind ALT-D NONE
+bind CTRL-C CLICK BindPadMacro:Dreadsteed

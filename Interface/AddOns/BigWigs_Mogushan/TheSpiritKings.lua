@@ -32,7 +32,7 @@ local L = mod:NewLocale("enUS", true)
 if L then
 	L.shield_removed = "Shield removed! (%s)"
 	L.casting_shields = "Casting shields"
-	L.casting_shields_desc = "Warning for when shields are casted for all bosses"
+	L.casting_shields_desc = "Warnings for when shields are casted for all bosses."
 	L.casting_shields_icon = 871
 
 	L.cowardice = EJ_GetSectionInfo(5838) .." (".. spellReflect ..")"
@@ -90,7 +90,7 @@ function mod:OnBossEnable()
 	self:Death("Win", 60701, 60708, 60709, 60710)
 end
 
-function mod:OnEngage(diff)
+function mod:OnEngage()
 	self:Berserk(600)
 	wipe(bossActivated)
 	if self:Heroic() then

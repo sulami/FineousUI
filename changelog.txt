@@ -1,5 +1,10 @@
 Changelog
 
+v3.0
+Nearly Complete Rebuild.
+Significantly lower Memory Usage.
+Profile Management via Reflux added.
+
 v2.0.3
 Added Incoming Combat Text via MSBT.
 

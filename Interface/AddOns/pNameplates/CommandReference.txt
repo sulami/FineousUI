@@ -1,0 +1,109 @@
+pNameplates
+Complete Configuration Command List
+
+Version: 2.0.5
+Author: Crushbeers
+
+
+******************
+*     GENERAL    *
+******************
+
+/pp percent
+-- Toggle Health Percent (on/off)
+/pp value
+-- Toggle Health Value (dependent on Percent)
+/pp max
+-- Toggle Health display when at 100% health (dependent on Percent)
+/pp threat
+-- Toggle Threat Styling(on/off)
+/pp role
+-- Toggle Active Threat Role (Tank or Heal/DPS)
+/pp mark
+-- Toggle Raid Icon styling (on/off)
+
+
+******************
+*    PROFILES    *
+******************
+
+/pp save name
+-- Save the current settings with the name desired
+/pp load name
+-- Load the saved file with the specified name
+/pp delete name
+-- Delete the saved file with the specified name  
+/pp list
+-- List all profiles currently saved
+
+
+******************
+* FONTS AND TEXT *
+******************
+
+/pp font #
+-- Select a font type from the 4 default fonts (# must be between 1-4)
+-- 1. ARIAL
+-- 2. FRIZQT
+-- 3. MORPHEUS
+-- 4. skurri
+/pp cast size ##
+-- Change castbar font size to number entered
+/pp name size ##
+-- Change name font size to number entered
+/pp name move location
+-- Move name to location entered (see below)
+/pp level size ##
+-- Change level font size to number entered
+/pp level move location
+-- Move level to location entered (see below)
+/pp health size ##
+-- Change level font size to number entered
+/pp health move location
+-- Move health to location entered (see below)
+/pp raid size ##
+-- Change raid icon size to number entered
+/pp raid move location
+-- Move raid icon to location entered (see below)
+
+[Valid Locations]:
+-- top
+-- right
+-- left
+-- center
+-- inleft
+-- inright
+
+
+******************
+*   HP/CASTING   *
+******************
+
+/pp hbar h ##
+-- Change Health Bar Height to number entered
+/pp hbar w ##
+-- Change Health Bar Width to number entered
+/pp cbar h ##
+-- Change Castbar Height to number entered
+/pp cbar w ##
+-- Change Castbar Width to number entered
+
+
+
+******************
+*      MISC      *
+******************
+
+/pp low
+-- Toggle the Low-Health Warning (on/off)
+/pp low ##
+-- Set the HP percent threshold for Low-Health Warning to number entered
+
+/pp vis
+-- Toggle ALL ENEMY nameplate visibility (on/off)
+/pp vis pet
+-- Toggle ENEMY PET nameplate visibility (on/off)
+/pp vis totem
+-- Toggle ENEMY TOTEM nameplate visibility (on/off)
+/pp vis guardian
+-- Toggle ENEMY GUARDIAN nameplate visibility (on/off)

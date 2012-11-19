@@ -1,0 +1,2 @@
+mRunes: disabled
+ZygorGuidesViewer: disabled

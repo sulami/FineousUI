@@ -1,0 +1,9 @@
+MACRO 16777218 "CR" "INV_MISC_QUESTIONMARK"
+#showtooltip   
+/cast [@mouseover,help] Raise Ally; Raise Ally
+END
+MACRO 16777217 "DC" "INV_MISC_QUESTIONMARK"
+#showtooltip Lichborne
+/cast !Lichborne;
+/cast [@player] Death Coil
+END
