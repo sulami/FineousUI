@@ -3,7 +3,7 @@ TI_status = {
 	["state"] = true,
 	["debugstate"] = false,
 	["version"] = "2.0",
-	["usedefault"] = false,
+	["usedefault"] = true,
 	["autoadd"] = false,
 	["options"] = {
 		{
@@ -12,34 +12,34 @@ TI_status = {
 			["name"] = "Available Quests",
 		}, -- [1]
 		{
+			["state"] = true,
+			["type"] = "activequest",
+			["name"] = "Active Quests",
+		}, -- [2]
+		{
 			["state"] = false,
 			["type"] = "gossip",
 			["name"] = "Gossip",
-		}, -- [2]
+		}, -- [3]
 		{
 			["state"] = false,
 			["type"] = "taxi",
 			["name"] = "Taxi",
-		}, -- [3]
+		}, -- [4]
 		{
 			["state"] = false,
 			["type"] = "vendor",
 			["name"] = "Vendor",
-		}, -- [4]
+		}, -- [5]
 		{
 			["state"] = false,
 			["type"] = "banker",
 			["name"] = "Bank",
-		}, -- [5]
+		}, -- [6]
 		{
 			["state"] = false,
 			["type"] = "healer",
 			["name"] = "Spirit Healer",
-		}, -- [6]
-		{
-			["state"] = true,
-			["type"] = "activequest",
-			["name"] = "Active Quests",
 		}, -- [7]
 		{
 			["state"] = false,

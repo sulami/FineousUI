@@ -7,9 +7,6 @@ local mod, CL = BigWigs:NewBoss("Tsulong", 886, 742)
 if not mod then return end
 mod:RegisterEnableMob(62442)
 
-local day, night = (EJ_GetSectionInfo(6315)), (EJ_GetSectionInfo(6310))
-local summonUnstableSha, sunBreath, nightmares, darkOfNight = (GetSpellInfo(122953)), (GetSpellInfo(122855)), (GetSpellInfo(122777)), (GetSpellInfo(123813))
-
 --------------------------------------------------------------------------------
 -- Localization
 --
@@ -19,11 +16,16 @@ if L then
 	L.phases = "Phases"
 	L.phases_desc = "Warning for phase changes"
 
+	L.unstable_sha, L.unstable_sha_desc = EJ_GetSectionInfo(6320)
+	L.unstable_sha_icon = 122938
+
 	L.breath, L.breath_desc = EJ_GetSectionInfo(6313)
 	L.breath_icon = 122752
+
+	L.day = EJ_GetSectionInfo(6315)
+	L.night = EJ_GetSectionInfo(6310)
 end
 L = mod:GetLocale()
-L.breath = L.breath.." "..INLINE_TANK_ICON
 
 --------------------------------------------------------------------------------
 -- Initialization
@@ -31,121 +33,122 @@ L.breath = L.breath.." "..INLINE_TANK_ICON
 
 function mod:GetOptions()
 	return {
-		122752, 122768, 122789, { 122777, "PROXIMITY", "FLASHSHAKE", "SAY" },
-		122855, "ej:6320",
-		123813,
+		"ej:6550",
+		"breath", 122768, 122789, { 122777, "PROXIMITY", "FLASHSHAKE", "SAY" },
+		122855, "unstable_sha", 123011,
 		"berserk", "phases", "bosskill",
 	}, {
-		[122752] = "ej:6310",
-		["ej:6320"] = "ej:6315",
-		[123813] = "heroic",
+		["ej:6550"] = "heroic",
+		["breath"] = L["night"],
+		[122855] = L["day"],
 		berserk = "general",
 	}
 end
 
 function mod:OnBossEnable()
 	self:Log("SPELL_CAST_START", "SunBreath", 122855)
-	self:Log("SPELL_AURA_APPLIED", "ShadowBreath", 122752)
+	self:Log("SPELL_CAST_SUCCESS", "ShadowBreath", 122752)
+	self:Log("SPELL_CAST_SUCCESS", "Terrorize", 123011)
 	self:Log("SPELL_AURA_APPLIED_DOSE", "DreadShadows", 122768)
 	self:Log("SPELL_AURA_APPLIED", "Sunbeam", 122789)
-	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "CheckBossStatus")
 
-	self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "EngageCheck")
 
-
-	self:Death("Win", 62442)
+	self:Death("Deaths", 62442)
 end
 
 function mod:OnEngage(diff)
 	self:OpenProximity(8, 122777)
-	self:Berserk(480)
-	self:Bar("phases", day, 121, 122789)
-	self:Bar(122777, nightmares, 15.6, 122777)
+	self:Berserk(490)
+	self:Bar("phases", L["day"], 121, 122789)
+	self:Bar(122777, 122777, 15.6, 122777) --Nightmares
+
+	self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 end
 
 --------------------------------------------------------------------------------
 -- Event Handlers
 --
 
-function mod:DreadShadows(player, _, _, _, spellName, stack)
-	if self:Difficulty() > 2 then
-		if UnitIsUnit("player", player) and stack > 5 and stack % 3 == 0 then -- might need adjusting
-			self:LocalMessage(122768, ("%s (%d)"):format(spellName, stack), "Personal", 122768, "Info")
-		end
-	else
-		if UnitIsUnit("player", player) and stack > 11 and stack % 3 == 0 then -- might need adjusting
-			self:LocalMessage(122768, ("%s (%d)"):format(spellName, stack), "Personal", 122768, "Info")
-		end
+function mod:EngageCheck()
+	self:CheckBossStatus()
+	-- assume only 1 Embodied Terror is up at a time, else you wipe
+	if not UnitExists("boss2") then return end
+	if self:GetCID(UnitGUID("boss2")) == 62969 then
+		self:Bar(123011, "~"..self:SpellName(123011), 5, 123011) -- Terrorize
 	end
 end
 
-function mod:Sunbeam(player, _, _, _, spellName)
+function mod:Terrorize(_, spellId, _, _, spellName)
+	self:Message(spellId, spellName, "Important", spellId)
+	self:Bar(spellId, spellName, 41, spellId) -- stop this when add dies, might be tricky if more than one add can be up
+end
+
+function mod:DreadShadows(player, spellId, _, _, spellName, buffStack)
+	if UnitIsUnit("player", player) and buffStack > (self:Heroic() and 5 or 11) and buffStack % 3 == 0 then -- might need adjusting
+		self:LocalMessage(spellId, ("%s (%d)"):format(spellName, buffStack), "Personal", spellId, "Info")
+	end
+end
+
+function mod:Sunbeam(player, spellId, _, _, spellName)
 	if UnitIsUnit("player", player) then
-		self:LocalMessage(122789, spellName, "Positive", 122789)
+		self:LocalMessage(spellId, spellName, "Positive", spellId)
 	end
 end
 
-function mod:SunBreath(player, _, _, _, spellName)
-	self:Bar(122855, spellName, 29, 122855)
-	self:Message(122855, spellName, "Urgent", 122855)
+function mod:SunBreath(_, spellId, _, _, spellName)
+	self:Bar(spellId, spellName, 29, spellId)
+	self:Message(spellId, spellName, "Urgent", spellId)
 end
 
-function mod:ShadowBreath(player, _, _, _, spellName)
-	if self:Tank() then
-		self:Bar("breath", ("%s (%s)"):format(player, spellName), 30, 122752)
-		self:TargetMessage("breath", spellName, player, "Urgent", 122752)
-	end
+function mod:ShadowBreath(player, spellId, _, _, spellName)
+	self:Bar("breath", "~"..spellName, 25, spellId)
+	self:Message("breath", spellName, "Urgent", spellId)
 end
 
 do
-	local scanned = 0
-	local function getNightmaresTarget()
-		if UnitExists("boss1target") then
-			if not UnitDetailedThreatSituation("boss1target", "boss1") then
-				local name = UnitName("boss1target")
-				mod:TargetMessage(122777, nightmares, name, "Important", 122777, "Alert")
-				if UnitIsUnit("boss1target", "player") then
-					mod:FlashShake(122777)
-					mod:Say(122777, CL["say"]:format(nightmares))
-				end
-			end
-		else
-			if scanned < 10 then
-				scanned = scanned + 1
-				mod:ScheduleTimer(getNightmaresTarget, 0.1)
-			else
-				mod:CancelAllTimers()
-				scanned = 0
-			end
-		end
-	end
-	local last = 0
-	function mod:UNIT_SPELLCAST_SUCCEEDED(_, unitId, spellName, _, _, spellId)
+	local prev = 0
+	function mod:UNIT_SPELLCAST_SUCCEEDED(_, unitId, _, _, _, spellId)
 		if not unitId:match("boss") then return end
+
 		if spellId == 123252 then -- end of night phase
 			self:CloseProximity(122777)
-			self:Message("phases", day, "Positive", 122789)
-			self:Bar("phases", night, 121, 122768)
-			self:Bar("ej:6320", summonUnstableSha, 18, 122938)
+			self:StopBar(122752) -- shadow breath
+			self:Message("phases", L["day"], "Positive", 122789)
+			self:Bar("phases", L["night"], 121, 122768)
+			self:Bar("unstable_sha", 122953, 18, 122938)
 		elseif spellId == 122767 then -- start of night phase
 			self:OpenProximity(8, 122777)
-			self:Message("phases", night, "Positive", 122768)
-			self:Bar("phases", day, 121, 122789)
-			self:SendMessage("BigWigs_StopBar", self, summonUnstableSha)
-			self:SendMessage("BigWigs_StopBar", self, sunBreath)
+			self:Message("phases", L["night"], "Positive", 122768)
+			self:Bar("phases", L["day"], 121, 122789)
+			self:StopBar(122953) -- summon unstable sha
+			self:StopBar(122855) -- sun breath
 		elseif spellId == 122953 then -- summon unstable sha
-			local time = GetTime()
-			if (time - last) > 2 then
-				last = time
-				self:Message("ej:6320", spellName, "Important", 122938, "Alert")
-				self:Bar("ej:6320", spellName, 18, 122938)
+			local t = GetTime()
+			if t-prev > 2 then
+				prev = t
+				self:Message("unstable_sha", spellId, "Important", 122938, "Alert") -- summon unstable sha
+				self:Bar("unstable_sha", spellId, 18, 122938) -- summon unstable sha
 			end
-		elseif spellId == 122770 or spellId ==122775 then -- Nightmares
-			self:Bar(122777, spellName, 15, 122777)
-			getNightmaresTarget() -- probably won't work
+		elseif spellId == 122770 or spellId == 122775 then -- Nightmares
+			local t = GetTime()
+			if t-prev > 2 then
+				prev = t
+				self:Bar(122777, 122777, 15, 122777) -- Nightmares
+				self:Message(122777, 122777, 15, 122777)
+			end
 		elseif spellId == 123813 then -- dark of night- heroic
-			self:Bar(123813, darkOfNight, 30, 130013)
-			self:Message(123813, darkOfNight, "Urgent", 130013, "Alarm")
+			self:Bar("ej:6550", spellId, 30, 130013) -- dark of night
+			self:Message("ej:6550", spellId, "Urgent", 130013, "Alarm") -- dark of night
 		end
 	end
 end
+
+function mod:Deaths(mobId)
+	if mobId == 62442 then
+		self:Win()
+	elseif mobId == 62969 then
+		self:StopBar(123011) -- Terrorize
+	end
+end
+

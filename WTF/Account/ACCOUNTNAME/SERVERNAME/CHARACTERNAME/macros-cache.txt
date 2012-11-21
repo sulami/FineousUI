@@ -37,6 +37,5 @@ MACRO 16777301 "PET" "INV_MISC_QUESTIONMARK"
 END
 MACRO 16777306 "Port" "INV_MISC_QUESTIONMARK"
 #showtooltip
-/cast [mod:ctrl] Demonic Circle: Summon
-/cast [nomod] Demonic Circle: Teleport
+/cast [mod:ctrl] Demonic Circle: Summon;  Demonic Circle: Teleport
 END

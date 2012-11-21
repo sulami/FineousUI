@@ -4,7 +4,11 @@ ReforgeLiteDB = {
 	["updateTooltip"] = true,
 	["windowY"] = 880.0000610351563,
 	["reforgeCheat"] = 5,
-	["methodWindowY"] = 867.5001831054688,
+	["activeWindowTitle"] = {
+		0.8, -- [1]
+		0, -- [2]
+		0, -- [3]
+	},
 	["profiles"] = {
 		["Sulami - Stormscale"] = {
 			["caps"] = {
@@ -32,6 +36,12 @@ ReforgeLiteDB = {
 				}, -- [2]
 			},
 			["targetLevel"] = 3,
+			["customMethodPresets"] = {
+			},
+			["buffs"] = {
+			},
+			["itemsLocked"] = {
+			},
 			["weights"] = {
 				0, -- [1]
 				0, -- [2]
@@ -42,12 +52,6 @@ ReforgeLiteDB = {
 				0, -- [7]
 				0, -- [8]
 			},
-			["buffs"] = {
-			},
-			["itemsLocked"] = {
-			},
-			["customMethodPresets"] = {
-			},
 		},
 		["Fineous - Stormscale"] = {
 			["caps"] = {
@@ -55,7 +59,7 @@ ReforgeLiteDB = {
 					["stat"] = 4,
 					["points"] = {
 						{
-							["value"] = 4390,
+							["value"] = 4775,
 							["preset"] = 3,
 							["method"] = 2,
 							["after"] = 0,
@@ -77,105 +81,102 @@ ReforgeLiteDB = {
 			["method"] = {
 				["items"] = {
 					{
+						["dst"] = 4,
+						["src"] = 6,
+						["amount"] = 270,
+						["reforge"] = 39,
 					}, -- [1]
 					{
-						["dst"] = 7,
+						["dst"] = 6,
 						["src"] = 8,
-						["reforge"] = 56,
 						["amount"] = 145,
+						["reforge"] = 55,
 					}, -- [2]
 					{
 						["dst"] = 8,
-						["src"] = 6,
-						["reforge"] = 42,
-						["amount"] = 223,
+						["src"] = 4,
+						["amount"] = 229,
+						["reforge"] = 28,
 					}, -- [3]
 					{
 						["dst"] = 6,
 						["src"] = 5,
-						["reforge"] = 33,
 						["amount"] = 166,
+						["reforge"] = 33,
 					}, -- [4]
 					{
-						["dst"] = 8,
+						["dst"] = 4,
 						["src"] = 5,
-						["reforge"] = 35,
 						["amount"] = 274,
+						["reforge"] = 32,
 					}, -- [5]
 					{
 						["dst"] = 7,
 						["src"] = 6,
-						["reforge"] = 41,
 						["amount"] = 184,
+						["reforge"] = 41,
 					}, -- [6]
-					{
-					}, -- [7]
-					{
-						["dst"] = 6,
-						["src"] = 4,
-						["reforge"] = 26,
-						["amount"] = 178,
-					}, -- [8]
 					{
 						["dst"] = 4,
 						["src"] = 6,
+						["amount"] = 214,
 						["reforge"] = 39,
+					}, -- [7]
+					{
+					}, -- [8]
+					{
+						["dst"] = 4,
+						["src"] = 8,
 						["amount"] = 310,
+						["reforge"] = 53,
 					}, -- [9]
 					{
-						["dst"] = 7,
-						["src"] = 8,
-						["reforge"] = 56,
-						["amount"] = 229,
 					}, -- [10]
 					{
 						["dst"] = 8,
 						["src"] = 6,
-						["reforge"] = 42,
 						["amount"] = 166,
+						["reforge"] = 42,
 					}, -- [11]
 					{
 						["dst"] = 7,
 						["src"] = 6,
+						["amount"] = 141,
 						["reforge"] = 41,
-						["amount"] = 152,
 					}, -- [12]
 					{
-						["dst"] = 4,
+						["dst"] = 8,
 						["src"] = 6,
-						["reforge"] = 39,
 						["amount"] = 431,
+						["reforge"] = 42,
 					}, -- [13]
 					{
 					}, -- [14]
 					{
 						["dst"] = 4,
 						["src"] = 5,
-						["reforge"] = 32,
 						["amount"] = 106,
+						["reforge"] = 32,
 					}, -- [15]
 					{
 						["dst"] = 6,
 						["src"] = 4,
-						["reforge"] = 26,
 						["amount"] = 150,
+						["reforge"] = 26,
 					}, -- [16]
 				},
 				["stats"] = {
 					283, -- [1]
 					0, -- [2]
 					0, -- [3]
-					4380, -- [4]
+					4775, -- [4]
 					1126, -- [5]
-					4720, -- [6]
-					710, -- [7]
-					6522, -- [8]
+					4718, -- [6]
+					325, -- [7]
+					6604, -- [8]
 				},
 			},
-			["customMethodPresets"] = {
-			},
-			["buffs"] = {
-			},
+			["targetLevel"] = 3,
 			["weights"] = {
 				0, -- [1]
 				0, -- [2]
@@ -186,16 +187,23 @@ ReforgeLiteDB = {
 				0, -- [7]
 				272, -- [8]
 			},
+			["buffs"] = {
+			},
 			["itemsLocked"] = {
 			},
-			["targetLevel"] = 3,
+			["customMethodPresets"] = {
+			},
 		},
 	},
 	["windowWidth"] = 800,
 	["itemSize"] = 24,
 	["openOnReforge"] = true,
 	["methodWindowX"] = 1035.000610351563,
-	["windowX"] = 1042.000366210938,
+	["inactiveWindowTitle"] = {
+		0.5, -- [1]
+		0.5, -- [2]
+		0.5, -- [3]
+	},
 	["customPresets"] = {
 		["affli_custom"] = {
 			["caps"] = {
@@ -234,14 +242,6 @@ ReforgeLiteDB = {
 			},
 		},
 	},
-	["inactiveWindowTitle"] = {
-		0.5, -- [1]
-		0.5, -- [2]
-		0.5, -- [3]
-	},
-	["activeWindowTitle"] = {
-		0.8, -- [1]
-		0, -- [2]
-		0, -- [3]
-	},
+	["windowX"] = 1041.00048828125,
+	["methodWindowY"] = 867.5001831054688,
 }

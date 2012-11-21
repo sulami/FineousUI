@@ -17,17 +17,27 @@ TipTac_Config = {
 	["colorGuildByReaction"] = false,
 	["showBuffs"] = false,
 	["optionsBottom"] = 351.0000305175781,
-	["barsCondenseValues"] = false,
-	["anchorFrameTipPoint"] = "BOTTOMLEFT",
-	["backdropInsets"] = 0,
+	["tipBorderColor"] = {
+		0.3019607843137255, -- [1]
+		0.3019607843137255, -- [2]
+		0.4, -- [3]
+		0, -- [4]
+	},
+	["anchorFrameUnitType"] = "mouse",
+	["tipColor"] = {
+		0, -- [1]
+		0, -- [2]
+		0, -- [3]
+		0.75, -- [4]
+	},
 	["anchorFrameTipType"] = "mouse",
 	["classification_trivial"] = "~%s ",
 	["classification_worldboss"] = "%s|r (Boss) ",
-	["anchorWorldUnitPoint"] = "BOTTOMLEFT",
-	["showTalents"] = false,
-	["manaBar"] = false,
-	["anchorWorldTipPoint"] = "BOTTOMLEFT",
+	["barTexture"] = "Interface\\Addons\\Skada\\statusbar\\normTex",
+	["classification_rare"] = "%s|r (Rare) ",
 	["colorNameByClass"] = true,
+	["anchorWorldTipPoint"] = "BOTTOMLEFT",
+	["manaBar"] = false,
 	["classColoredBorder"] = true,
 	["classification_rareelite"] = "+%s|r (Rare) ",
 	["anchorWorldUnitType"] = "mouse",
@@ -37,19 +47,9 @@ TipTac_Config = {
 	["top"] = 118.0001602172852,
 	["colSameGuild"] = "|cff0cff03",
 	["gradientTip"] = false,
-	["classification_rare"] = "%s|r (Rare) ",
-	["barTexture"] = "Interface\\Addons\\Skada\\statusbar\\normTex",
-	["tipColor"] = {
-		0, -- [1]
-		0, -- [2]
-		0, -- [3]
-		0.75, -- [4]
-	},
-	["anchorFrameUnitType"] = "mouse",
-	["tipBorderColor"] = {
-		0.3019607843137255, -- [1]
-		0.3019607843137255, -- [2]
-		0.4, -- [3]
-		0, -- [4]
-	},
+	["showTalents"] = false,
+	["anchorWorldUnitPoint"] = "BOTTOMLEFT",
+	["backdropInsets"] = 0,
+	["anchorFrameTipPoint"] = "BOTTOMLEFT",
+	["barsCondenseValues"] = false,
 }

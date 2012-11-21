@@ -24,7 +24,8 @@ if L then
 
 	L.unseenstrike_inc = "Близится Удар!"
 
-	L.assault_message = "%2$dx Выпад на |3-5(%1$s)"
+	L.assault_message = "Выпад"
+	L.side_swap = "Смена стороны"
 end
 
 L = BigWigs:NewBossLocale("Garalon", "ruRU")
@@ -43,12 +44,27 @@ end
 
 L = BigWigs:NewBossLocale("Amber-Shaper Un'sok", "ruRU")
 if L then
-	L.explosion_casting = "Янтарный взрыв"
-	L.explosion_casting_desc = "Предупреждать о начале применения Янтарного взрыва. Крайне рекомендуется включить 'Увеличение'!"
+	L.explosion_by_other = "Янтарный взрыв на других"
+	L.explosion_by_other_desc = "Предупреждение о восстановлении Янтарного взрыва, используемого Янтарным чудовищем или целью вашего фокуса."
+
+	L.explosion_casting_by_other = "Чужое чтение Янтарного взрыва"
+	L.explosion_casting_by_other_desc = "Предупреждение о чтении Янтарного взрыва чудовищем или целью вашего фокуса. Крайне рекомендуется включить Увеличение.!"
+
+	L.explosion_by_you = "Янтарный взрыв на вас"
+	L.explosion_by_you_desc = "Предупреждение о восстановлении вашего Янтарного взрыва."
+
+	L.explosion_casting_by_you = "Ваше чтение Янтарного взрыва"
+	L.explosion_casting_by_you_desc = "Предупреждение о вашем чтении Янтарного взрыва. Крайне рекомендуется включить Увеличение!"
 
 	L.willpower = "Сила воли"
-	L.willpower_desc = "Когда иссякнет Сила воли - игрок умрет, а Мутировавший организм продолжит бесконтрольное существовавание."
-	L.willpower_message = "Ваша сила воли: %d (%d)"
+	L.willpower_message = "Ваша сила воли %d"
+
+	L.break_free_message = "Здоровье у %d%%!"
+	L.fling_message = "Бросок!"
+	L.parasite = "Паразит"
+
+	L.boss_is_casting = "БОСС произносит!"
+	L.you_are_casting = "ВЫ произносите!"
 end
 
 L = BigWigs:NewBossLocale("Grand Empress Shek'zeer", "ruRU")
@@ -58,7 +74,9 @@ if L then
 	L.phases_desc = "Предупредать о смене фаз."
 
 	L.eyes = "Взгляд императрицы"
-	L.eyes_desc = "Считает стаки взгляда императрицы и показывает таймер."
+	L.eyes_desc = "Считает стаки Взгляда императрицы и показывает таймер."
 	L.eyes_message = "%2$dx Взгляд на |3-5(%1$s)"
+
+	L.fumes_bar = "Ваш эффект паров"
 end
 

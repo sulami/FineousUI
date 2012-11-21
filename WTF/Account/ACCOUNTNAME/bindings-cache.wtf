@@ -29,7 +29,7 @@ bind 2 ACTIONBUTTON2
 bind 3 ACTIONBUTTON3
 bind 4 ACTIONBUTTON4
 bind 5 ACTIONBUTTON5
-bind 6 NONE
+bind 6 CLICK DominosActionButton7:LeftButton
 bind 7 NONE
 bind 8 NONE
 bind 9 NONE
@@ -130,7 +130,7 @@ bind F7 RAIDTARGET2
 bind CTRL-F CLICK DominosActionButton3:LeftButton
 bind ALT-D NONE
 bind CTRL-C CLICK BindPadMacro:Dreadsteed
-bind , CLICK BT4Button58:LeftButton
+bind , CLICK DominosActionButton5:LeftButton
 bind SHIFT-N TOGGLETALENTS
 bind SHIFT-H TOGGLECHARACTER4
 bind SHIFT-U TOGGLECHARACTER2

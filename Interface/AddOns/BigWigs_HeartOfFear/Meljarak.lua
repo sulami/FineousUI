@@ -12,8 +12,8 @@ mod:RegisterEnableMob(62397, 62408, 62402, 62405) -- boss, mender, battlemaster,
 --
 
 local korthikStrikeWarned = {}
-local primaryAmberIcon, secondaryAmberIcon, phase
-local firstKorthikStrikeDone
+local primaryAmberIcon, secondaryAmberIcon, phase = nil, nil, nil
+local firstKorthikStrikeDone = nil
 
 --------------------------------------------------------------------------------
 -- Localization
@@ -100,13 +100,13 @@ function mod:INSTANCE_ENCOUNTER_ENGAGE_UNIT()
 	self:CheckBossStatus()
 	for i = 2, MAX_BOSS_FRAMES do
 		if UnitName("boss"..i) == L["trapper"] then
-			self:OpenProximity(4, 121881) -- for amber prison EJ says 2 yards, but it might be bigger range -- 4 should be more than safe
+			self:OpenProximity(2.5, 121881)
 		end
 	end
 end
 
 function mod:WhirlingBladeDamage(player, spellId, _, _, spellName)
-	if UnitIsUnit("player", player) then
+	if not self:LFR() and UnitIsUnit("player", player) then
 		self:LocalMessage(spellId, CL["you"]:format(spellName), "Personal", spellId, "Info")
 		self:FlashShake(spellId) -- we FNS on cast too, but some more can't hurt
 	end
@@ -114,17 +114,23 @@ end
 
 do
 	local korthikStrike = mod:SpellName(122409)
-	local function allowKortikStrike(player)
+	local UnitDebuff = UnitDebuff
+	local function allowKorthikStrike(player)
 		korthikStrikeWarned[player] = nil
 	end
 	function mod:UNIT_AURA(_, unitId)
-		local player = UnitName(unitId)
-		if UnitDebuff(unitId, korthikStrike) and not korthikStrikeWarned[player] then
-			korthikStrikeWarned[player] = true
-			self:ScheduleTimer(allowKortikStrike, 10, player)
-			self:TargetMessage(122409, korthikStrike, player, "Urgent", 122409, "Alarm") -- does this need a bar? (2nd one ~30, then cooldown 50 sec)
-			self:Bar(122409, "~"..korthikStrike, firstKorthikStrikeDone and 50 or 30, 122409)
-			firstKorthikStrikeDone = true
+		if UnitDebuff(unitId, korthikStrike) then
+			local player, server = UnitName(unitId)
+			if server then
+				player = player .. "-" .. server
+			end
+			if not korthikStrikeWarned[player] then
+				korthikStrikeWarned[player] = true
+				self:ScheduleTimer(allowKorthikStrike, 10, player)
+				self:TargetMessage(122409, korthikStrike, player, "Urgent", 122409, "Alarm") -- does this need a bar? (2nd one ~30, then cooldown 50 sec)
+				self:Bar(122409, "~"..korthikStrike, firstKorthikStrikeDone and 50 or 30, 122409)
+				firstKorthikStrikeDone = true
+			end
 		end
 	end
 end
@@ -137,57 +143,57 @@ end
 
 do
 	local prisonList, scheduled = mod:NewTargetList(), nil
-	local function prison(spellName)
-		mod:TargetMessage(121881, spellName, prisonList, "Important", 122740, "Info")
+	local function prison(spellId)
+		mod:TargetMessage(spellId, spellId, prisonList, "Important", spellId, "Info")
 		scheduled = nil
 	end
-	function mod:AmberPrison(player, _, _, _, spellName)
+	function mod:AmberPrison(player, spellId, _, _, spellName)
 		if UnitIsUnit("player", player) then
-			self:Say(121881, CL["say"]:format(spellName))
+			self:Say(spellId, CL["say"]:format(spellName))
 		end
 		prisonList[#prisonList + 1] = player
 		if not primaryAmberIcon then
-			self:PrimaryIcon(121881, player)
+			self:PrimaryIcon(spellId, player)
 			primaryAmberIcon = player
 		else
-			self:SecondaryIcon(121881, player)
+			self:SecondaryIcon(spellId, player)
 			secondaryAmberIcon = player
 		end
 		if not scheduled then
-			scheduled = true
-			self:ScheduleTimer(prison, 0.1, spellName)
+			scheduled = self:ScheduleTimer(prison, 0.1, spellId)
 		end
 	end
 end
 
-function mod:AmberPrisonRemoved(player)
+function mod:AmberPrisonRemoved(player, spellId)
 	if UnitIsUnit(player, primaryAmberIcon) then
-		self:PrimaryIcon(121881)
+		self:PrimaryIcon(spellId)
+		primaryAmberIcon = nil
 	elseif UnitIsUnit(player, secondaryAmberIcon) then
-		self:SecondaryIcon(121881)
+		self:SecondaryIcon(spellId)
 	end
 end
 
-function mod:RainOfBlades(_, _, _, _, spellName)
-	self:Message(122406, spellName, "Important", 122406, "Alert")
-	self:Bar(122406, "~"..spellName, 60, 122406)
+function mod:RainOfBlades(_, spellId, _, _, spellName)
+	self:Message(spellId, spellName, "Important", spellId, "Alert")
+	self:Bar(spellId, "~"..spellName, 60, spellId)
 end
 
-function mod:Quickening(_, _, _, _, spellName)
-	self:Message(122149, spellName, "Attention", 122149)
+function mod:Quickening(_, spellId, _, _, spellName)
+	self:Message(spellId, spellName, "Attention", spellId)
 end
 
-function mod:Mending(_, _, source, _, spellName, _, _, _, _, _, sGUID)
+function mod:Mending(_, spellId, source, _, spellName, _, _, _, _, _, sGUID)
 	if UnitGUID("focus") == sGUID then
-		self:LocalMessage(122193, CL["cast"]:format(spellName), "Personal", 122193, "Info")
-		self:Bar(122193, spellName, 37, 122193)
+		self:LocalMessage(spellId, CL["cast"]:format(spellName), "Personal", spellId, "Info")
+		self:Bar(spellId, spellName, 37, spellId)
 	end
 end
 
-function mod:WhirlingBlade(_, _, _, _, spellName)
-	self:Message(121896, spellName, "Urgent", 121896, "Alarm")
-	self:Bar(121896, "~"..spellName, 45, 121896)
-	self:FlashShake(121896)
+function mod:WhirlingBlade(_, spellId, _, _, spellName)
+	self:Message(spellId, spellName, "Urgent", spellId, "Alarm")
+	self:Bar(spellId, "~"..spellName, 45, spellId)
+	self:FlashShake(spellId)
 end
 
 
@@ -206,42 +212,42 @@ end
 function mod:RecklessnessHeroic(_, spellId, _, _, spellName)
 	self:Message("recklessness", spellName, "Attention", spellId)
 	self:Bar("recklessness", spellName, 30, spellId)
-	self:Bar("next_pack", L["next_pack"], 50, L["next_pack_icon"]) --cd isn't 45 like the ej says?
-	self:DelayedMessage("next_pack", 50, L["next_pack"], "Attention", L["next_pack_icon"])
+	self:Bar("next_pack", L["next_pack"], 50, L.next_pack_icon) --cd isn't 45 like the ej says?
+	self:DelayedMessage("next_pack", 50, L["next_pack"], "Attention", L.next_pack_icon)
 end
 
 do
 	local prev = 0
-	function mod:ResinPoolDamage(player, _, _, _, spellName)
+	function mod:ResinPoolDamage(player, spellId, _, _, spellName)
 		if not UnitIsUnit(player, "player") then return end
 		local t = GetTime()
 		if t-prev > 2 then
 			prev = t
-			self:LocalMessage(122125, CL["underyou"]:format(spellName), "Personal", 122125, "Info")
-			self:FlashShake(122125)
+			self:LocalMessage(spellId, CL["underyou"]:format(spellName), "Personal", spellId, "Info")
+			self:FlashShake(spellId)
 		end
 	end
 end
 
-function mod:Resin(player, _, _, _, spellName)
+function mod:Resin(player, spellId, _, _, spellName)
 	if UnitIsUnit("player", player) then
-		self:Say(122064, CL["say"]:format(spellName))
-		self:FlashShake(122064)
-		self:LocalMessage(122064, CL["you"]:format(spellName), "Personal", 122064, "Info")
+		self:Say(spellId, CL["say"]:format(spellName))
+		self:FlashShake(spellId)
+		self:LocalMessage(spellId, CL["you"]:format(spellName), "Personal", spellId, "Info")
 	end
 end
 
 function mod:ImpalingSpear(_, spellId, source, _, spellName)
 	if UnitIsUnit(source, "player") then
-		self:Bar(122224, spellName, 50, 122224)
+		self:Bar(spellId, spellName, 50, spellId)
 	end
 end
 
-function mod:ImpalingSpearRemoved(_, _, source, _, spellName)
+function mod:ImpalingSpearRemoved(_, spellId, source, _, spellName)
 	if UnitIsUnit(source, "player") then
 		self:StopBar(spellName)
-		self:LocalMessage(122224, L["spear_removed"], "Personal", 122224, "Info")
-		self:FlashShake(122224)
+		self:LocalMessage(spellId, L["spear_removed"], "Personal", spellId, "Info")
+		self:FlashShake(spellId)
 	end
 end
 
@@ -282,3 +288,4 @@ function mod:Deaths(unitId)
 		self:StopBar(self:SpellName(122149)) -- quickening
 	end
 end
+

@@ -71,9 +71,7 @@ end
 function mod:OnEngage()
 	self:RegisterEvent("UNIT_HEALTH_FREQUENT")
 	forceCount, platform, danceTracker = 0, 0, true
-	if not self:LFR() then
-		self:Berserk(self:Heroic() and 720 or 600) -- Verify
-	end
+	self:Berserk(self:Heroic() and 720 or 600) -- Verify
 end
 
 --------------------------------------------------------------------------------
@@ -83,15 +81,14 @@ end
 do
 	local convertList, scheduled = mod:NewTargetList(), nil
 	local function convert(spellId)
-		mod:TargetMessage(spellId, mod:SpellName(spellId), convertList, "Attention", spellId)
+		mod:TargetMessage(spellId, spellId, convertList, "Attention", spellId)
 		scheduled = nil
 	end
 	function mod:Convert(player, spellId, _, _, spellName)
 		self:Bar(spellId, "~"..spellName, 36, spellId)
 		convertList[#convertList + 1] = player
 		if not scheduled then
-			scheduled = true
-			self:ScheduleTimer(convert, 0.1, spellId)
+			scheduled = self:ScheduleTimer(convert, 0.1, spellId)
 		end
 	end
 end

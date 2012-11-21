@@ -12,6 +12,11 @@ BigWigs3DB = {
 						["Victory"] = "None",
 					},
 				},
+				["Finous"] = {
+					["media"] = {
+						["Victory"] = "None",
+					},
+				},
 			},
 		},
 		["BigWigs_Bosses_Elegon"] = {
@@ -22,9 +27,9 @@ BigWigs3DB = {
 		},
 		["BigWigs_Bosses_Will of the Emperor"] = {
 		},
-		["BigWigs_Bosses_Grand Empress Shek'zeer"] = {
-		},
 		["BigWigs_Bosses_The Spirit Kings"] = {
+		},
+		["BigWigs_Bosses_Grand Empress Shek'zeer"] = {
 		},
 		["BigWigs_Bosses_Tsulong"] = {
 		},
@@ -32,7 +37,7 @@ BigWigs3DB = {
 		},
 		["BigWigs_Plugins_Raid Icons"] = {
 		},
-		["BigWigs_Bosses_Lei Shi"] = {
+		["BigWigs_Plugins_Super Emphasize"] = {
 		},
 		["BigWigs_Plugins_Bars"] = {
 			["profiles"] = {
@@ -42,21 +47,34 @@ BigWigs3DB = {
 					["scale"] = 1.2,
 					["BigWigsAnchor_y"] = 383.2881603227543,
 					["BigWigsEmphasizeAnchor_x"] = 383.2888547672155,
-					["font"] = "Friz Quadrata TT",
-					["BigWigsAnchor_width"] = 233.0001831054688,
-					["emphasizeGrowup"] = true,
-					["BigWigsAnchor_x"] = 184.8890669769753,
-					["BigWigsEmphasizeAnchor_width"] = 264.0000305175781,
 					["texture"] = "Minimalist",
+					["emphasizeGrowup"] = true,
+					["font"] = "Friz Quadrata TT",
+					["BigWigsAnchor_x"] = 184.8890669769753,
 					["interceptMouse"] = false,
+					["BigWigsAnchor_width"] = 233.0001831054688,
+					["BigWigsEmphasizeAnchor_width"] = 264.0000305175781,
 					["icon"] = false,
 					["fill"] = true,
+				},
+				["Finous"] = {
+					["BigWigsEmphasizeAnchor_y"] = 431.6444982992289,
+					["BigWigsAnchor_width"] = 240.9998321533203,
+					["BigWigsAnchor_y"] = 432.3556962331168,
+					["emphasizeGrowup"] = true,
+					["BigWigsAnchor_x"] = 977.7782354818555,
+					["texture"] = "Minimalist",
+					["emphasizeFlash"] = false,
+					["BigWigsEmphasizeAnchor_width"] = 246,
+					["BigWigsEmphasizeAnchor_x"] = 797.8668595976342,
+					["scale"] = 1.2,
+					["font"] = "Friz Quadrata TT",
 				},
 			},
 		},
 		["BigWigs_Bosses_Wind Lord Mel'jarak"] = {
 		},
-		["BigWigs_Plugins_Super Emphasize"] = {
+		["BigWigs_Bosses_Lei Shi"] = {
 		},
 		["BigWigs_Plugins_Proximity"] = {
 			["profiles"] = {
@@ -73,9 +91,26 @@ BigWigs3DB = {
 					["sound"] = false,
 					["font"] = "Friz Quadrata TT",
 				},
+				["Finous"] = {
+					["posx"] = 398.2217978371409,
+					["fontSize"] = 20,
+					["width"] = 100.0000305175781,
+					["objects"] = {
+						["title"] = false,
+						["close"] = false,
+						["ability"] = false,
+						["background"] = false,
+						["sound"] = false,
+					},
+					["font"] = "Friz Quadrata TT",
+					["lock"] = true,
+					["height"] = 95.00000762939453,
+					["sound"] = false,
+					["posy"] = 231.1108996934308,
+				},
 			},
 		},
-		["BigWigs_Bosses_Blade Lord Ta'yak"] = {
+		["BigWigs_Bosses_Garalon"] = {
 		},
 		["BigWigs_Bosses_Gara'jal the Spiritbinder"] = {
 		},
@@ -95,9 +130,21 @@ BigWigs3DB = {
 					["font"] = "Friz Quadrata TT",
 					["sink20ScrollArea"] = "Notification",
 				},
+				["Finous"] = {
+					["fontSize"] = 20,
+					["sink20OutputSink"] = "MikSBT",
+					["font"] = "Friz Quadrata TT",
+					["sink20Sticky"] = false,
+					["emphasizedMessages"] = {
+						["sink20Sticky"] = true,
+						["sink20OutputSink"] = "MikSBT",
+						["sink20ScrollArea"] = "Notification",
+					},
+					["sink20ScrollArea"] = "Notification",
+				},
 			},
 		},
-		["BigWigs_Bosses_Garalon"] = {
+		["BigWigs_Bosses_Blade Lord Ta'yak"] = {
 		},
 		["BigWigs_Bosses_Protectors of the Endless"] = {
 		},
@@ -105,12 +152,17 @@ BigWigs3DB = {
 		},
 	},
 	["profileKeys"] = {
-		["Fineous - Stormscale"] = "Default",
+		["Sulami - Stormscale"] = "Default",
+		["Fineous - Stormscale"] = "Finous",
 	},
 	["profiles"] = {
 		["Default"] = {
 			["shake"] = false,
 			["flash"] = false,
+		},
+		["Finous"] = {
+			["flash"] = false,
+			["shake"] = false,
 		},
 	},
 }

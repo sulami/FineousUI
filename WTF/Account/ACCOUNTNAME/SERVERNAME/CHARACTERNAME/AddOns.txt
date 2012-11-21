@@ -72,7 +72,7 @@ Forte_Cooldown: disabled
 Forte_Soulstone: disabled
 Forte_Healthstone: disabled
 TradeSkillDW: enabled
-Skada: disabled
+Skada: enabled
 RaidAchievement: enabled
 RaidAchievement_AchieveReminder: enabled
 RaidAchievement_CataHeroics: enabled
@@ -86,7 +86,7 @@ RaidAchievement_Ulduar: enabled
 RaidAchievement_WotlkHeroics: enabled
 epgp: enabled
 TidyPlates_ThreatPlates: disabled
-Auctionator: disabled
+Auctionator: enabled
 WebDKP: disabled
 ArkInventory: disabled
 vexpower: disabled
@@ -105,13 +105,13 @@ DBM: disabled
 BigWigs: enabled
 ErrorFilter: disabled
 SkadaCC: disabled
-SkadaDamage: disabled
-SkadaDamageTaken: disabled
+SkadaDamage: enabled
+SkadaDamageTaken: enabled
 SkadaDeaths: disabled
-SkadaDebuffs: disabled
-SkadaDispels: disabled
-SkadaEnemies: disabled
-SkadaHealing: disabled
+SkadaDebuffs: enabled
+SkadaDispels: enabled
+SkadaEnemies: enabled
+SkadaHealing: enabled
 SkadaPower: disabled
 SkadaThreat: disabled
 ncHoverBind: enabled
@@ -123,10 +123,10 @@ Forte_Core: disabled
 Forte_Summon: disabled
 Forte_Talent: disabled
 Forte_Timer: disabled
-EnhancedColourPicker: disabled
+EnhancedColourPicker: enabled
 MinimapButtonFrame: disabled
 MinimapButtonFrame_SkinPack: disabled
-eAlign: disabled
+eAlign: enabled
 TidyPlatesWidgets: disabled
 TidyPlatesHub: disabled
 TidyPlates: disabled
@@ -148,3 +148,4 @@ BigWigs_HeartOfFear: enabled
 BigWigs_Mogushan: enabled
 BigWigs_Options: enabled
 BigWigs_Plugins: enabled
+Reflux: enabled

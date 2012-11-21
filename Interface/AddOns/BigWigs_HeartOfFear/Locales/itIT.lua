@@ -24,7 +24,8 @@ if L then
 
 	L.unseenstrike_inc = "Incoming Strike!"
 
-	L.assault_message = "%2$dx Assalto su %1$s"
+	L.assault_message = "Assalto"
+	L.side_swap = "Side Swap"
 end
 
 L = BigWigs:NewBossLocale("Garalon", "itIT")
@@ -43,12 +44,27 @@ end
 
 L = BigWigs:NewBossLocale("Amber-Shaper Un'sok", "itIT")
 if L then
-	L.explosion_casting = "Lancio di Esplosione d'Ambra!"
-	L.explosion_casting_desc = "Avviso per il cast di Esplosione d'Ambra. L'avviso di inizio cast è associato a quest'opzione. Enfatizzazione fortemente consigliata!"
+	L.explosion_by_other = "Amber Explosion on others"
+	L.explosion_by_other_desc = "Cooldown warning for Amber Explosions cast by Amber Monstrosity or your focus target."
+
+	L.explosion_casting_by_other = "Amber Explosion cast by others"
+	L.explosion_casting_by_other_desc = "Casting warnings for Amber Explosions started by Amber Monstrosity or your focus target. Emphasizing this is highly recommended!"
+
+	L.explosion_by_you = "Amber Explosion on you"
+	L.explosion_by_you_desc = "Cooldown warning for your Amber Explosions."
+
+	L.explosion_casting_by_you = "Amber Explosion cast by you"
+	L.explosion_casting_by_you_desc = "Casting warnings for Amber Explosions started by you. Emphasizing this is highly recommended!"
 
 	L.willpower = "Volontà"
-	L.willpower_desc = "Quando Volontà finisce, il giocatore muore e il Costrutto Mutato continua ad attaccare, fuori controllo."
-	L.willpower_message = "La tua Volonta' e': %d (%d)"
+	L.willpower_message = "La tua Volonta' e' %d"
+
+	L.break_free_message = "Health at %d%%!"
+	L.fling_message = "Getting tossed!"
+	L.parasite = "Parasite"
+
+	L.boss_is_casting = "BOSS is casting!"
+	L.you_are_casting = "YOU are casting!"
 end
 
 L = BigWigs:NewBossLocale("Grand Empress Shek'zeer", "itIT")
@@ -60,5 +76,7 @@ if L then
 	L.eyes = "Occhi dell'Imperatrice"
 	L.eyes_desc = "Conta le stack di Occhi dell'Imeratrice e mostra una barra di durata."
 	L.eyes_message = "%2$dx Occhi su %1$s"
+
+	L.fumes_bar = "Your fumes buff"
 end
 
