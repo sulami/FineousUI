@@ -17,6 +17,9 @@ MACRO 16777302 "Heal" "INV_MISC_QUESTIONMARK"
 /cast Dark Regeneration
 /use Healthstone
 END
+MACRO 16777310 "HELL" "INV_MISC_QUESTIONMARK"
+/cast [nochanneling: Hellfire] Hellfire
+END
 MACRO 16777308 "MG" "INV_MISC_QUESTIONMARK"
 #showtooltip Malefic Grasp
 /cast [nochanneling: Malefic Grasp] Malefic Grasp

@@ -1144,7 +1144,7 @@ DominosDB = {
 				},
 				["class"] = {
 					["showInPetBattleUI"] = false,
-					["x"] = 529.0001220703125,
+					["x"] = 558.0001220703125,
 					["point"] = "BOTTOMLEFT",
 					["spacing"] = 2,
 					["showInOverrideUI"] = false,
@@ -1199,9 +1199,9 @@ DominosDB = {
 					["showInPetBattleUI"] = false,
 				},
 				["roll"] = {
-					["y"] = -18.9998779296875,
-					["x"] = 22.00002479553223,
-					["point"] = "TOPLEFT",
+					["y"] = 153.0000152587891,
+					["x"] = 46.00003814697266,
+					["point"] = "BOTTOMLEFT",
 					["spacing"] = 2,
 					["showInOverrideUI"] = true,
 					["showInPetBattleUI"] = true,

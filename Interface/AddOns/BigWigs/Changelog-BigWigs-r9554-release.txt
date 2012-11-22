@@ -1,9 +1,135 @@
 ------------------------------------------------------------------------
-r9535 | funkydude | 2012-11-21 03:00:33 +0000 (Wed, 21 Nov 2012) | 1 line
+r9554 | funkydude | 2012-11-22 00:53:55 +0000 (Thu, 22 Nov 2012) | 1 line
 Changed paths:
-   A /tags/r9535-release (from /trunk:9534)
+   A /tags/r9554-release (from /trunk:9553)
 
-Tagging as r9535-release
+Tagging as r9554-release
+------------------------------------------------------------------------
+r9553 | funkydude | 2012-11-22 00:38:45 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Tayak.lua
+
+Tayak: remove assault on player again.
+------------------------------------------------------------------------
+r9552 | Maat | 2012-11-22 00:30:38 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Protector.lua
+
+add FNS for storm!
+------------------------------------------------------------------------
+r9551 | funkydude | 2012-11-22 00:27:53 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+
+bump version
+------------------------------------------------------------------------
+r9550 | pettigrow | 2012-11-21 21:50:06 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/HeartOfFear/Locales/frFR.lua
+   M /trunk/Locales/common.frFR.lua
+
+frFR Update (untested - not playing anymore)
+------------------------------------------------------------------------
+r9549 | nebula169 | 2012-11-21 21:28:04 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/EndlessSpring/ShaOfFear.lua
+   M /trunk/EndlessSpring/Tsulong.lua
+
+VerifyEnable for Lei Shi and Sha of Fear and Win yell for Lei Shi
+------------------------------------------------------------------------
+r9548 | funkydude | 2012-11-21 21:12:25 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Protector.lua
+
+Protector: fix boss death
+------------------------------------------------------------------------
+r9547 | wetxius | 2012-11-21 20:44:17 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/HeartOfFear/Locales/ruRU.lua
+   M /trunk/Locales/common.ruRU.lua
+
+ruRU update.
+------------------------------------------------------------------------
+r9546 | funkydude | 2012-11-21 17:11:55 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Tayak.lua
+
+Tayak: tweaks
+------------------------------------------------------------------------
+r9545 | nebula169 | 2012-11-21 13:38:02 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/ShaOfFear.lua
+
+EndlessSpring/ShaOfFear: fix difficulties
+------------------------------------------------------------------------
+r9544 | nebula169 | 2012-11-21 13:33:57 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/ShaOfFear.lua
+
+EndlessSpring/ShaOfFear: tweak timers for cackle and death blossom, stop caring about breath if you're teleported
+------------------------------------------------------------------------
+r9543 | Maat | 2012-11-21 12:30:03 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Tsulong.lua
+
+fix message color
+------------------------------------------------------------------------
+r9542 | nebula169 | 2012-11-21 10:03:51 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Tayak.lua
+
+HeartOfFear/Tayak: 10min LFR berserk.
+------------------------------------------------------------------------
+r9541 | funkydude | 2012-11-21 07:23:21 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Locales/deDE.lua
+   M /trunk/HeartOfFear/Locales/esES.lua
+   M /trunk/HeartOfFear/Locales/frFR.lua
+   M /trunk/HeartOfFear/Locales/itIT.lua
+   M /trunk/HeartOfFear/Locales/ruRU.lua
+   M /trunk/HeartOfFear/Tayak.lua
+
+Tayak: timer fixes
+------------------------------------------------------------------------
+r9540 | nebula169 | 2012-11-21 07:23:19 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Tsulong.lua
+
+EndlessSpring/Tsulong: simplify enable check
+------------------------------------------------------------------------
+r9539 | funkydude | 2012-11-21 06:02:20 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Garalon.lua
+   M /trunk/HeartOfFear/Meljarak.lua
+   M /trunk/HeartOfFear/Unsok.lua
+   M /trunk/Mogushan/Elegon.lua
+
+register SPELL_MISSED where applicable
+------------------------------------------------------------------------
+r9538 | funkydude | 2012-11-21 05:52:06 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Tayak.lua
+
+Tayak: fire the assault CD on cast
+------------------------------------------------------------------------
+r9537 | durcyn | 2012-11-21 04:39:32 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Tayak.lua
+
+HeartOfFear/Tayak: Enrage is 8:10, up from 8:00, enjoy those ten extra seconds
+------------------------------------------------------------------------
+r9536 | nebula169 | 2012-11-21 03:33:12 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/EndlessSpring/Tsulong.lua
+
+Tsulong: LFR berserk is 10min and shenanigans to disable on win
 ------------------------------------------------------------------------
 r9534 | funkydude | 2012-11-21 02:49:14 +0000 (Wed, 21 Nov 2012) | 1 line
 Changed paths:
@@ -1811,58 +1937,4 @@ Changed paths:
    M /trunk/Mogushan/TheStoneGuard.lua
 
 TheStoneGuard: remove unneeded locale string.
-------------------------------------------------------------------------
-r9279 | funkydude | 2012-10-21 23:25:00 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: Don't show 2 resonance warnings
-------------------------------------------------------------------------
-r9278 | Maat | 2012-10-21 19:17:33 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-oops remove left in comments
-------------------------------------------------------------------------
-r9277 | Maat | 2012-10-21 19:10:00 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-check for more possible unitIds on engages
-------------------------------------------------------------------------
-r9276 | Maat | 2012-10-21 18:31:36 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-fix a message icon
-------------------------------------------------------------------------
-r9275 | Maat | 2012-10-21 17:48:34 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-fix missing text on maddening shout bar when meng activates
-------------------------------------------------------------------------
-r9274 | funkydude | 2012-10-21 17:29:26 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: tweak unit power function.
-------------------------------------------------------------------------
-r9273 | Maat | 2012-10-21 17:19:31 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-fix missing cowardice toggle option
-------------------------------------------------------------------------
-r9272 | Maat | 2012-10-21 17:15:52 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-another of those spellName fix
-------------------------------------------------------------------------
-r9271 | Maat | 2012-10-21 15:55:43 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-fix typo
 ------------------------------------------------------------------------

@@ -36,7 +36,7 @@ L = mod:GetLocale()
 function mod:GetOptions()
 	return {
 		{117988, "FLASHSHAKE", "SAY", "WHISPER"}, 117975,
-		{117436, "SAY", "PROXIMITY", "FLASHSHAKE"} , 118077,
+		{117436, "SAY", "PROXIMITY", "FLASHSHAKE"} , {118077, "FLASHSHAKE"},
 		117309, 117227,
 		"berserk", "bosskill",
 	}, {
@@ -163,6 +163,7 @@ end
 
 function mod:LightningStormStart(_, spellId, _, _, spellName)
 	self:Message(spellId, spellName, "Urgent", spellId, "Alarm")
+	self:FlashShake(spellId)
 end
 
 -- Elder Asani
@@ -182,12 +183,10 @@ function mod:CorruptedWater(_, spellId, _, _, spellName)
 	self:Message(spellId, spellName, "Attention", spellId)
 end
 
-function mod:Deaths(mobId)
-	if mobId == 60583 or mobId == 60585 or mobId == 60586 then
-		bossDead = bossDead + 1
-		if bossDead > 3 then
-			self:Win()
-		end
+function mod:Deaths()
+	bossDead = bossDead + 1
+	if bossDead > 2 then
+		self:Win()
 	end
 end
 

@@ -1,0 +1,68 @@
+------------------------------------------------------------------------
+r414 | zarnivoop | 2012-11-21 16:59:27 +0000 (Wed, 21 Nov 2012) | 1 line
+Changed paths:
+   A /tags/1.4-6 (from /trunk:413)
+
+Tagging as 1.4-6
+------------------------------------------------------------------------
+r413 | zarnivoop | 2012-11-20 21:03:51 +0000 (Tue, 20 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/modules/SkadaDamageTaken/DamageTaken.lua
+
+added min/max/avg to damage taken module
+------------------------------------------------------------------------
+r412 | zarnivoop | 2012-11-20 20:47:33 +0000 (Tue, 20 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BarDisplay.lua
+   M /trunk/lib/SpecializedLibBars-1.0/SpecializedLibBars-1.0.lua
+   M /trunk/modules/SkadaCC/CC.lua
+   M /trunk/modules/SkadaDamage/Damage.lua
+   M /trunk/modules/SkadaDamageTaken/DamageTaken.lua
+   M /trunk/modules/SkadaDeaths/Deaths.lua
+   M /trunk/modules/SkadaDebuffs/Debuffs.lua
+   M /trunk/modules/SkadaDispels/Dispels.lua
+   M /trunk/modules/SkadaDispels/Interrupts.lua
+   M /trunk/modules/SkadaEnemies/Enemies.lua
+   M /trunk/modules/SkadaHealing/Healing.lua
+   M /trunk/modules/SkadaHealing/Overhealing.lua
+   M /trunk/modules/SkadaHealing/TotalHealing.lua
+   M /trunk/modules/SkadaPower/Power.lua
+   M /trunk/modules/SkadaThreat/Threat.lua
+
+fix for bar placement in mixed icon/iconless modes
+------------------------------------------------------------------------
+r411 | zarnivoop | 2012-11-20 19:09:43 +0000 (Tue, 20 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Menus.lua
+   M /trunk/Skada.lua
+   M /trunk/locale/enUS.lua
+
+added RealID reporting, only one expansion late
+------------------------------------------------------------------------
+r410 | durcyn | 2012-10-24 17:46:34 +0000 (Wed, 24 Oct 2012) | 3 lines
+Changed paths:
+   M /trunk/Skada.lua
+   M /trunk/modules/SkadaDeaths/Deaths.lua
+
+Skada.lua:1854: fix SETGLOBAL petMobID
+modules/SkadaDeaths/Deaths.lua:96: fix SETGLOBAL srcName_modified
+
+------------------------------------------------------------------------
+r409 | zarnivoop | 2012-10-21 09:06:40 +0000 (Sun, 21 Oct 2012) | 1 line
+Changed paths:
+   M /trunk/modules/SkadaHealing/Healing.lua
+
+fix for healing breakage - oops
+------------------------------------------------------------------------
+r408 | gnarfoz | 2012-10-21 01:47:46 +0000 (Sun, 21 Oct 2012) | 1 line
+Changed paths:
+   M /trunk/modules/SkadaHealing/Healing.lua
+
+those ain't globals, yo :D
+------------------------------------------------------------------------
+r407 | zarnivoop | 2012-10-20 19:31:27 +0000 (Sat, 20 Oct 2012) | 1 line
+Changed paths:
+   M /trunk/modules/SkadaHealing/Healing.lua
+
+a few unnecessary globals removed
+------------------------------------------------------------------------

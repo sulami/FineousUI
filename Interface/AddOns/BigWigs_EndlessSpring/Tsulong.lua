@@ -13,6 +13,8 @@ mod:RegisterEnableMob(62442)
 
 local L = mod:NewLocale("enUS", true)
 if L then
+	L.win_trigger = "I thank you, strangers. I have been freed."
+
 	L.phases = "Phases"
 	L.phases_desc = "Warning for phase changes"
 
@@ -51,19 +53,23 @@ function mod:OnBossEnable()
 	self:Log("SPELL_CAST_SUCCESS", "Terrorize", 123011)
 	self:Log("SPELL_AURA_APPLIED_DOSE", "DreadShadows", 122768)
 	self:Log("SPELL_AURA_APPLIED", "Sunbeam", 122789)
+	self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "EngageCheck")
 
-	self:Death("Deaths", 62442)
+	self:Yell("Win", L["win_trigger"])
+	self:Death("Deaths", 62969)
 end
 
 function mod:OnEngage(diff)
 	self:OpenProximity(8, 122777)
-	self:Berserk(490)
+	self:Berserk(self:LFR() and 600 or 490)
 	self:Bar("phases", L["day"], 121, 122789)
 	self:Bar(122777, 122777, 15.6, 122777) --Nightmares
+end
 
-	self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+function mod:VerifyEnable(unit)
+	return UnitCanAttack("player", unit)
 end
 
 --------------------------------------------------------------------------------
@@ -73,8 +79,7 @@ end
 function mod:EngageCheck()
 	self:CheckBossStatus()
 	-- assume only 1 Embodied Terror is up at a time, else you wipe
-	if not UnitExists("boss2") then return end
-	if self:GetCID(UnitGUID("boss2")) == 62969 then
+	if UnitExists("boss2") and self:GetCID(UnitGUID("boss2")) == 62969 then
 		self:Bar(123011, "~"..self:SpellName(123011), 5, 123011) -- Terrorize
 	end
 end
@@ -135,7 +140,7 @@ do
 			if t-prev > 2 then
 				prev = t
 				self:Bar(122777, 122777, 15, 122777) -- Nightmares
-				self:Message(122777, 122777, 15, 122777)
+				self:Message(122777, 122777, "Attention", 122777)
 			end
 		elseif spellId == 123813 then -- dark of night- heroic
 			self:Bar("ej:6550", spellId, 30, 130013) -- dark of night
@@ -145,10 +150,6 @@ do
 end
 
 function mod:Deaths(mobId)
-	if mobId == 62442 then
-		self:Win()
-	elseif mobId == 62969 then
-		self:StopBar(123011) -- Terrorize
-	end
+	self:StopBar(123011) -- Terrorize
 end
 
