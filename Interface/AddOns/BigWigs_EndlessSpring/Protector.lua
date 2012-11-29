@@ -1,10 +1,4 @@
---[[ TO DO
 
-figure out how defile works
-proper review of the module
-need transcriptor log
-
---]]
 --------------------------------------------------------------------------------
 -- Module Declaration
 --
@@ -18,6 +12,7 @@ mod:RegisterEnableMob(60583, 60585, 60586) -- Kaolan, Regail, Asani
 --
 
 local bossDead = 0
+local firstDeath = nil
 
 --------------------------------------------------------------------------------
 -- Localization
@@ -25,7 +20,9 @@ local bossDead = 0
 
 local L = mod:NewLocale("enUS", true)
 if L then
-
+	L.on = "%s on %s!"
+	L.under = "%s under %s!"
+	L.heal = "%s heal"
 end
 L = mod:GetLocale()
 
@@ -35,43 +32,52 @@ L = mod:GetLocale()
 
 function mod:GetOptions()
 	return {
-		{117988, "FLASHSHAKE", "SAY", "WHISPER"}, 117975,
+		{117986, "FLASHSHAKE"}, 117975,
 		{117436, "SAY", "PROXIMITY", "FLASHSHAKE"} , {118077, "FLASHSHAKE"},
 		117309, 117227,
-		"berserk", "bosskill",
+		117052, "berserk", "bosskill",
 	}, {
-		[117988] = "ej:5789",
+		[117986] = "ej:5789",
 		[117436] = "ej:5793",
 		[117309] = "ej:5794",
-		berserk = "general",
+		[117052] = "general",
 	}
 end
 
 function mod:OnBossEnable()
 	-- Protector Kaolan
-	self:Log("SPELL_CAST_SUCCESS", "DefiledGroundCast", 117989, 117988, 118091, 117986) --117986 is the winner
-	self:Log("SPELL_AURA_APPLIED", "DefiledGround", 117989, 117988, 118091, 117986) --118091 wins here
+	self:Log("SPELL_CAST_SUCCESS", "DefiledGround", 117986)
+	self:Log("SPELL_DAMAGE", "DefiledGroundDamage", 117988)
+	self:Log("SPELL_MISSED", "DefiledGroundDamage", 117988)
 	self:Log("SPELL_CAST_START", "ExpelCorruption", 117975)
 
 	-- Elder Regail
 	self:Log("SPELL_AURA_APPLIED", "LightningPrisonApplied", 111850)
 	self:Log("SPELL_AURA_REMOVED", "LightningPrisonRemoved", 111850)
-	self:Log("SPELL_CAST_START", "LightningStormStart", 118077)
+	self:Log("SPELL_CAST_START", "LightningStorm", 118077)
 
 	-- Elder Asani
-	self:Log("SPELL_CAST_START", "CleansingWaterStart", 117309) -- Spawn Watter Bubble
-	self:Log("SPELL_CAST_SUCCESS", "CleansingPool", 117309) -- the good one
-	self:Log("SPELL_CAST_START", "CorruptedWater", 117227) -- Spawn Watter Bubble -- need combatlog for this
-	self:Log("SPELL_AURA_APPLIED_DOSE", "ShaCorruption", 117052)
+	self:Log("SPELL_SUMMON", "CleansingWaters", 117309)
+	self:Log("SPELL_AURA_APPLIED", "CleansingWatersDispel", 117283)
+	self:Log("SPELL_PERIODIC_HEAL", "CleansingWatersDispel", 117283) -- every 3s
+	self:Log("SPELL_SUMMON", "CorruptedWaters", 117227)
+
+	self:Log("SPELL_AURA_APPLIED", "ShaCorruptionFirst", 117052)
+	self:Log("SPELL_AURA_APPLIED_DOSE", "ShaCorruptionSecond", 117052)
 
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "CheckBossStatus")
 	self:Death("Deaths", 60583, 60585, 60586)
 end
 
 function mod:OnEngage()
+	self:Bar(117309, "~"..self:SpellName(117309), 11, 117309) -- Cleansing Waters
+	self:Bar(111850, "~"..self:SpellName(111850), 15, 111850) -- Lightning Prison
 	bossDead = 0
-	if not self:LFR() then
-		self:Berserk(490)
+	firstDeath = nil
+	self:Berserk(self:LFR() and 600 or 490)
+
+	if self:Tank() then
+		self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED") -- Cleansing Waters target
 	end
 end
 
@@ -79,55 +85,58 @@ end
 -- Event Handlers
 --
 
--- boss death start 1st bars
-function mod:ShaCorruption(_, _, _, _, _, _, _, _, _, dGUID) -- don't know if bossX is always same for the bosses regardles of kill order, so do CID check till we are sure
-	if self:GetCID(dGUID) == 60583 then -- protector has 2 stacks
-		self:Bar(117975, 117975, 6, 117975) -- expel corruption
+-- Sha Corruption "doses"
+
+function mod:ShaCorruptionFirst(_, spellId, source, _, spellName, _, _, _, _, dGUID)
+	local mobId = self:GetCID(dGUID)
+	if mobId == 60583 then -- Kaolan
+		self:Bar(117986, 117986, 11, 117986) -- Defiled Ground
+	elseif mobId == 60585 then -- Regail
+		self:Bar(118077, "~"..self:SpellName(118077), 26, 118077) -- Lightning Storm
+	elseif mobId == 60586 then -- Asani
+		self:Bar(117227, "~"..self:SpellName(117227), 11, 117227) -- Corrupted Waters
+	end
+
+	if not firstDeath then
+		firstDeath = true
+		self:Message(spellId, ("%s (%d)"):format(spellName, 1), "Attention", spellId, "Info")
 	end
 end
 
+function mod:ShaCorruptionSecond(_, spellId, source, _, spellName, _, _, _, _, dGUID)
+	local mobId = self:GetCID(dGUID)
+	if mobId == 60583 then -- Kaolan
+		self:Bar(117975, 117975, 6, 117975) -- Expel Corruption
+	elseif mobId == 60585 then -- Regail
+		self:Bar(118077, "~"..self:SpellName(118077), 11, 118077) -- Lightning Storm
+	elseif mobId == 60586 then -- Asani
+		self:Bar(117227, "~"..self:SpellName(117227), 15, 117227) -- Corrupted Waters
+	end
+
+	self:Message(spellId, ("%s (%d)"):format(spellName, 2), "Attention", spellId, "Info")
+end
 
 --Protector Kaolan
 
 function mod:ExpelCorruption(_, spellId, _, _, spellName)
 	self:Message(spellId, spellName, "Urgent", spellId)
 	self:Bar(spellId, spellName, 38, spellId)
-	self:Bar(117988, 117988, 12, 117988) -- Defiled Ground
+	self:Bar(117986, 117986, 12, 117986) -- Defiled Ground
 end
 
-do
-	local defiledGround = mod:SpellName(117988)
-	local function checkTarget(sGUID)
-		for i = 1, 4 do
-			local bossId = ("boss%d"):format(i)
-			if UnitGUID(bossId) == sGUID then
-				local player = UnitName(bossId.."target")
-				if player then
-					mod:Whisper(117988, player, defiledGround)
-				end
-				if UnitIsUnit(bossId.."target", "player") then
-					mod:FlashShake(117988)
-					mod:Say(117988, CL["say"]:format(defiledGround))
-					return
-				end
-			end
-		end
-	end
-	function mod:DefiledGroundCast(_, _, _, _, spellName, _, _, _, _, _, sGUID)
-		self:Bar(117988, spellName, 16, 117988)
-		self:ScheduleTimer(checkTarget, 0.1, sGUID)
-	end
+function mod:DefiledGround(_, spellId, _, _, spellName)
+	self:Bar(spellId, spellName, 16, spellId)
 end
 
 do
 	local prev = 0
-	function mod:DefiledGround(player, _, _, _, spellName)
-		local t = GetTime()
-		if t-prev > 2 then
-			prev = t
-			if UnitIsUnit(player, "player") then
-				self:LocalMessage(117988, CL["underyou"]:format(spellName), "Personal", 117988, "Info")
-				self:FlashShake(117988)
+	function mod:DefiledGroundDamage(player, _, _, _, spellName)
+		if UnitIsUnit(player, "player") then
+			local t = GetTime()
+			if t-prev > 1 then
+				prev = t
+				self:LocalMessage(117986, CL["underyou"]:format(spellName), "Personal", 117986, "Info")
+				self:FlashShake(117986)
 			end
 		end
 	end
@@ -137,11 +146,12 @@ end
 
 do
 	local lightningPrisonList, scheduled = mod:NewTargetList(), nil
-	local function prisonWarn(spellName)
+	local function warnPrison(spellName)
 		mod:TargetMessage(117436, spellName, lightningPrisonList, "Important", 117436, "Alert")
 		scheduled = nil
 	end
 	function mod:LightningPrisonApplied(player, _, _, _, spellName)
+		self:Bar(117436, "~"..spellName, 25, 117436)
 		lightningPrisonList[#lightningPrisonList + 1] = player
 		if UnitIsUnit(player, "player") then
 			self:FlashShake(117436)
@@ -149,8 +159,7 @@ do
 			self:OpenProximity(7, 117436)
 		end
 		if not scheduled then
-			scheduled = true
-			self:ScheduleTimer(prisonWarn, 0.2, spellName)
+			scheduled = self:ScheduleTimer(warnPrison, 0.2, spellName)
 		end
 	end
 end
@@ -161,29 +170,69 @@ function mod:LightningPrisonRemoved(player)
 	end
 end
 
-function mod:LightningStormStart(_, spellId, _, _, spellName)
+function mod:LightningStorm(_, spellId, _, _, spellName)
 	self:Message(spellId, spellName, "Urgent", spellId, "Alarm")
+	self:Bar(spellId, "~"..spellName, bossDead < 3 and 42 or 32, spellId)
 	self:FlashShake(spellId)
 end
 
 -- Elder Asani
 
-function mod:CleansingWaterStart(_, spellId, _, _, spellName)
-	self:Message(spellId, CL["soon"]:format(spellName), "Attention")
-	self:Bar(spellId, CL["soon"]:format(spellName), 7, spellId) -- 5+2 so it is exact for dispell
+function mod:CleansingWaters(_, spellId, _, _, spellName)
+	self:Message(spellId, CL["soon"]:format(spellName), "Attention", spellId, self:Dispeller("magic", true) and "Alert" or nil)
+	self:Bar(spellId, L["heal"]:format(spellName), 6, 55888) -- orb hitting the ground (water orb icon)
+	self:Bar(spellId, "~"..spellName, 32, spellId)
 end
 
-function mod:CleansingPool(_, spellId, _, _, spellName)
-	self:Message(spellId, spellId, "Urgent", spellId)
-	self:Bar(spellId, "~"..spellName , 32, spellId)
+do
+	-- assume your kill target is the boss with the lowest health and ignore cleansing waters on others
+	local function getKillTarget()
+		local lowest, lowestHP = nil, 100
+		for i=1,3 do
+			local unit = "boss"..i
+			local hp = UnitHealth(unit) / UnitHealthMax(unit)
+			if hp < lowestHP then
+				lowestHP = hp
+				lowest = unit
+			end
+		end
+		return lowest
+	end
+
+	-- Dispeller warning
+	function mod:CleansingWatersDispel(player, _, _, _, spellName, _, _, _, _, dGUID)
+		local mobId = self:GetCID(dGUID)
+		if self:Dispeller("magic", true) and (mobId == 60583 or mobId == 60585 or mobId == 60586) and dGUID == UnitGUID(getKillTarget()) then
+			self:LocalMessage(117309, L["on"]:format(spellName, player), "Important", 117309, "Info") --onboss
+		end
+	end
+
+	-- Tank warning
+	function mod:UNIT_SPELLCAST_SUCCEEDED(_, unitId, _, _, _, spellId)
+		if spellId == 122851 and unitId == "target" and UnitIsUnit(unitId, getKillTarget()) then -- Raid Warning: I'm Standing In Cleansing Waters
+			local bossName = UnitName(unitId)
+			self:LocalMessage(117309, L["under"]:format(self:SpellName(117309), bossName), "Urgent", 117309, "Alert")
+		end
+	end
 end
 
--- Globe BAD
-function mod:CorruptedWater(_, spellId, _, _, spellName)
+function mod:CorruptedWaters(_, spellId, _, _, spellName)
 	self:Message(spellId, spellName, "Attention", spellId)
+	self:Bar(spellId, "~"..spellName, 42, spellId)
 end
 
-function mod:Deaths()
+
+function mod:Deaths(mobId)
+	if mobId == 60583 then --Kaolan
+		self:StopBar(117986) -- Defiled Ground
+	elseif mobId == 60585 then -- Regail
+		self:StopBar("~"..self:SpellName(111850)) -- Lightning Prison
+		self:StopBar("~"..self:SpellName(118077)) -- Lightning Storm
+	elseif mobId == 60586 then -- Asani
+		self:StopBar("~"..self:SpellName(117309)) -- Cleansing Waters
+		self:StopBar("~"..self:SpellName(117227)) -- Corrupted Waters
+	end
+
 	bossDead = bossDead + 1
 	if bossDead > 2 then
 		self:Win()

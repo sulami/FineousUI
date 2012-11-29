@@ -1,9 +1,32 @@
 ------------------------------------------------------------------------
-r414 | zarnivoop | 2012-11-21 16:59:27 +0000 (Wed, 21 Nov 2012) | 1 line
+r417 | zarnivoop | 2012-11-28 14:11:42 +0000 (Wed, 28 Nov 2012) | 1 line
 Changed paths:
-   A /tags/1.4-6 (from /trunk:413)
+   A /tags/1.4-7 (from /trunk:416)
 
-Tagging as 1.4-6
+Tagging as 1.4-7
+------------------------------------------------------------------------
+r416 | zarnivoop | 2012-11-28 13:33:28 +0000 (Wed, 28 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Skada.toc
+   M /trunk/modules/SkadaCC/SkadaCC.toc
+   M /trunk/modules/SkadaDamage/SkadaDamage.toc
+   M /trunk/modules/SkadaDamageTaken/SkadaDamageTaken.toc
+   M /trunk/modules/SkadaDeaths/SkadaDeaths.toc
+   M /trunk/modules/SkadaDebuffs/SkadaDebuffs.toc
+   M /trunk/modules/SkadaDispels/SkadaDispels.toc
+   M /trunk/modules/SkadaEnemies/SkadaEnemies.toc
+   M /trunk/modules/SkadaHealing/SkadaHealing.toc
+   M /trunk/modules/SkadaPower/SkadaPower.toc
+   M /trunk/modules/SkadaThreat/SkadaThreat.toc
+
+.toc update
+------------------------------------------------------------------------
+r415 | funkydude | 2012-11-28 01:13:19 +0000 (Wed, 28 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Menus.lua
+   M /trunk/Skada.lua
+
+Use a popup index of 4 and don't recreate the popup table on every reset call
 ------------------------------------------------------------------------
 r413 | zarnivoop | 2012-11-20 21:03:51 +0000 (Tue, 20 Nov 2012) | 1 line
 Changed paths:
@@ -47,22 +70,4 @@ Changed paths:
 Skada.lua:1854: fix SETGLOBAL petMobID
 modules/SkadaDeaths/Deaths.lua:96: fix SETGLOBAL srcName_modified
 
-------------------------------------------------------------------------
-r409 | zarnivoop | 2012-10-21 09:06:40 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/modules/SkadaHealing/Healing.lua
-
-fix for healing breakage - oops
-------------------------------------------------------------------------
-r408 | gnarfoz | 2012-10-21 01:47:46 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/modules/SkadaHealing/Healing.lua
-
-those ain't globals, yo :D
-------------------------------------------------------------------------
-r407 | zarnivoop | 2012-10-20 19:31:27 +0000 (Sat, 20 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/modules/SkadaHealing/Healing.lua
-
-a few unnecessary globals removed
 ------------------------------------------------------------------------

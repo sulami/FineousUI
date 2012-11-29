@@ -1,6 +1,6 @@
-## Interface: 50001
+## Interface: 50100
 ## Author: Crushbeers (Antonidas US) / Beermuscles (Icecrown US)
-## Version: 2.0.2
+## Version: 2.1.0
 ## Title: |cFF48D1CCp|rNameplates
 ## Notes: Lightweight Nameplate mod - Health, Cast, Threat modifications.
 ## SavedVariablesPerCharacter: cfg

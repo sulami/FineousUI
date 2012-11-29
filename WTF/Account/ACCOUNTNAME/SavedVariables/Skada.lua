@@ -1,7 +1,7 @@
 
 SkadaDB = {
 	["profileKeys"] = {
-		["Sulamy - Stormscale"] = "Default",
+		["Sulamy - Stormscale"] = "FineousUI",
 		["Scripe - Nethersturm"] = "Default",
 		["Smashbot - Area 52"] = "Default",
 		["Thanata - Area 52"] = "Default",
@@ -16,14 +16,24 @@ SkadaDB = {
 		["Linon - Area 52"] = "Default",
 		["Sulami - Area 52"] = "Default",
 		["Enuresia - Area 52"] = "Default",
-		["Balneator - Stormscale"] = "Default",
+		["Sulami - Stormscale"] = "Default",
 		["Sulami - Laughing Skull"] = "Default",
 		["Oompaloom - Stormscale"] = "Default",
 		["Dumpfy - Alleria"] = "Default",
-		["Sulami - Stormscale"] = "Default",
+		["Balneator - Stormscale"] = "Default",
 		["Suilami - Blackrock"] = "Default",
 	},
 	["profiles"] = {
+		["FineousUI"] = {
+			["windows"] = {
+				{
+					["y"] = -141.0001525878906,
+					["x"] = 46.99993896484375,
+					["point"] = "LEFT",
+					["mode"] = "DPS",
+				}, -- [1]
+			},
+		},
 		["Default"] = {
 			["windows"] = {
 				{
@@ -31,21 +41,31 @@ SkadaDB = {
 					["bartexture"] = "Minimalist",
 					["barbgcolor"] = {
 						["a"] = -0,
-						["r"] = 0.2745098039215687,
-						["g"] = 0.2745098039215687,
 						["b"] = 0.2745098039215687,
+						["g"] = 0.2745098039215687,
+						["r"] = 0.2745098039215687,
 					},
 					["barcolor"] = {
-						["r"] = 0.2588235294117647,
-						["g"] = 0.3411764705882353,
 						["b"] = 1,
+						["g"] = 0.3411764705882353,
+						["r"] = 0.2588235294117647,
 					},
-					["barwidth"] = 267.999755859375,
+					["classicons"] = false,
 					["barfontsize"] = 10,
 					["y"] = -0,
-					["classicons"] = false,
-					["barslocked"] = true,
 					["x"] = -84,
+					["barslocked"] = true,
+					["title"] = {
+						["color"] = {
+							["a"] = -0,
+							["r"] = 0.2941176470588235,
+							["g"] = 0.3019607843137255,
+							["b"] = 0.2980392156862745,
+						},
+						["font"] = "Liberation Sans (U)",
+						["borderthickness"] = -0,
+					},
+					["mode"] = "Damage",
 					["background"] = {
 						["height"] = 150.0000610351563,
 						["borderthickness"] = 3,
@@ -54,18 +74,8 @@ SkadaDB = {
 							["b"] = 0.5019607843137255,
 						},
 					},
-					["mode"] = "Damage",
-					["title"] = {
-						["color"] = {
-							["a"] = -0,
-							["b"] = 0.2980392156862745,
-							["g"] = 0.3019607843137255,
-							["r"] = 0.2941176470588235,
-						},
-						["font"] = "Liberation Sans (U)",
-						["borderthickness"] = -0,
-					},
 					["barfont"] = "Liberation Sans (U)",
+					["barwidth"] = 267.999755859375,
 				}, -- [1]
 				{
 					["barheight"] = 15,
@@ -80,9 +90,9 @@ SkadaDB = {
 					["title"] = {
 						["color"] = {
 							["a"] = -0,
-							["r"] = 0.1019607843137255,
-							["g"] = 0.1019607843137255,
 							["b"] = 0.3019607843137255,
+							["g"] = 0.1019607843137255,
+							["r"] = 0.1019607843137255,
 						},
 						["bordertexture"] = "None",
 						["font"] = "Liberation Sans (U)",
@@ -98,37 +108,30 @@ SkadaDB = {
 					["classcolortext"] = false,
 					["barbgcolor"] = {
 						["a"] = -0,
-						["r"] = 0.3019607843137255,
-						["g"] = 0.3019607843137255,
 						["b"] = 0.3019607843137255,
+						["g"] = 0.3019607843137255,
+						["r"] = 0.3019607843137255,
 					},
 					["barcolor"] = {
 						["a"] = 1,
-						["r"] = 0.2705882352941176,
-						["g"] = 0.3647058823529412,
 						["b"] = 1,
+						["g"] = 0.3647058823529412,
+						["r"] = 0.2705882352941176,
 					},
 					["returnaftercombat"] = false,
 					["barorientation"] = 1,
 					["snapto"] = true,
-					["background"] = {
-						["borderthickness"] = -0,
-						["height"] = 78.00005340576172,
-						["color"] = {
-							["a"] = -0,
-							["r"] = -0,
-							["g"] = -0,
-							["b"] = 0.5019607843137255,
-						},
-						["bordertexture"] = "None",
-						["margin"] = -0,
-						["texture"] = "Solid",
-					},
-					["name"] = "nr2",
+					["mode"] = "Healing",
+					["point"] = "BOTTOMRIGHT",
 					["bartexture"] = "Minimalist",
 					["barwidth"] = 269.0004272460938,
 					["barspacing"] = -0,
-					["modeincombat"] = "",
+					["reversegrowth"] = false,
+					["x"] = -82.99951171875,
+					["scale"] = 1,
+					["barfontsize"] = 10,
+					["enabletitle"] = true,
+					["classcolorbars"] = true,
 					["buttons"] = {
 						["segment"] = true,
 						["menu"] = true,
@@ -136,25 +139,32 @@ SkadaDB = {
 						["report"] = true,
 						["reset"] = true,
 					},
-					["scale"] = 1,
-					["enabletitle"] = true,
-					["barfontsize"] = 10,
-					["classcolorbars"] = true,
-					["x"] = -82.99951171875,
-					["reversegrowth"] = false,
-					["point"] = "BOTTOMRIGHT",
-					["mode"] = "Healing",
+					["modeincombat"] = "",
+					["name"] = "nr2",
+					["background"] = {
+						["borderthickness"] = -0,
+						["color"] = {
+							["a"] = -0,
+							["b"] = 0.5019607843137255,
+							["g"] = -0,
+							["r"] = -0,
+						},
+						["height"] = 78.00005340576172,
+						["bordertexture"] = "None",
+						["margin"] = -0,
+						["texture"] = "Solid",
+					},
 				}, -- [2]
-			},
-			["hidedisables"] = false,
-			["icon"] = {
-				["hide"] = true,
 			},
 			["report"] = {
 				["number"] = 5,
 				["target"] = "scripè",
 				["channel"] = "guild",
 			},
+			["icon"] = {
+				["hide"] = true,
+			},
+			["hidedisables"] = false,
 		},
 		["Fineous"] = {
 			["hidepvp"] = true,
@@ -164,36 +174,36 @@ SkadaDB = {
 					["classicons"] = false,
 					["barslocked"] = true,
 					["y"] = 34.99998092651367,
-					["x"] = -280.499267578125,
+					["barfont"] = "Friz Quadrata TT",
 					["title"] = {
 						["color"] = {
 							["a"] = -0,
-							["b"] = 0.3019607843137255,
-							["g"] = 0.1019607843137255,
 							["r"] = 0.1019607843137255,
+							["g"] = 0.1019607843137255,
+							["b"] = 0.3019607843137255,
 						},
 						["font"] = "Friz Quadrata TT",
 					},
-					["point"] = "BOTTOM",
+					["classcolortext"] = true,
 					["bartexture"] = "Minimalist",
 					["barwidth"] = 244.9998016357422,
-					["classcolortext"] = true,
+					["point"] = "BOTTOM",
 					["mode"] = "Damage",
 					["barcolor"] = {
-						["b"] = 0.3490196078431372,
-						["g"] = 0.6,
-						["r"] = 0.3882352941176471,
+						["r"] = 0.4352941176470588,
+						["g"] = 0.7254901960784314,
+						["b"] = 0.4274509803921568,
 					},
 					["barfontsize"] = 10,
 					["classcolorbars"] = false,
 					["background"] = {
+						["height"] = 176.0000152587891,
 						["color"] = {
 							["a"] = -0,
 							["b"] = 0.5019607843137255,
 						},
-						["height"] = 176.0000152587891,
 					},
-					["barfont"] = "Friz Quadrata TT",
+					["x"] = -280.499267578125,
 				}, -- [1]
 			},
 			["icon"] = {

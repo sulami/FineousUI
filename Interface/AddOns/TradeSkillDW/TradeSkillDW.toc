@@ -1,8 +1,8 @@
-## Interface: 50001
+## Interface: 50100
 ## Title: TradeSkillDW
 ## Notes: TradeSkills double wide
 ## Author: another
-## Version: 1.84
+## Version: 1.86
 ## SavedVariables: TradeSkillDW_Settings
 ## Dependencies: Blizzard_TradeSkillUI
 ## SavedVariablesPerCharacter: TradeSkillDW_QueueSettings

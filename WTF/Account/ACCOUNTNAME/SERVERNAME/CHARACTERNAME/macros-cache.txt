@@ -1,44 +1,53 @@
-MACRO 16777307 "Curse" "INV_MISC_QUESTIONMARK"
+MACRO64 000000000100005B "Curse" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [mod:ctrl] Curse of Exhaustion
 /cast Curse of the Elements
 END
-MACRO 16777303 "DOT" "INV_MISC_QUESTIONMARK"
+MACRO64 000000000100005F "DL" "INV_MISC_QUESTIONMARK"
+#showtooltip Harvest Life
+/cast [nochanneling: Harvest Life] Harvest Life
+END
+MACRO64 0000000001000057 "DOT" "INV_MISC_QUESTIONMARK"
 #showtooltip Soulburn
 /use Soulburn
 /cast [mod:ctrl] Soul Swap
 END
-MACRO 16777309 "DS" "INV_MISC_QUESTIONMARK"
+MACRO64 000000000100005D "DS" "INV_MISC_QUESTIONMARK"
 #showtooltip Drain Soul
 /cast [nochanneling: Drain Soul] Drain Soul
 END
-MACRO 16777302 "Heal" "INV_MISC_QUESTIONMARK"
+MACRO64 0000000001000056 "Heal" "INV_MISC_QUESTIONMARK"
 /showtooltip
 /cast Dark Regeneration
 /use Healthstone
 END
-MACRO 16777310 "HELL" "INV_MISC_QUESTIONMARK"
+MACRO64 000000000100005E "HELL" "INV_MISC_QUESTIONMARK"
 /cast [nochanneling: Hellfire] Hellfire
 END
-MACRO 16777308 "MG" "INV_MISC_QUESTIONMARK"
+MACRO64 000000000100005C "MG" "INV_MISC_QUESTIONMARK"
 #showtooltip Malefic Grasp
 /cast [nochanneling: Malefic Grasp] Malefic Grasp
 END
-MACRO 16777305 "MuC" "INV_MISC_QUESTIONMARK"
+MACRO64 0000000001000059 "MuC" "INV_MISC_QUESTIONMARK"
 #showtooltip Seed of Corruption
 /use [mod:ctrl] Soulburn
 /cast Seed of Corruption
 END
-MACRO 16777304 "pa" "INV_MISC_QUESTIONMARK"
+MACRO64 0000000001000055 "PET" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [mod: ctrl] Summon Infernal; Summon Doomguard
+END
+MACRO64 000000000100005A "Port" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [mod:ctrl] Demonic Circle: Summon;  Demonic Circle: Teleport
+END
+MACRO64 0000000001000058 "SB" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast Shadow Bolt
 /petattack
 END
-MACRO 16777301 "PET" "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cast [mod: ctrl] Summon Infernal; Summon Doomguard
-END
-MACRO 16777306 "Port" "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cast [mod:ctrl] Demonic Circle: Summon;  Demonic Circle: Teleport
+MACRO64 0000000001000060 "SF" "INV_MISC_QUESTIONMARK"
+#showtooltip Soul Fire
+/cast Soul Fire
+/petattack
 END

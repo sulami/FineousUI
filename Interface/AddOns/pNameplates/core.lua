@@ -1,5 +1,5 @@
 -- pNameplates
--- Version:  2.0.5
+-- Version:  2.1.0
 -- Authors:  Crushbeers
 
 --[[       TABLE OF CONTENTS      ]]--
@@ -161,9 +161,10 @@ local function StyleCastbar(plate)
         insets = { left = -1, right = -1, top = -1, bottom = -1 }
     })
     plate.OCB:SetBackdropColor(0, 0, 0, 0.6)
-    plate.OCB:ClearAllPoints()
-    plate.OCB:SetPoint("TOPRIGHT", plate.HB, "BOTTOMRIGHT", 0, -4)
-    plate.OCB:SetPoint("BOTTOMLEFT", plate.HB, "BOTTOMLEFT", 0, -15)
+    
+	plate.OCB:ClearAllPoints()
+    plate.OCB:SetPoint("TOPRIGHT", plate.HB, "BOTTOMRIGHT", (cfg.cbw/2)-(cfg.hpw/2), -4)
+    plate.OCB:SetPoint("BOTTOMLEFT", plate.HB, "BOTTOMLEFT", (cfg.hpw/2)-(cfg.cbw/2), -5-cfg.cbh)
 	
 	plate.OCB.Border:SetTexture(0, 0, 0, 1)
     plate.OCB.Border:SetTexCoord(0, 1, 0, 1)
@@ -307,25 +308,27 @@ local function UpdateDisplay(plate)
 	--CheckAbbrv(plate)
 end
 
-local function UpdateCastInfo(OCB)
-	plate = OCB:GetParent()
+local function UpdateCastInfo(Castbar)
+	plate = Castbar:GetParent()
 
-	OCB:ClearAllPoints()
-    OCB:SetPoint("TOPRIGHT", plate.HB, "BOTTOMRIGHT", (cfg.cbw/2)-(cfg.hpw/2), -4)
-    OCB:SetPoint("BOTTOMLEFT", plate.HB, "BOTTOMLEFT", (cfg.hpw/2)-(cfg.cbw/2), -5-cfg.cbh)
+	Castbar:ClearAllPoints()
+    Castbar:SetPoint("TOPRIGHT", plate.HB, "BOTTOMRIGHT", (cfg.cbw/2)-(cfg.hpw/2), -4)
+    Castbar:SetPoint("BOTTOMLEFT", plate.HB, "BOTTOMLEFT", (cfg.hpw/2)-(cfg.cbw/2), -5-cfg.cbh)
 
 	local SpellName = select(3, UnitCastingInfo("target"))
 	if (not SpellName) then SpellName = select(3, UnitChannelInfo("target")) end
-	local _, max = OCB:GetMinMaxValues()
-	local current = OCB:GetValue()
-	local final = math.floor((max-current)*10)/10
+	local _, max = Castbar:GetMinMaxValues()
+	local current = Castbar:GetValue()
+	local finish = math.floor((max-current)*10)/10
 	
-	OCB.Time:SetText(final)
-	OCB.Spell:SetText(SpellName)
+	--print(min.." "..current.." "..max.." "..finish)
+	
+	Castbar.Time:SetText(finish)
+	Castbar.Spell:SetText(SpellName)
 	
 	-- Fixes phantom Castbar frames appearing
-	if (not final or final <= 0) then OCB:Hide()
-	else OCB:Show() end
+	if (not finish or finish <= 0) then Castbar:Hide()
+	else Castbar:Show() end
 end
 
 local function UpdateTextLocations(plate)
@@ -362,9 +365,12 @@ end
 --------------------------------------
 
 local function init(plate)
-	plate.OHB, plate.OCB = plate:GetChildren()
+	OldFrames, OldName = plate:GetChildren()
+	plate.ONa = OldName:GetRegions()
+	plate.OHB, plate.OCB = OldFrames:GetChildren()
+	
     plate.OCB.Fill, plate.OCB.Border, plate.OCB.Shield, plate.OCB.Icon = plate.OCB:GetRegions()
-    plate.Thr, plate.OBo, plate.OHi, plate.ONa, plate.OLv, plate.Boss, plate.Raid, plate.ODg = plate:GetRegions()
+    plate.Thr, plate.OBo, plate.OHi, plate.OLv, plate.Boss, plate.Raid, plate.ODg = OldFrames:GetRegions()
 	
 	plate.HB = CreateFrame("StatusBar", nil, plate)
 	plate.HB:SetPoint("BOTTOM", plate, "BOTTOM", 0, 0)
@@ -422,11 +428,14 @@ local function init(plate)
 	StyleCastbar(plate)
 	
 	plate.OCB:SetScript("OnValueChanged", UpdateCastInfo)
+	plate.OCB:SetParent(plate)
 	
 	plate:SetScript("OnUpdate", function(plate, time)
+		if (plate.OHi:IsShown()) then plate.Over:Show() else plate.Over:Hide() end
+	
 		plate.HB:SetMinMaxValues(plate.OHB:GetMinMaxValues())
 		plate.HB:SetValue(plate.OHB:GetValue())
-		if (plate.OHi:IsShown()) then plate.Over:Show() else plate.Over:Hide() end
+		
 		local r1, g1, b1, _ = plate.HB:GetStatusBarColor()
 		local r2, g2, b2, _ = plate.OHB:GetStatusBarColor()
 		if (b2 > 0 and g2 > 0) then plate.Player = true else plate.Player = false end
@@ -481,7 +490,7 @@ local function CheckDefaults()
 	if (not cfg.FontType) then cfg.FontType = "Fonts\\ARIALN.ttf" end
 	if (not cfg.hpw) then cfg.hpw = 100 end
 	if (not cfg.hph) then cfg.hph = 14 end
-	if (not cfg.cbw) then cfg.cbw = 10 end
+	if (not cfg.cbw) then cfg.cbw = 100 end
 	if (not cfg.cbh) then cfg.cbh = 10 end
 	if (not cfg.raidSize) then cfg.raidSize = 24 end
 	
@@ -589,7 +598,7 @@ local function handler(args)
 		local num = tonumber(select(2, string.split(' ', args)))
 		if (num > 4 or num < 1) then print("|cFF48D1CCp|rNameplates|cFF48D1CC: Selection must be between 1-4.") return
 		else cfg.FontType = "Fonts\\"..Fonts[num]..".ttf" end
-		print("|cFF48D1CCp|rNameplates|cFF48D1CC: Font Type changed to |r"..Fonts[num] or "NeutraFace")
+		print("|cFF48D1CCp|rNameplates|cFF48D1CC: Font Type changed to |r"..Fonts[num])
 	elseif (args:match("mot.-%s+%d")) then
 		local num = tonumber(select(2, string.split(' ', args)))
 		if (num > 2 or num < 0) then print("|cFF48D1CCp|rNameplates|cFF48D1CC: Selection must be between 0-2.") return end
@@ -678,4 +687,4 @@ end
 SLASH_pp1 = "/pp";
 SlashCmdList["pp"] = handler;
 
-print("|cFF48D1CCp|rNameplates  |cFF48D1CC(v2.0.5)|r  is loaded: |cFF48D1CC/pp|r for a Basic Command list.")
+print("|cFF48D1CCp|rNameplates  |cFF48D1CC(v2.1.0)|r  is loaded: |cFF48D1CC/pp|r for a Basic Command list.")

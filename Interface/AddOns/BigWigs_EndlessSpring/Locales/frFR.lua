@@ -2,12 +2,14 @@
 local L = BigWigs:NewBossLocale("Protector of the Endless", "frFR")
 if not L then return end
 if L then
-
+	L.on = "%s sur %s!"
+	L.under = "%s en dessous de %s!"
+	L.heal = "%s heal"
 end
 
 L = BigWigs:NewBossLocale("Tsulong", "frFR")
 if L then
-	L.win_trigger = "I thank you, strangers. I have been freed."
+	L.engage_yell = "You do not belong here! The waters must be protected... I will cast you out, or slay you!"
 
 	L.phases = "Phases"
 	L.phases_desc = "Prévient quand la rencontre entre dans une nouvelle phase."
@@ -15,9 +17,6 @@ end
 
 L = BigWigs:NewBossLocale("Lei Shi", "frFR")
 if L then
-	L.engage_trigger = "Qu... Qu'est-ce que vous faites là ?! Partez !" -- à vérifier
-	L.win_trigger = "I...ah...oh! Did I...? Was I...? It was so cloudy."
-
 	L.hp_to_go = "%d%% à faire"
 	L.end_hide = "Se cacher a pris fin"
 

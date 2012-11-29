@@ -1,9 +1,225 @@
 ------------------------------------------------------------------------
-r9554 | funkydude | 2012-11-22 00:53:55 +0000 (Thu, 22 Nov 2012) | 1 line
+r9585 | funkydude | 2012-11-27 23:43:36 +0000 (Tue, 27 Nov 2012) | 1 line
 Changed paths:
-   A /tags/r9554-release (from /trunk:9553)
+   A /tags/r9585-release (from /trunk:9584)
 
-Tagging as r9554-release
+Tagging as r9585-release
+------------------------------------------------------------------------
+r9584 | funkydude | 2012-11-27 23:37:40 +0000 (Tue, 27 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Plugins/Flash.lua
+
+Flash: do this animation properly
+------------------------------------------------------------------------
+r9583 | funkydude | 2012-11-27 19:08:06 +0000 (Tue, 27 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+   M /trunk/Core/BigWigs_Core.toc
+   M /trunk/EndlessSpring/BigWigs_EndlessSpring.toc
+   M /trunk/Foreign/BigWigs_Foreign.toc
+   M /trunk/HeartOfFear/BigWigs_HeartOfFear.toc
+   M /trunk/Mogushan/BigWigs_Mogushan.toc
+   M /trunk/Options/BigWigs_Options.toc
+   M /trunk/Options/Options.lua
+   M /trunk/Plugins/BigWigs_Plugins.toc
+
+toc 50100
+------------------------------------------------------------------------
+r9582 | durcyn | 2012-11-27 05:39:56 +0000 (Tue, 27 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Meljarak.lua
+
+HeartOfFear/Meljarak: nil checks on amber vars in AmberPrisonRemoved
+------------------------------------------------------------------------
+r9581 | funkydude | 2012-11-27 02:37:23 +0000 (Tue, 27 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Core/BossPrototype.lua
+   M /trunk/HeartOfFear/Meljarak.lua
+   M /trunk/HeartOfFear/Shekzeer.lua
+   M /trunk/HeartOfFear/Tayak.lua
+   M /trunk/HeartOfFear/Unsok.lua
+   M /trunk/Mogushan/Elegon.lua
+   M /trunk/Mogushan/Garajal.lua
+   M /trunk/Mogushan/TheSpiritKings.lua
+   M /trunk/Mogushan/WillOfTheEmperor.lua
+
+tweaks
+------------------------------------------------------------------------
+r9580 | funkydude | 2012-11-27 02:05:06 +0000 (Tue, 27 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Mogushan/TheStoneGuard.lua
+
+TheStoneGuard: reset death count on engage
+------------------------------------------------------------------------
+r9579 | funkydude | 2012-11-26 23:46:50 +0000 (Mon, 26 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Plugins/Tips.lua
+
+bugfix for svn users.
+------------------------------------------------------------------------
+r9578 | funkydude | 2012-11-26 22:20:32 +0000 (Mon, 26 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Core/BossPrototype.lua
+   M /trunk/Loader.lua
+
+Moan in chat when an addon is forcing our Core/Plugins to load prematurely (this is mainly targeted at improperly configured bar skinning mods)
+------------------------------------------------------------------------
+r9577 | wetxius | 2012-11-25 20:10:23 +0000 (Sun, 25 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Locales/ruRU.lua
+
+ruRU minor update.
+------------------------------------------------------------------------
+r9576 | funkydude | 2012-11-25 15:48:28 +0000 (Sun, 25 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Docs/BarStyles.txt
+
+update the BarStyles documentation.
+------------------------------------------------------------------------
+r9575 | jongt23 | 2012-11-25 12:15:47 +0000 (Sun, 25 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Locales/esES.lua
+   M /trunk/Locales/common.esES.lua
+   M /trunk/Mogushan/Locales/esES.lua
+
+esES update
+------------------------------------------------------------------------
+r9574 | funkydude | 2012-11-24 21:44:10 +0000 (Sat, 24 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Plugins/BigWigs_Plugins.toc
+
+Test using LoadWith to load the plugins
+------------------------------------------------------------------------
+r9573 | funkydude | 2012-11-24 17:15:08 +0000 (Sat, 24 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Core/Core.lua
+   M /trunk/Loader.lua
+   M /trunk/Mogushan/WillOfTheEmperor.lua
+   M /trunk/Plugins/Proximity.lua
+   M /trunk/Plugins/Tips.lua
+
+Loader: Some experimental combat loading stuff
+------------------------------------------------------------------------
+r9572 | wetxius | 2012-11-24 09:26:41 +0000 (Sat, 24 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/HeartOfFear/Locales/ruRU.lua
+
+ruRU update.
+------------------------------------------------------------------------
+r9571 | nebula169 | 2012-11-23 22:00:39 +0000 (Fri, 23 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/EndlessSpring/Protector.lua
+
+EndlessSpring/Protector: dispeller and tank warnings for cleansing waters, add initial timers, actually stop bars
+------------------------------------------------------------------------
+r9570 | Maat | 2012-11-22 21:30:04 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Unsok.lua
+
+both places :S
+------------------------------------------------------------------------
+r9569 | Maat | 2012-11-22 21:29:39 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Unsok.lua
+
+fix missing closing parenthesis 
+------------------------------------------------------------------------
+r9567 | funkydude | 2012-11-22 15:27:37 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+
+LeiShi: Check the correct variable
+------------------------------------------------------------------------
+r9566 | funkydude | 2012-11-22 15:08:43 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+
+bump version
+------------------------------------------------------------------------
+r9565 | durcyn | 2012-11-22 15:05:57 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+
+EndlessSpring/LeiShi: bugfix: s/and/then/
+------------------------------------------------------------------------
+r9564 | funkydude | 2012-11-22 14:57:10 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/EndlessSpring/Tsulong.lua
+
+LeiShi & Tsulong: better enable checks
+------------------------------------------------------------------------
+r9563 | funkydude | 2012-11-22 14:21:16 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Tsulong.lua
+
+Tsulong: bugfix shadow breath
+------------------------------------------------------------------------
+r9562 | funkydude | 2012-11-22 14:17:33 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+
+LeiShi: remove yell stuff and handle engaging and disabling properly.
+------------------------------------------------------------------------
+r9561 | funkydude | 2012-11-22 11:50:03 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Locales/frFR.lua
+   M /trunk/HeartOfFear/Meljarak.lua
+
+Meljarak: some more ids
+------------------------------------------------------------------------
+r9560 | funkydude | 2012-11-22 11:24:02 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+   M /trunk/Core/BossPrototype.lua
+   M /trunk/Core/Core.lua
+
+Add an extra check for yell/emote searching.
+------------------------------------------------------------------------
+r9559 | nebula169 | 2012-11-22 09:40:01 +0000 (Thu, 22 Nov 2012) | 3 lines
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/EndlessSpring/Tsulong.lua
+
+Tsulong: initial breath bars, misc ocd cleanup
+revert back locale strings for Tsulong and Lei Shi (y u no disable)
+
+------------------------------------------------------------------------
+r9558 | nebula169 | 2012-11-22 05:51:17 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+   M /trunk/EndlessSpring/Locales/frFR.lua
+   M /trunk/EndlessSpring/Locales/ruRU.lua
+   M /trunk/EndlessSpring/Tsulong.lua
+
+update yell triggers for Tsulong and Lei Shi
+------------------------------------------------------------------------
+r9557 | nebula169 | 2012-11-22 05:15:59 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Protector.lua
+
+EndlessSpring/Protector: cd bars for mostly everything
+------------------------------------------------------------------------
+r9556 | durcyn | 2012-11-22 05:00:43 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+
+EndlessSpring/LeiShi: OnBossEnable self:Yell typo fix
+------------------------------------------------------------------------
+r9555 | nebula169 | 2012-11-22 01:40:53 +0000 (Thu, 22 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/Protector.lua
+
+EndlessSpring/Protector: Kill the say/whisper on Defiled Ground and warn on damage
 ------------------------------------------------------------------------
 r9553 | funkydude | 2012-11-22 00:38:45 +0000 (Thu, 22 Nov 2012) | 1 line
 Changed paths:
@@ -1594,347 +1810,4 @@ Changed paths:
    M /trunk/Mogushan/WillOfTheEmperor.lua
 
 WillOfTheEmperor: shave 2 sec off courage.
-------------------------------------------------------------------------
-r9326 | durcyn | 2012-10-25 17:02:12 +0000 (Thu, 25 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Plugins/Proximity.lua
-
-Plugins/Proximity.lua:665: comment missing second dash
-------------------------------------------------------------------------
-r9324 | funkydude | 2012-10-25 15:33:05 +0000 (Thu, 25 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Core/BossPrototype.lua
-   M /trunk/Core/Constants.lua
-   M /trunk/HeartOfFear/Meljarak.lua
-   M /trunk/Loader.lua
-   M /trunk/Locales/itIT.lua
-   M /trunk/Mogushan/Feng.lua
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-   M /trunk/Mogushan/TheSpiritKings.lua
-   M /trunk/Plugins/Bars.lua
-   M /trunk/Plugins/Proximity.lua
-
-whitespace fixes
-------------------------------------------------------------------------
-r9323 | Maat | 2012-10-25 15:02:09 +0000 (Thu, 25 Oct 2012) | 5 lines
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-be consistent about what we call rain of arrows
-rename shield to impervious shield to be more specific
-move Qiang engage to OnEngage
-call :CheckBossStatus first so we wipe bossActivated before trying to check boss engages
-
-------------------------------------------------------------------------
-r9322 | nebula169 | 2012-10-25 11:12:48 +0000 (Thu, 25 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: cancel resonance's bar on phase end
-------------------------------------------------------------------------
-r9321 | nebula169 | 2012-10-25 11:05:52 +0000 (Thu, 25 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: Add healers to the combo warning
-------------------------------------------------------------------------
-r9320 | funkydude | 2012-10-25 10:59:15 +0000 (Thu, 25 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/BigWigs.toc
-   M /trunk/Mogushan/Locales/itIT.lua
-
-itIT update
-------------------------------------------------------------------------
-r9319 | nebula169 | 2012-10-25 05:29:12 +0000 (Thu, 25 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: fix resonance warning
-------------------------------------------------------------------------
-r9317 | funkydude | 2012-10-24 23:32:24 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheStoneGuard.lua
-
-TheStoneGuard: tweak some names
-------------------------------------------------------------------------
-r9316 | nebula169 | 2012-10-24 22:59:17 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: make combo warning target only, tweak add icons, add some missing strings to locales
-------------------------------------------------------------------------
-r9315 | funkydude | 2012-10-24 22:29:13 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Core/BossPrototype.lua
-   M /trunk/Mogushan/Feng.lua
-
-Feng: tweak resonance function
-------------------------------------------------------------------------
-r9314 | funkydude | 2012-10-24 22:11:06 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: wipe the resonance icon table after use.
-------------------------------------------------------------------------
-r9313 | funkydude | 2012-10-24 21:56:14 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Mogushan/Feng: Fix arcane resonance warning rarely failing, add a cd bar.
-------------------------------------------------------------------------
-r9312 | funkydude | 2012-10-24 20:54:03 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Locales/common.ptBR.lua
-   M /trunk/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-
-ptBR update
-------------------------------------------------------------------------
-r9311 | Maat | 2012-10-24 20:31:24 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-another fix
-------------------------------------------------------------------------
-r9310 | funkydude | 2012-10-24 20:27:09 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheStoneGuard.lua
-
-Mogushan/TheStoneGuard: Add cobalt mine cooldown bar and target scanning /say and warning.
-------------------------------------------------------------------------
-r9309 | Maat | 2012-10-24 20:18:29 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-small fix
-------------------------------------------------------------------------
-r9308 | jongt23 | 2012-10-24 17:12:23 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/esES.lua
-
-esES update
-------------------------------------------------------------------------
-r9307 | wetxius | 2012-10-24 05:38:25 +0000 (Wed, 24 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/ruRU.lua
-
-ruRU update.
-------------------------------------------------------------------------
-r9306 | pettigrow | 2012-10-23 21:20:54 +0000 (Tue, 23 Oct 2012) | 2 lines
-Changed paths:
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-- frFR Update
-- WillOfTheEmperor: fix some bar texts
-------------------------------------------------------------------------
-r9305 | nebula169 | 2012-10-23 21:03:56 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-
-Feng: counters on the main phase abilities, phase change warning
-------------------------------------------------------------------------
-r9304 | jongt23 | 2012-10-23 18:24:50 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/esES.lua
-
-esES update
-------------------------------------------------------------------------
-r9303 | funkydude | 2012-10-23 13:16:55 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/BigWigs.toc
-
-bump to grab the latest candybar alpha for testing
-------------------------------------------------------------------------
-r9302 | wetxius | 2012-10-23 07:58:14 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Locales/common.ruRU.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Plugins/Locales/ruRU.lua
-
-ruRU update.
-------------------------------------------------------------------------
-r9301 | nebula169 | 2012-10-23 07:13:52 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: don't need a gas timer in heroic, rebrand energize as a devastating combo timer
-------------------------------------------------------------------------
-r9300 | funkydude | 2012-10-23 02:43:44 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Core/BossPrototype.lua
-
-Core/BossPrototype: Let bars take spell ids for text
-------------------------------------------------------------------------
-r9299 | nebula169 | 2012-10-23 02:35:07 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Garajal.lua
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-
-Garajal: parens are for counting
-------------------------------------------------------------------------
-r9297 | funkydude | 2012-10-23 01:23:59 +0000 (Tue, 23 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/zhTW.lua
-
-zhTW update
-------------------------------------------------------------------------
-r9296 | nebula169 | 2012-10-22 23:00:10 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Garajal.lua
-
-Garajal: aaaand heroic banish cd timer
-------------------------------------------------------------------------
-r9295 | nebula169 | 2012-10-22 22:27:35 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Garajal.lua
-
-Garajal: heroic initial banish timer, stop crossover/banish bars when out of shadow realm
-------------------------------------------------------------------------
-r9294 | funkydude | 2012-10-22 22:12:53 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-TheSpiritKings: sort ids
-------------------------------------------------------------------------
-r9293 | funkydude | 2012-10-22 21:07:18 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: use :SpellName where applicable
-------------------------------------------------------------------------
-r9292 | funkydude | 2012-10-22 20:38:13 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/BigWigs.toc
-   M /trunk/Core/BossPrototype.lua
-
-Add :SpellName(id) API call connected to our spellname cache. Takes one or many ids, returns one or many names, and maybe a party hat.
-------------------------------------------------------------------------
-r9291 | funkydude | 2012-10-22 20:26:06 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Loader.lua
-
-Loader: nil check for the group check
-------------------------------------------------------------------------
-r9290 | pettigrow | 2012-10-22 20:03:04 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/frFR.lua
-
-frFR Update
-------------------------------------------------------------------------
-r9289 | jongt23 | 2012-10-22 19:14:21 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/esES.lua
-
-esES update
-------------------------------------------------------------------------
-r9288 | funkydude | 2012-10-22 18:47:58 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Garajal.lua
-
-Garajal: Initial banish timer
-------------------------------------------------------------------------
-r9287 | funkydude | 2012-10-22 17:26:04 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/TheStoneGuard.lua
-
-remove an old locale string
-------------------------------------------------------------------------
-r9286 | pettigrow | 2012-10-22 17:14:01 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/frFR.lua
-
-frFR Update
-------------------------------------------------------------------------
-r9285 | funkydude | 2012-10-22 15:10:12 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Core/BossPrototype.lua
-
-Core/BossPrototype: fix a certain use of LocalMessage.
-------------------------------------------------------------------------
-r9284 | funkydude | 2012-10-22 15:08:06 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Garajal.lua
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-
-Garajal: Fix totem timer, restrict banishment warning to tanks & use a sound, misc cleanups.
-------------------------------------------------------------------------
-r9283 | Maat | 2012-10-22 13:11:35 +0000 (Mon, 22 Oct 2012) | 3 lines
-Changed paths:
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-remove bars when bosses deactivate and start their signature ability bar
-add volley and pinned down bar for subetai on engage
-warn all shields removed
-------------------------------------------------------------------------
-r9281 | funkydude | 2012-10-22 00:45:58 +0000 (Mon, 22 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: cancel a few things between phases
-------------------------------------------------------------------------
-r9280 | funkydude | 2012-10-21 23:35:29 +0000 (Sun, 21 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/BigWigs.toc
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-   M /trunk/Mogushan/TheStoneGuard.lua
-
-TheStoneGuard: remove unneeded locale string.
 ------------------------------------------------------------------------

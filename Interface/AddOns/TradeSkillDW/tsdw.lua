@@ -223,7 +223,7 @@ local function SetTabValues(value)
 
 	local tab, anchor	
 	index = 1
-	for _, v in pairs(knownSkills[value]) do
+	for _, v in pairs(knownSkills[value]) do --v is tradeSkillName
 		tab = tabPool[value][index]
 		if not(tab) then
 			tab = CreateFrame("CheckButton", nil, TradeSkillFrame, "TradeSkillDW_SkillTabTemplate")
@@ -231,7 +231,8 @@ local function SetTabValues(value)
 		end
 
 		tab.skill = v
-		tab.slot = knownSkills[SKILL_SLOT][v]
+		tab.slot = knownSkills[SKILL_SLOT][v].slot
+		tab.bookType = knownSkills[SKILL_SLOT][v].bookType
 
 		if (anchor) then
 			if value == SKILL_PRIMARY then
@@ -264,6 +265,22 @@ local function SetTabValues(value)
 	end
 end
 
+local function FindSpellSlot(name)
+	local bookType = BOOKTYPE_SPELL
+	--name, texture, offset, numSpells
+	local _, _, offset, numSpells = GetSpellTabInfo(2)
+	local total = numSpells
+
+	for slot = offset, offset + total do
+		local skillType, spellId = GetSpellBookItemInfo(slot, bookType)
+		local spellName, rank = GetSpellBookItemName(slot, bookType)
+
+		if name == spellName then
+			return slot, bookType, spellId
+		end
+	end
+end
+
 local function SetTabs()
 	-- clear
 	for k, v in pairs(knownSkills[SKILL_PRIMARY]) do
@@ -289,19 +306,35 @@ local function SetTabs()
 			--print(name, skillLine)
 			if TradeSkillDW_AllowSkills[skillLine] then
 				if numSpells > 0 and TradeSkillDW_AllowPrimarySkills[skillLine] then
-					local spellIndex = spelloffset + 1
-					local spellName, subSpellName = GetSpellBookItemName(spellIndex, BOOKTYPE_PROFESSION)
+					local slot = spelloffset + 1
+					local spellName, subSpellName = GetSpellBookItemName(slot, BOOKTYPE_PROFESSION)
 					knownSkills[SKILL_PRIMARY][index] = spellName
-					knownSkills[SKILL_SLOT][spellName] = spellIndex
+					knownSkills[SKILL_SLOT][spellName] = knownSkills[SKILL_SLOT][spellName] or {}
+					knownSkills[SKILL_SLOT][spellName].slot = slot
+					knownSkills[SKILL_SLOT][spellName].bookType = BOOKTYPE_PROFESSION
 				end
 				if numSpells > 1 and TradeSkillDW_AllowSecondarySkills[skillLine] then
-					local spellIndex = spelloffset + 2
-					local spellName, subSpellName = GetSpellBookItemName(spellIndex, BOOKTYPE_PROFESSION)
+					local slot = spelloffset + 2
+					local spellName, subSpellName = GetSpellBookItemName(slot, BOOKTYPE_PROFESSION)
 					knownSkills[SKILL_SECONDARY][index] = spellName
-					knownSkills[SKILL_SLOT][spellName] = spellIndex
+					knownSkills[SKILL_SLOT][spellName] = knownSkills[SKILL_SLOT][spellName] or {}
+					knownSkills[SKILL_SLOT][spellName].slot = slot --slot in 
+					knownSkills[SKILL_SLOT][spellName].bookType = BOOKTYPE_PROFESSION
 				end
 				index = index + 1
 			end
+		end
+	end
+	
+	--custom skills like Runeforging
+	for skillId, spellName in pairs(TradeSkillDW_CustomSkills) do --skillId, skillName
+		if IsUsableSpell(spellName) then
+			knownSkills[SKILL_PRIMARY][index] = spellName
+			local slot, bookType, spellId = FindSpellSlot(spellName)
+			knownSkills[SKILL_SLOT][spellName] = knownSkills[SKILL_SLOT][spellName] or {}
+			knownSkills[SKILL_SLOT][spellName].slot = slot
+			knownSkills[SKILL_SLOT][spellName].bookType = bookType
+			index = index + 1
 		end
 	end
 	SetTabValues(SKILL_PRIMARY)
@@ -411,7 +444,9 @@ function TradeSkillDW_SkillTab_OnEnter(self)
 	else
 		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 	end
-	GameTooltip:SetSpellBookItem(self.slot, BOOKTYPE_PROFESSION)
+	if self.slot and self.bookType then
+		GameTooltip:SetSpellBookItem(self.slot, self.bookType)
+	end
 end
 
 function TradeSkillDW_SkillTab_OnLeave(self)

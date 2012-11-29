@@ -1,6 +1,6 @@
 
 TI_status = {
-	["state"] = true,
+	["state"] = false,
 	["debugstate"] = false,
 	["version"] = "2.0",
 	["usedefault"] = true,

@@ -28,7 +28,7 @@ Postal3DB = {
 		},
 	},
 	["profileKeys"] = {
-		["Sulamy - Stormscale"] = "Sulamy - Stormscale",
+		["Sulamy - Stormscale"] = "FineousUI",
 		["Scripe - Nethersturm"] = "Scripe - Nethersturm",
 		["Smashbot - Area 52"] = "Smashbot - Area 52",
 		["Thanata - Area 52"] = "Thanata - Area 52",

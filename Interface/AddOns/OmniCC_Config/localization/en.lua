@@ -83,14 +83,12 @@ L.UseAniUpdaterTip =
 cause crashes on some environments.
 Disabling this option will solve the issue.]]
 
-L.UseAniUpdaterSmallTip = "|cffff2020Changing requires game reload.|r"
-
 L.MinDurationTip =
 [[Determines how long a cooldown
 must be in order to show text.
 
 This setting is mainly used to
-filter out the GCD.]]
+filter out the global cooldown.]]
 
 L.MinSizeTip =
 [[Determines how big a frame must be to display text.
@@ -100,7 +98,7 @@ The larger the value, the bigger things must be.
 Some benchmarks:
 100 - The size of an action button
 80  - The size of a class or pet action button
-55  - The size of a Blizzard target frame buff]]
+55  - The size of a target frame buff]]
 
 L.MinEffectDurationTip =
 [[Determines how long a

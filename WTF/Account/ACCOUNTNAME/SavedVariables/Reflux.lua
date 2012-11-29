@@ -28,13 +28,15 @@ RefluxDB = {
 						["FontSize"] = 12,
 						["BarTexture"] = "Minimalist",
 						["BarFont"] = "Friz Quadrata TT",
-						["name"] = "Fineous-Stormscale.1",
+						["BarSpacing"] = 3,
 						["BkgdColor"] = {
 							0, -- [1]
 							0, -- [2]
 							0, -- [3]
 							0.800000011920929, -- [4]
 						},
+						["name"] = "Fineous-Stormscale.1",
+						["BarPadding"] = 1,
 						["Groups"] = {
 							{
 								["Enabled"] = true,
@@ -50,7 +52,7 @@ RefluxDB = {
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Haunt",
+										["show_spark"] = false,
 										["Unit"] = "target",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -72,17 +74,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["Enabled"] = true,
+										["show_all_stacks"] = false,
 										["blink_boss"] = false,
-										["show_spark"] = false,
+										["append_usable"] = false,
+										["TimeFormat"] = "Fmt_Float",
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.5450980392156862,
 											["g"] = 1,
 											["b"] = 0.3725490196078432,
 										},
-										["TimeFormat"] = "Fmt_Float",
-										["BuffOrDebuff"] = "HARMFUL",
+										["AuraName"] = "Haunt",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -90,17 +92,17 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "HARMFUL",
 										["append_cd"] = true,
-										["blink_enabled"] = false,
+										["Enabled"] = true,
 										["show_ttn3"] = false,
-										["show_all_stacks"] = false,
+										["blink_enabled"] = false,
 										["show_ttn1"] = false,
 									}, -- [1]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Agony, Shadowflame",
+										["show_spark"] = false,
 										["Unit"] = "target",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -122,17 +124,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["Enabled"] = true,
+										["show_all_stacks"] = false,
 										["blink_boss"] = false,
-										["show_spark"] = false,
+										["append_usable"] = false,
+										["TimeFormat"] = "Fmt_Float",
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 1,
 											["g"] = 0.7450980392156863,
 											["b"] = 0,
 										},
-										["TimeFormat"] = "Fmt_Float",
-										["BuffOrDebuff"] = "HARMFUL",
+										["AuraName"] = "Agony, Shadowflame",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -140,17 +142,17 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "HARMFUL",
 										["append_cd"] = true,
-										["blink_enabled"] = false,
+										["Enabled"] = true,
 										["show_ttn3"] = false,
-										["show_all_stacks"] = false,
+										["blink_enabled"] = false,
 										["show_ttn1"] = false,
 									}, -- [2]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Corruption",
+										["show_spark"] = false,
 										["Unit"] = "target",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -172,35 +174,35 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_Float",
-										["show_spark"] = false,
-										["vct_color"] = {
-											["a"] = 0.3,
-											["b"] = 0,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
-										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
-										["append_cd"] = true,
 										["blink_enabled"] = false,
-										["show_ttn3"] = false,
+										["blink_boss"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 1,
 											["g"] = 0.74509803921569,
 											["b"] = 0,
 										},
+										["AuraName"] = "Corruption",
+										["vct_color"] = {
+											["a"] = 0.3,
+											["b"] = 0,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["buffcd_reset_spells"] = "",
+										["BuffOrDebuff"] = "HARMFUL",
+										["append_cd"] = true,
+										["Enabled"] = true,
+										["show_ttn3"] = false,
+										["TimeFormat"] = "Fmt_Float",
 										["show_ttn1"] = false,
 									}, -- [3]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Unstable Affliction, Doom",
+										["show_spark"] = false,
 										["Unit"] = "target",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -222,12 +224,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
+										["blink_enabled"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_Float",
-										["show_spark"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
+										["BarColor"] = {
+											["a"] = 1,
+											["b"] = 0,
+											["g"] = 0.74509803921569,
+											["r"] = 1,
+										},
+										["AuraName"] = "Unstable Affliction, Doom",
 										["vct_color"] = {
 											["a"] = 0.25,
 											["b"] = 0.2235294117647059,
@@ -235,22 +242,17 @@ RefluxDB = {
 											["r"] = 0,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "HARMFUL",
 										["append_cd"] = true,
-										["blink_enabled"] = false,
+										["Enabled"] = true,
 										["show_ttn3"] = false,
-										["BarColor"] = {
-											["a"] = 1,
-											["b"] = 0,
-											["g"] = 0.74509803921569,
-											["r"] = 1,
-										},
+										["TimeFormat"] = "Fmt_Float",
 										["show_ttn1"] = false,
 									}, -- [4]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Curse of the Elements, Curse of Exhaustion, Curse of Enfeeblement",
+										["show_spark"] = false,
 										["Unit"] = "target",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -272,17 +274,12 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
+										["blink_enabled"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["BarColor"] = {
-											["a"] = 1,
-											["b"] = 0.6,
-											["g"] = 0.2196078431372549,
-											["r"] = 0.4784313725490196,
-										},
-										["show_spark"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
+										["TimeFormat"] = "Fmt_SingleUnit",
+										["AuraName"] = "Curse of the Elements, Curse of Exhaustion, Curse of Enfeeblement",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -290,11 +287,16 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "HARMFUL",
 										["append_cd"] = true,
-										["blink_enabled"] = false,
+										["Enabled"] = true,
 										["show_ttn3"] = false,
-										["TimeFormat"] = "Fmt_SingleUnit",
+										["BarColor"] = {
+											["a"] = 1,
+											["b"] = 0.6,
+											["g"] = 0.2196078431372549,
+											["r"] = 0.4784313725490196,
+										},
 										["show_ttn1"] = false,
 									}, -- [5]
 									{
@@ -339,13 +341,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [6]
 									{
 										["buffcd_duration"] = 0,
@@ -389,13 +391,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [7]
 									{
 										["buffcd_duration"] = 0,
@@ -439,13 +441,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [8]
 									{
 										["buffcd_duration"] = 0,
@@ -489,13 +491,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [9]
 								},
 								["FixedDuration"] = "0",
@@ -515,7 +517,7 @@ RefluxDB = {
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Haunt",
+										["show_spark"] = false,
 										["Unit"] = "focus",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -537,35 +539,35 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_Float",
-										["show_spark"] = false,
-										["vct_color"] = {
-											["a"] = 0.3,
-											["b"] = 0,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
-										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
-										["append_cd"] = true,
 										["blink_enabled"] = false,
-										["show_ttn3"] = false,
+										["blink_boss"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.54509803921569,
 											["g"] = 1,
 											["b"] = 0.37254901960784,
 										},
+										["AuraName"] = "Haunt",
+										["vct_color"] = {
+											["a"] = 0.3,
+											["b"] = 0,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["buffcd_reset_spells"] = "",
+										["BuffOrDebuff"] = "HARMFUL",
+										["append_cd"] = true,
+										["Enabled"] = true,
+										["show_ttn3"] = false,
+										["TimeFormat"] = "Fmt_Float",
 										["show_ttn1"] = false,
 									}, -- [1]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Agony, Shadowflame",
+										["show_spark"] = false,
 										["Unit"] = "focus",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -587,12 +589,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
+										["blink_enabled"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_Float",
-										["show_spark"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
+										["BarColor"] = {
+											["a"] = 1,
+											["r"] = 1,
+											["g"] = 0.74509803921569,
+											["b"] = 0,
+										},
+										["AuraName"] = "Agony, Shadowflame",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -600,22 +607,17 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "HARMFUL",
 										["append_cd"] = true,
-										["blink_enabled"] = false,
+										["Enabled"] = true,
 										["show_ttn3"] = false,
-										["BarColor"] = {
-											["a"] = 1,
-											["r"] = 1,
-											["g"] = 0.74509803921569,
-											["b"] = 0,
-										},
+										["TimeFormat"] = "Fmt_Float",
 										["show_ttn1"] = false,
 									}, -- [2]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Corruption",
+										["show_spark"] = false,
 										["Unit"] = "focus",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -637,12 +639,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
+										["blink_enabled"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_Float",
-										["show_spark"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
+										["BarColor"] = {
+											["a"] = 1,
+											["r"] = 1,
+											["g"] = 0.74509803921569,
+											["b"] = 0,
+										},
+										["AuraName"] = "Corruption",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -650,22 +657,17 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "HARMFUL",
 										["append_cd"] = true,
-										["blink_enabled"] = false,
+										["Enabled"] = true,
 										["show_ttn3"] = false,
-										["BarColor"] = {
-											["a"] = 1,
-											["r"] = 1,
-											["g"] = 0.74509803921569,
-											["b"] = 0,
-										},
+										["TimeFormat"] = "Fmt_Float",
 										["show_ttn1"] = false,
 									}, -- [3]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Unstable Affliction, Doom",
+										["show_spark"] = false,
 										["Unit"] = "focus",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -687,35 +689,35 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_Float",
-										["show_spark"] = false,
-										["vct_color"] = {
-											["a"] = 0.3,
-											["b"] = 0,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
-										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
-										["append_cd"] = true,
 										["blink_enabled"] = false,
-										["show_ttn3"] = false,
+										["blink_boss"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0,
 											["g"] = 0.74509803921569,
 											["r"] = 1,
 										},
+										["AuraName"] = "Unstable Affliction, Doom",
+										["vct_color"] = {
+											["a"] = 0.3,
+											["b"] = 0,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["buffcd_reset_spells"] = "",
+										["BuffOrDebuff"] = "HARMFUL",
+										["append_cd"] = true,
+										["Enabled"] = true,
+										["show_ttn3"] = false,
+										["TimeFormat"] = "Fmt_Float",
 										["show_ttn1"] = false,
 									}, -- [4]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Curse of the Elements, Curse of Exhaustion, Curse of Enfeeblement",
+										["show_spark"] = false,
 										["Unit"] = "focus",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -737,29 +739,29 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
-										["Enabled"] = true,
-										["BuffOrDebuff"] = "HARMFUL",
-										["TimeFormat"] = "Fmt_SingleUnit",
-										["show_spark"] = false,
-										["vct_color"] = {
-											["a"] = 0.3,
-											["b"] = 0,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
-										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
-										["append_cd"] = true,
 										["blink_enabled"] = false,
-										["show_ttn3"] = false,
+										["blink_boss"] = false,
+										["show_all_stacks"] = false,
+										["append_usable"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.47843137254902,
 											["g"] = 0.21960784313725,
 											["b"] = 0.6,
 										},
+										["AuraName"] = "Curse of the Elements, Curse of Exhaustion, Curse of Enfeeblement",
+										["vct_color"] = {
+											["a"] = 0.3,
+											["b"] = 0,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["buffcd_reset_spells"] = "",
+										["BuffOrDebuff"] = "HARMFUL",
+										["append_cd"] = true,
+										["Enabled"] = true,
+										["show_ttn3"] = false,
+										["TimeFormat"] = "Fmt_SingleUnit",
 										["show_ttn1"] = false,
 									}, -- [5]
 									{
@@ -804,13 +806,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [6]
 									{
 										["buffcd_duration"] = 0,
@@ -854,13 +856,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [7]
 									{
 										["buffcd_duration"] = 0,
@@ -904,13 +906,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [8]
 									{
 										["buffcd_duration"] = 0,
@@ -954,13 +956,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [9]
 								},
 								["FixedDuration"] = "0",
@@ -972,8 +974,8 @@ RefluxDB = {
 								["Position"] = {
 									"CENTER", -- [1]
 									"CENTER", -- [2]
-									-480.6997985839844, -- [3]
-									-73.69937896728516, -- [4]
+									-479.4997863769531, -- [3]
+									-46.09941482543945, -- [4]
 								},
 								["Scale"] = 0.8333336114883423,
 								["Bars"] = {
@@ -1019,13 +1021,13 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [1]
 									{
 										["buffcd_duration"] = 0,
@@ -1069,18 +1071,18 @@ RefluxDB = {
 										["show_ttn1"] = false,
 										["AuraName"] = "",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["b"] = 0.6,
 											["g"] = 0.6,
 											["r"] = 0.6,
 										},
+										["blink_enabled"] = false,
 									}, -- [2]
 									{
 										["buffcd_duration"] = 0,
 										["BuffOrDebuff"] = "HELPFUL",
-										["show_spark"] = true,
+										["show_spark"] = false,
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1117,20 +1119,20 @@ RefluxDB = {
 										["buffcd_reset_spells"] = "",
 										["append_usable"] = false,
 										["show_ttn1"] = false,
-										["AuraName"] = "",
+										["AuraName"] = "Immolation Aura",
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
 										["BarColor"] = {
 											["a"] = 1,
-											["b"] = 0.6,
-											["g"] = 0.6,
-											["r"] = 0.6,
+											["b"] = 0,
+											["g"] = 0.2980392156862745,
+											["r"] = 1,
 										},
+										["blink_enabled"] = false,
 									}, -- [3]
 									{
 										["buffcd_duration"] = 0,
 										["BuffOrDebuff"] = "HELPFUL",
-										["show_spark"] = false,
+										["AuraName"] = "Molten Core",
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1152,17 +1154,12 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
+										["blink_enabled"] = false,
+										["blink_boss"] = false,
 										["show_all_stacks"] = false,
 										["append_cd"] = true,
-										["Enabled"] = true,
-										["blink_boss"] = false,
-										["BarColor"] = {
-											["a"] = 1,
-											["b"] = 0,
-											["g"] = 0.5568627450980392,
-											["r"] = 1,
-										},
-										["show_mypip"] = false,
+										["TimeFormat"] = "Fmt_Float",
+										["append_usable"] = false,
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -1170,17 +1167,22 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["show_mypip"] = false,
 										["show_ttn1"] = false,
-										["AuraName"] = "Molten Core",
+										["show_spark"] = false,
 										["show_ttn3"] = false,
-										["blink_enabled"] = false,
-										["TimeFormat"] = "Fmt_Float",
+										["BarColor"] = {
+											["a"] = 1,
+											["b"] = 0,
+											["g"] = 0.5568627450980392,
+											["r"] = 1,
+										},
+										["Enabled"] = true,
 									}, -- [4]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Bloodlust, Time Warp, Ancient Hysteria",
+										["show_spark"] = false,
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = false,
@@ -1202,17 +1204,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["blink_enabled"] = false,
+										["show_all_stacks"] = false,
 										["append_cd"] = true,
-										["show_spark"] = false,
+										["BuffOrDebuff"] = "HELPFUL",
+										["TimeFormat"] = "Fmt_Float",
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.92156862745098,
 											["g"] = 0.10980392156863,
 											["b"] = 0.12156862745098,
 										},
-										["TimeFormat"] = "Fmt_Float",
-										["append_usable"] = false,
+										["AuraName"] = "Bloodlust, Time Warp, Ancient Hysteria",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -1220,17 +1222,17 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["BuffOrDebuff"] = "HELPFUL",
+										["append_usable"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
+										["blink_enabled"] = false,
 										["show_ttn3"] = false,
-										["show_all_stacks"] = false,
+										["Enabled"] = true,
 										["show_ttn1"] = false,
 									}, -- [5]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Potion of the Jade Serpent",
+										["show_spark"] = false,
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1252,17 +1254,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["blink_enabled"] = false,
+										["show_all_stacks"] = false,
 										["append_cd"] = true,
-										["show_spark"] = false,
+										["BuffOrDebuff"] = "HELPFUL",
+										["TimeFormat"] = "Fmt_Float",
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.19607843137255,
 											["g"] = 0.75686274509804,
 											["b"] = 0.21960784313725,
 										},
-										["TimeFormat"] = "Fmt_Float",
-										["append_usable"] = false,
+										["AuraName"] = "Potion of the Jade Serpent",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -1270,17 +1272,17 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["BuffOrDebuff"] = "HELPFUL",
+										["append_usable"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
+										["blink_enabled"] = false,
 										["show_ttn3"] = false,
-										["show_all_stacks"] = false,
+										["Enabled"] = true,
 										["show_ttn1"] = false,
 									}, -- [6]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["AuraName"] = "Dark Soul: Misery, Dark Soul: Knowledge, Dark Soul: Instability",
+										["show_spark"] = false,
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1302,17 +1304,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["blink_enabled"] = false,
+										["show_all_stacks"] = false,
 										["append_cd"] = true,
-										["show_spark"] = false,
+										["BuffOrDebuff"] = "HELPFUL",
+										["TimeFormat"] = "Fmt_Float",
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.54509803921569,
 											["g"] = 0.29019607843137,
 											["b"] = 0.74117647058824,
 										},
-										["TimeFormat"] = "Fmt_Float",
-										["append_usable"] = false,
+										["AuraName"] = "Dark Soul: Misery, Dark Soul: Knowledge, Dark Soul: Instability",
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -1320,11 +1322,11 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["BuffOrDebuff"] = "HELPFUL",
+										["append_usable"] = false,
 										["blink_boss"] = false,
-										["Enabled"] = true,
+										["blink_enabled"] = false,
 										["show_ttn3"] = false,
-										["show_all_stacks"] = false,
+										["Enabled"] = true,
 										["show_ttn1"] = false,
 									}, -- [7]
 								},
@@ -1345,7 +1347,7 @@ RefluxDB = {
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["show_spark"] = true,
+										["AuraName"] = "Dark Soul: Misery, Dark Soul: Instability, Dark Soul: Knowledge",
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1367,35 +1369,35 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
 										["blink_enabled"] = false,
-										["BuffOrDebuff"] = "CASTCD",
-										["TimeFormat"] = "Fmt_SingleUnit",
+										["blink_boss"] = false,
 										["Enabled"] = false,
-										["vct_color"] = {
-											["a"] = 0.3,
-											["b"] = 0,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
-										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
-										["append_cd"] = true,
-										["AuraName"] = "Dark Soul: Misery, Dark Soul: Instability, Dark Soul: Knowledge",
-										["show_ttn3"] = false,
+										["show_all_stacks"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.5450980392156862,
 											["g"] = 0.2901960784313725,
 											["b"] = 0.7411764705882353,
 										},
+										["append_usable"] = false,
+										["vct_color"] = {
+											["a"] = 0.3,
+											["b"] = 0,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["buffcd_reset_spells"] = "",
+										["BuffOrDebuff"] = "CASTCD",
+										["append_cd"] = true,
+										["show_spark"] = true,
+										["show_ttn3"] = false,
+										["TimeFormat"] = "Fmt_SingleUnit",
 										["show_ttn1"] = false,
 									}, -- [1]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["show_spark"] = true,
+										["AuraName"] = "Summon Doomguard",
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1417,35 +1419,35 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
 										["blink_enabled"] = false,
-										["BuffOrDebuff"] = "CASTCD",
-										["TimeFormat"] = "Fmt_SingleUnit",
+										["blink_boss"] = false,
 										["Enabled"] = false,
-										["vct_color"] = {
-											["a"] = 0.3,
-											["b"] = 0,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
-										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
-										["append_cd"] = true,
-										["AuraName"] = "Summon Doomguard",
-										["show_ttn3"] = false,
+										["show_all_stacks"] = false,
 										["BarColor"] = {
 											["a"] = 1,
 											["r"] = 0.8823529411764706,
 											["g"] = 0.4941176470588236,
 											["b"] = 0.2627450980392157,
 										},
+										["append_usable"] = false,
+										["vct_color"] = {
+											["a"] = 0.3,
+											["b"] = 0,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["buffcd_reset_spells"] = "",
+										["BuffOrDebuff"] = "CASTCD",
+										["append_cd"] = true,
+										["show_spark"] = true,
+										["show_ttn3"] = false,
+										["TimeFormat"] = "Fmt_SingleUnit",
 										["show_ttn1"] = false,
 									}, -- [2]
 									{
 										["buffcd_duration"] = 0,
 										["show_mypip"] = false,
-										["show_spark"] = true,
+										["AuraName"] = "Blessing of the Celestials",
 										["Unit"] = "player",
 										["blink_label"] = "",
 										["OnlyMine"] = true,
@@ -1467,12 +1469,17 @@ RefluxDB = {
 										["show_ttn2"] = false,
 										["show_time"] = true,
 										["show_text_user"] = "",
-										["show_all_stacks"] = false,
-										["blink_boss"] = false,
 										["blink_enabled"] = false,
-										["BuffOrDebuff"] = "BUFFCD",
-										["TimeFormat"] = "Fmt_SingleUnit",
+										["blink_boss"] = false,
 										["Enabled"] = false,
+										["show_all_stacks"] = false,
+										["BarColor"] = {
+											["a"] = 1,
+											["b"] = 0.6,
+											["g"] = 0.6,
+											["r"] = 0.6,
+										},
+										["append_usable"] = false,
 										["vct_color"] = {
 											["a"] = 0.3,
 											["b"] = 0,
@@ -1480,16 +1487,11 @@ RefluxDB = {
 											["r"] = 0.6,
 										},
 										["buffcd_reset_spells"] = "",
-										["append_usable"] = false,
+										["BuffOrDebuff"] = "BUFFCD",
 										["append_cd"] = true,
-										["AuraName"] = "Blessing of the Celestials",
+										["show_spark"] = true,
 										["show_ttn3"] = false,
-										["BarColor"] = {
-											["a"] = 1,
-											["b"] = 0.6,
-											["g"] = 0.6,
-											["r"] = 0.6,
-										},
+										["TimeFormat"] = "Fmt_SingleUnit",
 										["show_ttn1"] = false,
 									}, -- [3]
 								},
@@ -1497,8 +1499,6 @@ RefluxDB = {
 								["Width"] = 256.799802382338,
 							}, -- [4]
 						},
-						["BarPadding"] = 1,
-						["BarSpacing"] = 3,
 						["bUncompressed"] = true,
 					},
 				},
@@ -1571,44 +1571,81 @@ RefluxDB = {
 				},
 			},
 			["AzCastBar_Config"] = {
-				["optionsLeft"] = 22.00057601928711,
-				["Pet"] = {
-					["enabled"] = false,
-					["colInterrupt"] = {
-						1, -- [1]
-						0.75, -- [2]
-						0.5, -- [3]
-					},
+				["Player"] = {
+					["vertTile"] = false,
 					["colNormal"] = {
 						0.4, -- [1]
 						0.6, -- [2]
 						0.8, -- [3]
 					},
-					["bottom"] = 353,
-					["colFailed"] = {
-						1, -- [1]
-						0.5, -- [2]
-						0.5, -- [3]
+					["useSameBGTexture"] = false,
+					["showSpellTarget"] = false,
+					["left"] = 808,
+					["showTime"] = false,
+					["colSafezone"] = {
+						0.3, -- [1]
+						0.8, -- [2]
+						0.3, -- [3]
+						0.6, -- [4]
 					},
-					["colNonInterruptable"] = {
-						0.78, -- [1]
-						0.82, -- [2]
-						0.86, -- [3]
+					["showLabel"] = false,
+					["nameLabelAlign"] = "LEFT",
+					["backdropIndent"] = -1,
+					["timeFontFlags"] = "",
+					["horzTile"] = false,
+					["colBackdrop"] = {
+						0, -- [1]
+						0, -- [2]
+						0, -- [3]
+						1, -- [4]
 					},
-					["showRank"] = false,
-					["left"] = 835,
-				},
-				["Focus"] = {
+					["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
+					["showTotalTime"] = false,
+					["mergeTrade"] = false,
+					["iconAnchor"] = "NONE",
+					["safeZone"] = false,
 					["colBackGround"] = {
 						0.3, -- [1]
 						0.3, -- [2]
 						0.3, -- [3]
 						0.6, -- [4]
 					},
+					["showSpark"] = false,
+					["showRank"] = false,
+					["width"] = 304,
 					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
+					["reverseGrowth"] = false,
+					["colFailed"] = {
+						1, -- [1]
+						0.5, -- [2]
+						0.5, -- [3]
+					},
+					["bottom"] = 358,
+					["height"] = 20,
+					["colNonInterruptable"] = {
+						0.78, -- [1]
+						0.82, -- [2]
+						0.86, -- [3]
+					},
+					["colInterrupt"] = {
+						1, -- [1]
+						0.75, -- [2]
+						0.5, -- [3]
+					},
+					["timeLabelAlign"] = "RIGHT",
+				},
+				["optionsLeft"] = 22.00057601928711,
+				["Focus"] = {
 					["backdropIndent"] = -1,
-					["bottom"] = 700.000244140625,
+					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
 					["useSameBGTexture"] = false,
+					["bottom"] = 700.000244140625,
+					["colBackGround"] = {
+						0.3, -- [1]
+						0.3, -- [2]
+						0.3, -- [3]
+						0.6, -- [4]
+					},
 					["reverseGrowth"] = false,
 					["left"] = 1120.0009765625,
 					["width"] = 162,
@@ -1623,12 +1660,12 @@ RefluxDB = {
 						0.5, -- [2]
 						0.5, -- [3]
 					},
-					["showRank"] = false,
 					["colNormal"] = {
 						0.4, -- [1]
 						0.6, -- [2]
 						0.8, -- [3]
 					},
+					["showRank"] = false,
 					["colNonInterruptable"] = {
 						0.78, -- [1]
 						0.82, -- [2]
@@ -1646,7 +1683,7 @@ RefluxDB = {
 					["vertTile"] = false,
 					["useSameBGTexture"] = false,
 					["reverseGrowth"] = false,
-					["left"] = 810,
+					["timeLabelAlign"] = "RIGHT",
 					["colInterrupt"] = {
 						1, -- [1]
 						0.75, -- [2]
@@ -1662,7 +1699,7 @@ RefluxDB = {
 					},
 					["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
 					["showTotalTime"] = false,
-					["timeLabelAlign"] = "RIGHT",
+					["backdropIndent"] = -1,
 					["bottom"] = 700.0001831054688,
 					["colBackGround"] = {
 						0.3, -- [1]
@@ -1670,36 +1707,35 @@ RefluxDB = {
 						0.3, -- [3]
 						0.6, -- [4]
 					},
-					["colNormal"] = {
-						0.4, -- [1]
-						0.6, -- [2]
-						0.8, -- [3]
-					},
+					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
 					["showRank"] = false,
 					["width"] = 300,
 					["showSpark"] = false,
-					["horzTile"] = false,
+					["height"] = 18,
 					["colFailed"] = {
 						1, -- [1]
 						0.5, -- [2]
 						0.5, -- [3]
 					},
 					["showLabel"] = true,
-					["height"] = 18,
+					["horzTile"] = false,
 					["colNonInterruptable"] = {
 						0.78, -- [1]
 						0.82, -- [2]
 						0.86, -- [3]
 					},
-					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
-					["backdropIndent"] = -1,
+					["colNormal"] = {
+						0.4, -- [1]
+						0.6, -- [2]
+						0.8, -- [3]
+					},
+					["left"] = 810,
 				},
-				["optionsBottom"] = 609.0000610351563,
 				["Mirror"] = {
 					["vertTile"] = false,
 					["useSameBGTexture"] = false,
 					["reverseGrowth"] = false,
-					["showSpark"] = false,
+					["left"] = 880,
 					["hideIconBorder"] = true,
 					["colNormal"] = {
 						0.4, -- [1]
@@ -1714,7 +1750,7 @@ RefluxDB = {
 					},
 					["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
 					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
-					["bottom"] = 382,
+					["iconAnchor"] = "NONE",
 					["colBackGround"] = {
 						0.3, -- [1]
 						0.3, -- [2]
@@ -1722,74 +1758,38 @@ RefluxDB = {
 						0.6, -- [4]
 					},
 					["width"] = 160,
-					["iconAnchor"] = "NONE",
-					["showTotalTime"] = false,
+					["showSpark"] = false,
 					["height"] = 20,
-					["backdropIndent"] = -1,
 					["horzTile"] = false,
-					["left"] = 880,
+					["backdropIndent"] = -1,
+					["bottom"] = 382,
+					["showTotalTime"] = false,
 				},
-				["Player"] = {
-					["vertTile"] = false,
-					["timeLabelAlign"] = "RIGHT",
-					["useSameBGTexture"] = false,
-					["showSpellTarget"] = false,
-					["left"] = 808,
+				["optionsBottom"] = 609.0000610351563,
+				["Pet"] = {
+					["enabled"] = false,
 					["colInterrupt"] = {
 						1, -- [1]
 						0.75, -- [2]
 						0.5, -- [3]
 					},
-					["colSafezone"] = {
-						0.3, -- [1]
-						0.8, -- [2]
-						0.3, -- [3]
-						0.6, -- [4]
-					},
-					["showLabel"] = false,
 					["colNormal"] = {
 						0.4, -- [1]
 						0.6, -- [2]
 						0.8, -- [3]
 					},
-					["showTotalTime"] = false,
-					["timeFontFlags"] = "",
-					["height"] = 20,
-					["showTime"] = false,
-					["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
-					["bottom"] = 358,
-					["backdropIndent"] = -1,
-					["safeZone"] = false,
-					["iconAnchor"] = "NONE",
-					["colBackGround"] = {
-						0.3, -- [1]
-						0.3, -- [2]
-						0.3, -- [3]
-						0.6, -- [4]
-					},
-					["reverseGrowth"] = false,
+					["bottom"] = 353,
 					["showRank"] = false,
-					["width"] = 304,
-					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
-					["showSpark"] = false,
-					["colFailed"] = {
-						1, -- [1]
-						0.5, -- [2]
-						0.5, -- [3]
-					},
-					["mergeTrade"] = false,
-					["horzTile"] = false,
 					["colNonInterruptable"] = {
 						0.78, -- [1]
 						0.82, -- [2]
 						0.86, -- [3]
 					},
-					["nameLabelAlign"] = "LEFT",
-					["colBackdrop"] = {
-						0, -- [1]
-						0, -- [2]
-						0, -- [3]
-						1, -- [4]
+					["left"] = 835,
+					["colFailed"] = {
+						1, -- [1]
+						0.5, -- [2]
+						0.5, -- [3]
 					},
 				},
 			},

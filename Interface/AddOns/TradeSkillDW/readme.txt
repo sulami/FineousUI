@@ -2,6 +2,12 @@ Lightweight tradeskill double wide window with profession's tabs. Reuses origina
 
 Changes:
 
+v1.86
+toc changed for v5.1.0
+
+v1.85
+Runeforging
+
 v1.84
 processing independent from browsing queue
 

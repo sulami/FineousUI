@@ -17,6 +17,10 @@ local CL = AL:GetLocale("Big Wigs: Common")
 local customBossOptions = {}
 local pName = UnitName("player")
 
+-- Try to grab unhooked copies of critical loading funcs (hooked by some crappy addons)
+local GetCurrentMapAreaID = BigWigsLoader.GetCurrentMapAreaID
+local SetMapToCurrentZone = BigWigsLoader.SetMapToCurrentZone
+
 -------------------------------------------------------------------------------
 -- Target monitoring
 --
@@ -61,7 +65,7 @@ local function targetCheck(unit)
 end
 local function chatMsgMonsterYell(event, msg)
 	for yell, mod in pairs(enableyells) do
-		if yell == msg or msg:find(yell) then
+		if yell == msg or msg:find(yell, nil, true) or msg:find(yell) then -- Preserve backwards compat by leaving in the 3rd check
 			targetSeen("player", mod)
 		end
 	end

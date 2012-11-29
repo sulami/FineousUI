@@ -357,7 +357,7 @@ local newAddMsg = {}
 
 	local rplc = {
 		"[GEN]", --General
-		"[TR]", --Trade
+		"[T]", --Trade
 		"[WD]", --WorldDefense
 		"[LD]", --LocalDefense
 		"[LFG]", --LookingForGroup
@@ -382,12 +382,12 @@ local newAddMsg = {}
 		"%[%d0?%. LocalDefense.-%]",
 		"%[%d0?%. LookingForGroup%]",
 		"%[%d0?%. GuildRecruitment.-%]",
-		gsub(CHAT_BATTLEGROUND_GET, ".*%[(.*)%].*", "%%[%1%%]"),
-		gsub(CHAT_BATTLEGROUND_LEADER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
+		gsub((CHAT_BATTLEGROUND_GET or "[battleground]"), ".*%[(.*)%].*", "%%[%1%%]"),
+		gsub((CHAT_BATTLEGROUND_LEADER_GET or "[battleground leader]"), ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_GUILD_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_PARTY_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_PARTY_LEADER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
-		gsub(CHAT_PARTY_GUIDE_GET, ".*%[(.*)%].*", "%%[%1%%]"),
+		gsub((CHAT_PARTY_GUIDE_GET or "[party guide]"), ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_OFFICER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_RAID_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_RAID_LEADER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
@@ -422,8 +422,15 @@ local newAddMsg = {}
 		chn[2] = "%[%d0?%. 交易.-%]"
 		chn[3] = "%[%d0?%. 世界防務%]"
 		chn[4] = "%[%d0?%. 本地防務.-%]"
-		chn[5] = "%[%d0?%. 組隊%]"
+		chn[5] = "%[%d0?%. 尋求組隊%]"
 		chn[6] = "%[%d0?%. 公會招募.-%]"
+	elseif L == "koKR" then --Korean
+		chn[1] = "%[%d0?%. 일반.-%]"
+		chn[2] = "%[%d0?%. 거래.-%]"
+		chn[3] = "%[%d0?%. 광역수비%]"
+		chn[4] = "%[%d0?%. 지역수비.-%]"
+		chn[5] = "%[%d0?%. 파티찾기%]"
+		chn[6] = "%[%d0?%. 길드찾기.-%]"
 	end
 
 	local AddMessage = function(frame, text, ...)

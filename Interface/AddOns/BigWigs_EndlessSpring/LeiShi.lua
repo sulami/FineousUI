@@ -20,9 +20,6 @@ local nextProtectWarning = 85
 
 local L = mod:NewLocale("enUS", true)
 if L then
-	L.engage_trigger = "Wh-what are you doing here?! G-go away!"
-	L.win_trigger = "I...ah...oh! Did I...? Was I...? It was so cloudy."
-
 	L.hp_to_go = "%d%% to go"
 	L.end_hide = "Hiding ended"
 
@@ -45,29 +42,29 @@ function mod:GetOptions()
 	}
 end
 
+function mod:VerifyEnable(unit)
+	local hp = UnitHealth(unit) / UnitHealthMax(unit) * 100
+	if hp > 8 and UnitCanAttack("player", unit) then
+		return true
+	end
+end
+
 function mod:OnBossEnable()
 	self:Log("SPELL_AURA_APPLIED", "GetAwayApplied", 123461)
 	self:Log("SPELL_AURA_REMOVED", "GetAwayRemoved", 123461)
 	self:Log("SPELL_AURA_APPLIED", "Protect", 123250)
 	self:Log("SPELL_CAST_START", "Hide", 123244)
 
-	self:Yell("Engage", L["engage_trigger"])
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "EngageCheck") -- use this to detect him coming out of hide
-	self:RegisterEvent("PLAYER_REGEN_ENABLED", "CheckForWipe")
-	self:RegisterEvent("UNIT_HEALTH_FREQUENT")
-
-	Self:Yell("Win", L["win_trigger"])
+	self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 end
 
 function mod:OnEngage(diff)
 	hiding = false
 	nextProtectWarning = 85
 	self:Bar("special", "~"..L["special"], 33, 123263)
+	self:RegisterEvent("UNIT_HEALTH_FREQUENT")
 	self:Berserk(480)
-end
-
-function mod:VerifyEnable(unit)
-	return UnitCanAttack("player", unit)
 end
 
 --------------------------------------------------------------------------------
@@ -77,6 +74,7 @@ end
 -- NOTE: Any timer related to "special" is inaccurate, still need to figure out how they work
 
 function mod:EngageCheck()
+	self:CheckBossStatus()
 	if hiding then
 		hiding = false
 		self:Bar("special", "~"..L["special"], 20, 123263)
@@ -131,5 +129,11 @@ end
 
 function mod:Protect(_, spellId, _, _, spellName)
 	self:Message(spellId, spellName, "Important", spellId, "Alarm")
+end
+
+function mod:UNIT_SPELLCAST_SUCCEEDED(_, unitId, _, _, _, spellId)
+	if spellId == 127524 and unitId == "boss1" then -- Transform
+		self:Win()
+	end
 end
 

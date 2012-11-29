@@ -94,6 +94,12 @@ Author: Crushbeers
 *      MISC      *
 ******************
 
+/pp motion #
+--  Set the nameplate motion
+--  0 : Overlap
+--  1 : Stacked
+--  2 : Spread
+
 /pp low
 -- Toggle the Low-Health Warning (on/off)
 /pp low ##

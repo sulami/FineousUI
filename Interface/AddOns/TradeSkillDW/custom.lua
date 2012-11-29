@@ -53,3 +53,6 @@ TradeSkillDW_AllowSecondarySkills = {
 	[794] = true, --Archaeology
 }
 
+TradeSkillDW_CustomSkills = {
+	[960] = "Runeforging",
+}

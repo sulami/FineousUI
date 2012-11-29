@@ -2,6 +2,7 @@
 	OmniCC configuration interface localization - Portuguese
 --]]
 
+if GetLocale() ~= 'ptBR' then return end
 local L = OMNICC_LOCALS
 
 L.GeneralSettings = "Display"
@@ -79,8 +80,6 @@ L.UseAniUpdaterTip =
 [[Otimiza o desempenho do processador, mas pode
 causar falhas em alguns sistemas.
 Desativar esta opção irá resolver o problema.]]
-
-L.UseAniUpdaterSmallTip = "|cffff2020Changing requires game reload.|r"
 
 L.MinDurationTip =
 [[Determina o tempo mínimo que um cooldown

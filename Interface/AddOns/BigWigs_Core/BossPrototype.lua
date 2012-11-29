@@ -12,7 +12,7 @@ local type = type
 local core = BigWigs
 local C = core.C
 local difficulty = 3
-local offDispel, defDispel = "", ""
+local UpdateDispelStatus = nil
 
 -------------------------------------------------------------------------------
 -- Debug
@@ -72,31 +72,7 @@ function boss:OnEnable()
 	difficulty = diff
 
 	-- Update Dispel Status
-	offDispel, defDispel = "", ""
-	if IsSpellKnown(19801) or IsSpellKnown(2908) or IsSpellKnown(5938) then
-		-- Tranq (Hunter), Soothe (Druid), Shiv (Rogue)
-		offDispel = offDispel .. "enrage,"
-	end
-	if IsSpellKnown(19801) or IsSpellKnown(32375) or IsSpellKnown(528) or IsSpellKnown(370) or IsSpellKnown(30449) or IsSpellKnown(110707) or IsSpellKnown(110802) then
-		-- Tranq (Hunter), Mass Dispel (Priest), Dispel Magic (Priest), Purge (Shaman), Spellsteal (Mage), Mass Dispel (Symbiosis), Purge (Symbiosis)
-		offDispel = offDispel .. "magic,"
-	end
-	if IsSpellKnown(527) or IsSpellKnown(77130) or (IsSpellKnown(115450) and IsSpellKnown(115451)) or (IsSpellKnown(4987) and IsSpellKnown(53551)) or IsSpellKnown(88423) then
-		-- Purify (Priest), Purify Spirit (Shaman), Detox (Monk-Modifier), Cleanse (Paladin-Modifier), Nature's Cure (Resto Druid)
-		defDispel = defDispel .. "magic,"
-	end
-	if IsSpellKnown(527) or IsSpellKnown(115450) or IsSpellKnown(4987) then
-		-- Purify (Priest), Detox (Monk), Cleanse (Paladin)
-		defDispel = defDispel .. "disease,"
-	end
-	if IsSpellKnown(88423) or IsSpellKnown(115450) or IsSpellKnown(4987) or IsSpellKnown(2782) then
-		-- Nature's Cure (Resto Druid), Detox (Monk), Cleanse (Paladin), Remove Corruption (Druid)
-		defDispel = defDispel .. "poison,"
-	end
-	if IsSpellKnown(88423) or IsSpellKnown(2782) or IsSpellKnown(77130) or IsSpellKnown(475) then
-		-- Nature's Cure (Resto Druid), Remove Corruption (Druid), Purify Spirit (Shaman), Remove Curse (Mage)
-		defDispel = defDispel .. "curse,"
-	end
+	UpdateDispelStatus()
 end
 function boss:OnDisable()
 	if debug then dbg(self, "OnDisable()") end
@@ -144,7 +120,7 @@ do
 			self[yellMap[self][msg]](self, msg, ...)
 		else
 			for yell, func in pairs(yellMap[self]) do
-				if msg:find(yell) then
+				if msg:find(yell, nil, true) or msg:find(yell) then -- Preserve backwards compat by leaving in the 2nd check
 					self[func](self, msg, ...)
 				end
 			end
@@ -155,7 +131,7 @@ do
 			self[emoteMap[self][msg]](self, msg, ...)
 		else
 			for emote, func in pairs(emoteMap[self]) do
-				if msg:find(emote) then
+				if msg:find(emote, nil, true) or msg:find(emote) then -- Preserve backwards compat by leaving in the 2nd check
 					self[func](self, msg, ...)
 				end
 			end
@@ -352,31 +328,7 @@ do
 		end
 
 		-- Update Dispel Status
-		offDispel, defDispel = "", ""
-		if IsSpellKnown(19801) or IsSpellKnown(2908) or IsSpellKnown(5938) then
-			-- Tranq (Hunter), Soothe (Druid), Shiv (Rogue)
-			offDispel = offDispel .. "enrage,"
-		end
-		if IsSpellKnown(19801) or IsSpellKnown(32375) or IsSpellKnown(528) or IsSpellKnown(370) or IsSpellKnown(30449) or IsSpellKnown(110707) or IsSpellKnown(110802) then
-			-- Tranq (Hunter), Mass Dispel (Priest), Dispel Magic (Priest), Purge (Shaman), Spellsteal (Mage), Mass Dispel (Symbiosis), Purge (Symbiosis)
-			offDispel = offDispel .. "magic,"
-		end
-		if IsSpellKnown(527) or IsSpellKnown(77130) or (IsSpellKnown(115450) and IsSpellKnown(115451)) or (IsSpellKnown(4987) and IsSpellKnown(53551)) or IsSpellKnown(88423) then
-			-- Purify (Priest), Purify Spirit (Shaman), Detox (Monk-Modifier), Cleanse (Paladin-Modifier), Nature's Cure (Resto Druid)
-			defDispel = defDispel .. "magic,"
-		end
-		if IsSpellKnown(527) or IsSpellKnown(115450) or IsSpellKnown(4987) then
-			-- Purify (Priest), Detox (Monk), Cleanse (Paladin)
-			defDispel = defDispel .. "disease,"
-		end
-		if IsSpellKnown(88423) or IsSpellKnown(115450) or IsSpellKnown(4987) or IsSpellKnown(2782) then
-			-- Nature's Cure (Resto Druid), Detox (Monk), Cleanse (Paladin), Remove Corruption (Druid)
-			defDispel = defDispel .. "poison,"
-		end
-		if IsSpellKnown(88423) or IsSpellKnown(2782) or IsSpellKnown(77130) or IsSpellKnown(475) then
-			-- Nature's Cure (Resto Druid), Remove Corruption (Druid), Purify Spirit (Shaman), Remove Curse (Mage)
-			defDispel = defDispel .. "curse,"
-		end
+		UpdateDispelStatus()
 	end
 
 	function boss:Win()
@@ -405,6 +357,7 @@ function boss:Heroic()
 end
 
 function boss:GetCID(guid)
+	if not guid then return -1 end
 	local creatureId = tonumber(guid:sub(7, 10), 16)
 	return creatureId
 end
@@ -452,14 +405,44 @@ function boss:Damager()
 end
 ]]
 
-function boss:Dispeller(dispelType, isOffensive)
-	if isOffensive then
-		if offDispel:find(dispelType, nil, true) then
-			return true
+do
+	local offDispel, defDispel = "", ""
+	function UpdateDispelStatus()
+		offDispel, defDispel = "", ""
+		if IsSpellKnown(19801) or IsSpellKnown(2908) or IsSpellKnown(5938) then
+			-- Tranq (Hunter), Soothe (Druid), Shiv (Rogue)
+			offDispel = offDispel .. "enrage,"
 		end
-	else
-		if defDispel:find(dispelType, nil, true) then
-			return true
+		if IsSpellKnown(19801) or IsSpellKnown(32375) or IsSpellKnown(528) or IsSpellKnown(370) or IsSpellKnown(30449) or IsSpellKnown(110707) or IsSpellKnown(110802) then
+			-- Tranq (Hunter), Mass Dispel (Priest), Dispel Magic (Priest), Purge (Shaman), Spellsteal (Mage), Mass Dispel (Symbiosis), Purge (Symbiosis)
+			offDispel = offDispel .. "magic,"
+		end
+		if IsSpellKnown(527) or IsSpellKnown(77130) or (IsSpellKnown(115450) and IsSpellKnown(115451)) or (IsSpellKnown(4987) and IsSpellKnown(53551)) or IsSpellKnown(88423) then
+			-- Purify (Priest), Purify Spirit (Shaman), Detox (Monk-Modifier), Cleanse (Paladin-Modifier), Nature's Cure (Resto Druid)
+			defDispel = defDispel .. "magic,"
+		end
+		if IsSpellKnown(527) or IsSpellKnown(115450) or IsSpellKnown(4987) then
+			-- Purify (Priest), Detox (Monk), Cleanse (Paladin)
+			defDispel = defDispel .. "disease,"
+		end
+		if IsSpellKnown(88423) or IsSpellKnown(115450) or IsSpellKnown(4987) or IsSpellKnown(2782) then
+			-- Nature's Cure (Resto Druid), Detox (Monk), Cleanse (Paladin), Remove Corruption (Druid)
+			defDispel = defDispel .. "poison,"
+		end
+		if IsSpellKnown(88423) or IsSpellKnown(2782) or IsSpellKnown(77130) or IsSpellKnown(475) then
+			-- Nature's Cure (Resto Druid), Remove Corruption (Druid), Purify Spirit (Shaman), Remove Curse (Mage)
+			defDispel = defDispel .. "curse,"
+		end
+	end
+	function boss:Dispeller(dispelType, isOffensive)
+		if isOffensive then
+			if offDispel:find(dispelType, nil, true) then
+				return true
+			end
+		else
+			if defDispel:find(dispelType, nil, true) then
+				return true
+			end
 		end
 	end
 end
