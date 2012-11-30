@@ -15,7 +15,7 @@
 -- @name LibCandyBar-3.0
 
 local major = "LibCandyBar-3.0"
-local minor = tonumber(("$Rev: 43 $"):match("(%d+)")) or 1
+local minor = tonumber(("$Rev: 45 $"):match("(%d+)")) or 1
 if not LibStub then error("LibCandyBar-3.0 requires LibStub.") end
 local cbh = LibStub:GetLibrary("CallbackHandler-1.0")
 if not cbh then error("LibCandyBar-3.0 requires CallbackHandler-1.0") end
@@ -91,7 +91,7 @@ local function resetBar(bar)
 	bar.candyBarLabel:SetJustifyV("MIDDLE")
 	bar.candyBarLabel:SetFont(_fontName, _fontSize)
 	bar.candyBarLabel:SetFontObject("GameFontHighlightSmallOutline")
-	
+
 	bar.candyBarDuration:SetTextColor(1,1,1,1)
 	bar.candyBarDuration:SetJustifyH("CENTER")
 	bar.candyBarDuration:SetJustifyV("MIDDLE")
@@ -124,6 +124,7 @@ end
 
 local function restyleBar(self)
 	if not self.running then return end
+	-- In the past we used a :GetTexture check here, but as of WoW v5 it randomly returns nil, so use our own variable.
 	if self.candyBarIconFrame.icon then
 		self.candyBarBar:SetPoint("TOPLEFT", self.candyBarIconFrame, "TOPRIGHT")
 		self.candyBarBar:SetPoint("BOTTOMLEFT", self.candyBarIconFrame, "BOTTOMRIGHT")

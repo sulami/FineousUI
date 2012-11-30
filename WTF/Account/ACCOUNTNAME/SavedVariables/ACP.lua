@@ -15,8 +15,8 @@ ACP_Data = {
 		["Forte"] = true,
 		["AtlasLoot"] = true,
 		["ShadowedUnitFrames"] = true,
-		["TidyPlates"] = true,
 		["OmniCC"] = true,
+		["TidyPlates"] = true,
 		["RaidAchievement"] = true,
 	},
 	["ProtectedAddons"] = {

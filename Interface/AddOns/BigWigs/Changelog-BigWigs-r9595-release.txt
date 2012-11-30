@@ -1,9 +1,66 @@
 ------------------------------------------------------------------------
-r9585 | funkydude | 2012-11-27 23:43:36 +0000 (Tue, 27 Nov 2012) | 1 line
+r9595 | funkydude | 2012-11-30 02:12:38 +0000 (Fri, 30 Nov 2012) | 1 line
 Changed paths:
-   A /tags/r9585-release (from /trunk:9584)
+   A /tags/r9595-release (from /trunk:9594)
 
-Tagging as r9585-release
+Tagging as r9595-release
+------------------------------------------------------------------------
+r9594 | funkydude | 2012-11-30 02:10:05 +0000 (Fri, 30 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+
+bump version
+------------------------------------------------------------------------
+r9593 | funkydude | 2012-11-30 00:24:39 +0000 (Fri, 30 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Mogushan/TheStoneGuard.lua
+
+TheStoneGuard: remove cobalt mine target scanning, Blizz nerfed it so the boss no longer targets the person it's casting on.
+------------------------------------------------------------------------
+r9592 | Maat | 2012-11-30 00:12:00 +0000 (Fri, 30 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Zorlok.lua
+
+fix danceTracker ?
+------------------------------------------------------------------------
+r9591 | jongt23 | 2012-11-29 22:15:24 +0000 (Thu, 29 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Locales/esES.lua
+
+esES update
+------------------------------------------------------------------------
+r9590 | funkydude | 2012-11-29 06:22:36 +0000 (Thu, 29 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Mogushan/TheSpiritKings.lua
+
+TheSpiritKings: various fixes
+------------------------------------------------------------------------
+r9589 | Wetxius | 2012-11-28 20:39:55 +0000 (Wed, 28 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/Mogushan/TheStoneGuard.lua
+
+Berserk in heroic - 420s.
+------------------------------------------------------------------------
+r9588 | funkydude | 2012-11-28 20:32:32 +0000 (Wed, 28 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/HeartOfFear/Meljarak.lua
+
+Meljarak: don't flashshake for whirling on LFR
+------------------------------------------------------------------------
+r9587 | nebula169 | 2012-11-28 13:14:01 +0000 (Wed, 28 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/EndlessSpring/LeiShi.lua
+
+LeiShi: 10min LFR berserk
+------------------------------------------------------------------------
+r9586 | funkydude | 2012-11-28 03:17:14 +0000 (Wed, 28 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+   M /trunk/Core/Core.lua
+   M /trunk/Loader.lua
+   M /trunk/Plugins/Tips.lua
+
+First pass at support for INSTANCE_CHAT, hopefully this works out as I can't test.
 ------------------------------------------------------------------------
 r9584 | funkydude | 2012-11-27 23:37:40 +0000 (Tue, 27 Nov 2012) | 1 line
 Changed paths:
@@ -1736,78 +1793,4 @@ Changed paths:
    M /trunk/Mogushan/Feng.lua
 
 lets not display barrier cooldown on LFR
-------------------------------------------------------------------------
-r9338 | Maat | 2012-10-29 12:48:19 +0000 (Mon, 29 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-try to fulfill the ticket 502 request
-------------------------------------------------------------------------
-r9337 | funkydude | 2012-10-28 22:07:27 +0000 (Sun, 28 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Garajal.lua
-
-Garajal: make attack bar hc only
-------------------------------------------------------------------------
-r9336 | funkydude | 2012-10-28 21:36:51 +0000 (Sun, 28 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: add a bar for the first (sometimes) fists and fix first epicenter
-------------------------------------------------------------------------
-r9335 | funkydude | 2012-10-28 20:48:08 +0000 (Sun, 28 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: sound on 2 tank stacks
-------------------------------------------------------------------------
-r9334 | funkydude | 2012-10-28 20:29:05 +0000 (Sun, 28 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Feng.lua
-
-Feng: fix stopping lightning fists after a new phase
-------------------------------------------------------------------------
-r9333 | Maat | 2012-10-28 16:36:28 +0000 (Sun, 28 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Elegon.lua
-
-fix overcharge stack announce
-------------------------------------------------------------------------
-r9332 | funkydude | 2012-10-28 00:44:27 +0000 (Sun, 28 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-TheSpiritKings: cleanups
-------------------------------------------------------------------------
-r9331 | funkydude | 2012-10-27 22:09:15 +0000 (Sat, 27 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/Locales/deDE.lua
-   M /trunk/Mogushan/Locales/esES.lua
-   M /trunk/Mogushan/Locales/frFR.lua
-   M /trunk/Mogushan/Locales/itIT.lua
-   M /trunk/Mogushan/Locales/ptBR.lua
-   M /trunk/Mogushan/Locales/ruRU.lua
-   M /trunk/Mogushan/Locales/zhCN.lua
-   M /trunk/Mogushan/Locales/zhTW.lua
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: option name tweak
-------------------------------------------------------------------------
-r9330 | funkydude | 2012-10-27 21:50:26 +0000 (Sat, 27 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: module cleanups
-------------------------------------------------------------------------
-r9329 | funkydude | 2012-10-27 15:49:32 +0000 (Sat, 27 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/TheSpiritKings.lua
-
-TheSpiritKings: few more cowardice warnings, module cleanups
-------------------------------------------------------------------------
-r9328 | funkydude | 2012-10-26 12:45:08 +0000 (Fri, 26 Oct 2012) | 1 line
-Changed paths:
-   M /trunk/Mogushan/WillOfTheEmperor.lua
-
-WillOfTheEmperor: shave 2 sec off courage.
 ------------------------------------------------------------------------

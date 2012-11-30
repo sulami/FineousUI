@@ -17,39 +17,39 @@ TipTac_Config = {
 	["colorGuildByReaction"] = false,
 	["showBuffs"] = false,
 	["optionsBottom"] = 351.0000305175781,
-	["tipBorderColor"] = {
-		0.3019607843137255, -- [1]
-		0.3019607843137255, -- [2]
-		0.4, -- [3]
-		0, -- [4]
-	},
-	["anchorFrameUnitType"] = "mouse",
+	["barsCondenseValues"] = false,
+	["anchorFrameTipPoint"] = "BOTTOMLEFT",
+	["classification_worldboss"] = "%s|r (Boss) ",
+	["anchorFrameTipType"] = "mouse",
+	["classification_trivial"] = "~%s ",
+	["backdropInsets"] = 0,
+	["anchorWorldUnitPoint"] = "BOTTOMLEFT",
+	["anchorWorldTipPoint"] = "BOTTOMLEFT",
+	["manaBar"] = false,
+	["showTalents"] = false,
+	["colorNameByClass"] = true,
+	["classification_rareelite"] = "+%s|r (Rare) ",
+	["colSameGuild"] = "|cff0cff03",
+	["anchorWorldUnitType"] = "mouse",
+	["fadeTime"] = 0.25,
+	["targetYouText"] = "<<YOU>>",
+	["left"] = 1448,
+	["top"] = 118.0001602172852,
+	["classColoredBorder"] = true,
+	["gradientTip"] = false,
+	["classification_rare"] = "%s|r (Rare) ",
+	["barTexture"] = "Interface\\Addons\\Skada\\statusbar\\normTex",
 	["tipColor"] = {
 		0, -- [1]
 		0, -- [2]
 		0, -- [3]
 		0.75, -- [4]
 	},
-	["anchorFrameTipType"] = "mouse",
-	["classification_trivial"] = "~%s ",
-	["classification_worldboss"] = "%s|r (Boss) ",
-	["barTexture"] = "Interface\\Addons\\Skada\\statusbar\\normTex",
-	["classification_rare"] = "%s|r (Rare) ",
-	["colorNameByClass"] = true,
-	["anchorWorldTipPoint"] = "BOTTOMLEFT",
-	["manaBar"] = false,
-	["colSameGuild"] = "|cff0cff03",
-	["classColoredBorder"] = true,
-	["anchorWorldUnitType"] = "mouse",
-	["fadeTime"] = 0.25,
-	["targetYouText"] = "<<YOU>>",
-	["left"] = 1448,
-	["top"] = 118.0001602172852,
-	["classification_rareelite"] = "+%s|r (Rare) ",
-	["gradientTip"] = false,
-	["showTalents"] = false,
-	["anchorWorldUnitPoint"] = "BOTTOMLEFT",
-	["backdropInsets"] = 0,
-	["anchorFrameTipPoint"] = "BOTTOMLEFT",
-	["barsCondenseValues"] = false,
+	["anchorFrameUnitType"] = "mouse",
+	["tipBorderColor"] = {
+		0.3019607843137255, -- [1]
+		0.3019607843137255, -- [2]
+		0.4, -- [3]
+		0, -- [4]
+	},
 }

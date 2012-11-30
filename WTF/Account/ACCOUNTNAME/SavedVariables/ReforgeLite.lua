@@ -4,11 +4,7 @@ ReforgeLiteDB = {
 	["updateTooltip"] = true,
 	["windowY"] = 880.0000470504208,
 	["reforgeCheat"] = 5,
-	["activeWindowTitle"] = {
-		0.8, -- [1]
-		0, -- [2]
-		0, -- [3]
-	},
+	["openOnReforge"] = true,
 	["profiles"] = {
 		["Sulami - Stormscale"] = {
 			["caps"] = {
@@ -36,11 +32,7 @@ ReforgeLiteDB = {
 				}, -- [2]
 			},
 			["targetLevel"] = 3,
-			["customMethodPresets"] = {
-			},
 			["buffs"] = {
-			},
-			["itemsLocked"] = {
 			},
 			["weights"] = {
 				0, -- [1]
@@ -51,6 +43,10 @@ ReforgeLiteDB = {
 				0, -- [6]
 				0, -- [7]
 				0, -- [8]
+			},
+			["itemsLocked"] = {
+			},
+			["customMethodPresets"] = {
 			},
 		},
 		["Sulamy - Stormscale"] = {
@@ -79,8 +75,6 @@ ReforgeLiteDB = {
 				}, -- [2]
 			},
 			["targetLevel"] = 3,
-			["customMethodPresets"] = {
-			},
 			["weights"] = {
 				0, -- [1]
 				0, -- [2]
@@ -91,9 +85,11 @@ ReforgeLiteDB = {
 				0, -- [7]
 				0, -- [8]
 			},
+			["buffs"] = {
+			},
 			["itemsLocked"] = {
 			},
-			["buffs"] = {
+			["customMethodPresets"] = {
 			},
 		},
 		["Fineous - Stormscale"] = {
@@ -126,70 +122,70 @@ ReforgeLiteDB = {
 					{
 						["dst"] = 4,
 						["src"] = 6,
-						["amount"] = 270,
 						["reforge"] = 39,
+						["amount"] = 270,
 					}, -- [1]
 					{
 						["dst"] = 6,
 						["src"] = 4,
-						["amount"] = 185,
 						["reforge"] = 26,
+						["amount"] = 185,
 					}, -- [2]
 					{
 						["dst"] = 6,
 						["src"] = 4,
-						["amount"] = 209,
 						["reforge"] = 26,
+						["amount"] = 209,
 					}, -- [3]
 					{
 						["dst"] = 4,
 						["src"] = 5,
-						["amount"] = 166,
 						["reforge"] = 32,
+						["amount"] = 166,
 					}, -- [4]
 					{
 						["dst"] = 4,
 						["src"] = 5,
-						["amount"] = 274,
 						["reforge"] = 32,
+						["amount"] = 274,
 					}, -- [5]
 					{
 						["dst"] = 8,
 						["src"] = 4,
-						["amount"] = 177,
 						["reforge"] = 28,
+						["amount"] = 177,
 					}, -- [6]
 					{
 						["dst"] = 8,
 						["src"] = 6,
-						["amount"] = 260,
 						["reforge"] = 42,
+						["amount"] = 260,
 					}, -- [7]
 					{
 						["dst"] = 7,
 						["src"] = 8,
-						["amount"] = 276,
 						["reforge"] = 56,
+						["amount"] = 276,
 					}, -- [8]
 					{
 						["dst"] = 4,
 						["src"] = 6,
-						["amount"] = 310,
 						["reforge"] = 39,
+						["amount"] = 310,
 					}, -- [9]
 					{
 					}, -- [10]
 					{
 						["dst"] = 8,
 						["src"] = 6,
-						["amount"] = 166,
 						["reforge"] = 42,
+						["amount"] = 166,
 					}, -- [11]
 					{
 						["dst"] = 8,
 						["src"] = 4,
-						["amount"] = 172,
 						["reforge"] = 28,
+						["amount"] = 172,
 					}, -- [12]
 					{
 					}, -- [13]
@@ -198,8 +194,8 @@ ReforgeLiteDB = {
 					{
 						["dst"] = 6,
 						["src"] = 5,
-						["amount"] = 106,
 						["reforge"] = 33,
+						["amount"] = 106,
 					}, -- [15]
 					{
 					}, -- [16]
@@ -215,7 +211,10 @@ ReforgeLiteDB = {
 					6605, -- [8]
 				},
 			},
-			["targetLevel"] = 3,
+			["customMethodPresets"] = {
+			},
+			["buffs"] = {
+			},
 			["weights"] = {
 				0, -- [1]
 				0, -- [2]
@@ -226,23 +225,16 @@ ReforgeLiteDB = {
 				0, -- [7]
 				272, -- [8]
 			},
-			["buffs"] = {
-			},
 			["itemsLocked"] = {
 			},
-			["customMethodPresets"] = {
-			},
+			["targetLevel"] = 3,
 		},
 	},
 	["windowWidth"] = 800,
 	["itemSize"] = 24,
-	["openOnReforge"] = true,
+	["methodWindowY"] = 867.5001639584066,
 	["methodWindowX"] = 1035.000572196033,
-	["inactiveWindowTitle"] = {
-		0.5, -- [1]
-		0.5, -- [2]
-		0.5, -- [3]
-	},
+	["windowX"] = 1040.000469410012,
 	["customPresets"] = {
 		["affli_custom"] = {
 			["caps"] = {
@@ -281,6 +273,14 @@ ReforgeLiteDB = {
 			},
 		},
 	},
-	["windowX"] = 1040.000469410012,
-	["methodWindowY"] = 867.5001639584066,
+	["inactiveWindowTitle"] = {
+		0.5, -- [1]
+		0.5, -- [2]
+		0.5, -- [3]
+	},
+	["activeWindowTitle"] = {
+		0.8, -- [1]
+		0, -- [2]
+		0, -- [3]
+	},
 }

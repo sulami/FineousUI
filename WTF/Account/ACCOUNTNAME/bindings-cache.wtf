@@ -74,7 +74,7 @@ bind SHIFT-M TOGGLEWORLDMAP
 bind SHIFT-O TOGGLESOCIAL
 bind H MULTIACTIONBAR2BUTTON1
 bind N CLICK DominosActionButton4:LeftButton
-bind U CLICK BT4Button51:LeftButton
+bind U MULTIACTIONBAR3BUTTON5
 bind K CLICK BT4Button56:LeftButton
 bind O CLICK BT4Button57:LeftButton
 bind L CLICK DominosActionButton2:LeftButton
