@@ -2,7 +2,7 @@
 OmniCC4Config = {
 	["groups"] = {
 	},
-	["version"] = "5.1.1",
+	["version"] = "5.1.2",
 	["groupSettings"] = {
 		["base"] = {
 			["enabled"] = true,

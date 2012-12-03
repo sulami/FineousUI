@@ -6657,6 +6657,7 @@ AUCTIONATOR_TOONS = {
 	},
 	["Fineous"] = {
 		["firstSeen"] = 1349089851,
+		["guid"] = "0x02000000052BC482",
 		["firstVersion"] = "3.0.5",
 	},
 	["Sulamy"] = {
