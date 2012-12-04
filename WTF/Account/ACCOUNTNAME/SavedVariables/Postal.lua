@@ -1,28 +1,5 @@
 
 Postal3DB = {
-	["profileKeys"] = {
-		["Sulamy - Stormscale"] = "FineousUI",
-		["Scripe - Nethersturm"] = "Scripe - Nethersturm",
-		["Smashbot - Area 52"] = "Smashbot - Area 52",
-		["Thanata - Area 52"] = "Thanata - Area 52",
-		["Darakka - Area 52"] = "Darakka - Area 52",
-		["Balneator - Laughing Skull"] = "Balneator - Laughing Skull",
-		["Fineous - Stormscale"] = "FineousUI",
-		["Scripe - Area 52"] = "Scripe - Area 52",
-		["Linon - Area 52"] = "Linon - Area 52",
-		["Truffallo - Blackrock"] = "Truffallo - Blackrock",
-		["Saizew - Area 52"] = "Saizew - Area 52",
-		["Tluffallo - Blackrock"] = "Tluffallo - Blackrock",
-		["Sarutori - Alleria"] = "Sarutori - Alleria",
-		["Sulami - Area 52"] = "Sulami - Area 52",
-		["Enuresia - Area 52"] = "Enuresia - Area 52",
-		["Balneator - Stormscale"] = "Balneator - Stormscale",
-		["Sulami - Laughing Skull"] = "Sulami - Laughing Skull",
-		["Oompaloom - Stormscale"] = "Oompaloom - Stormscale",
-		["Dumpfy - Alleria"] = "Dumpfy - Alleria",
-		["Sulami - Stormscale"] = "FineousUI",
-		["Suilami - Blackrock"] = "Suilami - Blackrock",
-	},
 	["global"] = {
 		["BlackBook"] = {
 			["alts"] = {
@@ -50,6 +27,29 @@ Postal3DB = {
 			},
 		},
 	},
+	["profileKeys"] = {
+		["Sulamy - Stormscale"] = "FineousUI",
+		["Scripe - Nethersturm"] = "Scripe - Nethersturm",
+		["Smashbot - Area 52"] = "Smashbot - Area 52",
+		["Thanata - Area 52"] = "Thanata - Area 52",
+		["Darakka - Area 52"] = "Darakka - Area 52",
+		["Balneator - Laughing Skull"] = "Balneator - Laughing Skull",
+		["Fineous - Stormscale"] = "FineousUI",
+		["Scripe - Area 52"] = "Scripe - Area 52",
+		["Linon - Area 52"] = "Linon - Area 52",
+		["Truffallo - Blackrock"] = "Truffallo - Blackrock",
+		["Saizew - Area 52"] = "Saizew - Area 52",
+		["Tluffallo - Blackrock"] = "Tluffallo - Blackrock",
+		["Sarutori - Alleria"] = "Sarutori - Alleria",
+		["Sulami - Area 52"] = "Sulami - Area 52",
+		["Enuresia - Area 52"] = "Enuresia - Area 52",
+		["Sulami - Stormscale"] = "FineousUI",
+		["Sulami - Laughing Skull"] = "Sulami - Laughing Skull",
+		["Oompaloom - Stormscale"] = "Oompaloom - Stormscale",
+		["Dumpfy - Alleria"] = "Dumpfy - Alleria",
+		["Balneator - Stormscale"] = "Balneator - Stormscale",
+		["Suilami - Blackrock"] = "Suilami - Blackrock",
+	},
 	["profiles"] = {
 		["Sulamy - Stormscale"] = {
 		},
@@ -68,6 +68,10 @@ Postal3DB = {
 		},
 		["Darakka - Area 52"] = {
 		},
+		["Finous"] = {
+		},
+		["Balneator - Laughing Skull"] = {
+		},
 		["Fineous - Stormscale"] = {
 			["BlackBook"] = {
 				["recent"] = {
@@ -75,10 +79,6 @@ Postal3DB = {
 					"Scripè|Stormscale|Horde", -- [2]
 				},
 			},
-		},
-		["Balneator - Laughing Skull"] = {
-		},
-		["Finous"] = {
 		},
 		["Scripe - Area 52"] = {
 			["BlackBook"] = {
@@ -97,7 +97,7 @@ Postal3DB = {
 		},
 		["Saizew - Area 52"] = {
 		},
-		["Balneator - Stormscale"] = {
+		["Sarutori - Alleria"] = {
 		},
 		["Tluffallo - Blackrock"] = {
 		},
@@ -128,7 +128,7 @@ Postal3DB = {
 		},
 		["Dumpfy - Alleria"] = {
 		},
-		["Sarutori - Alleria"] = {
+		["Balneator - Stormscale"] = {
 		},
 		["Suilami - Blackrock"] = {
 		},

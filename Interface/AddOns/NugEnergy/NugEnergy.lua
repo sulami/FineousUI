@@ -1,10 +1,10 @@
-local tex = [[Interface\AddOns\ShadowedUnitFrames\media\textures\Minimalist.tga]]
+local tex = [[Interface\AddOns\NugEnergy\Flat.tga]]
 local width = 240
 local height = 15
-local font = [[Interface\AddOns\NugEnergy\Emblem.ttf]]
+local font = [[Interface\AddOns\NugEnergy\Myriad Condensed Web.ttf]]
 local fontSize = 10
-local color = { 0.9, 0.1, 0.1 }
-local color2 = { .9, 0.1, 0.4 } -- for dispatch and meta
+local color = { 0.5, 0.5, 0.5 }
+local color2 = { 0.5, 0.5, 0.5 } -- for dispatch and meta
 local color3 = { 131/255, 0.2, 0.2 } --max color
 local textcolor = {1,1,1}
 local textoutline = false
@@ -189,7 +189,7 @@ function NugEnergy.Initialize(self)
                 self.bg:SetVertexColor(color2[1]*.5,color2[2]*.5,color2[3]*.5)
                 end
             else
-                ForcedToShow = nil
+                ForcedToShow = true
                 if not onlyText then
                 self:SetStatusBarColor(unpack(color))
                 self.bg:SetVertexColor(color[1]*.5,color[2]*.5,color[3]*.5)
@@ -493,7 +493,7 @@ function NugEnergy.SlashCmd(msg)
     end
     if k == "lock" then
         NugEnergy:EnableMouse(false)
-        ForcedToShow = nil
+        ForcedToShow = true
         NugEnergy:UPDATE_STEALTH()
     end
     if k == "markadd" then

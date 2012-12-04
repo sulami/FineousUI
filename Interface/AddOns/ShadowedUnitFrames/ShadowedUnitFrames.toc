@@ -2,10 +2,10 @@
 ## Title: Shadowed Unit Frames
 ## Notes: Now with 90% more shadows than the leading competitors
 ## Author: Shadowed
-## Version: v3.7.3
+## Version: v3.7.4
 ## SavedVariables: ShadowedUFDB
 ## OptionalDeps: Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, Clique
-## X-Curse-Packaged-Version: v3.7.3
+## X-Curse-Packaged-Version: v3.7.4
 ## X-Curse-Project-Name: Shadowed Unit Frames
 ## X-Curse-Project-ID: shadowed-unit-frames
 ## X-Curse-Repository-ID: wow/shadowed-unit-frames/mainline

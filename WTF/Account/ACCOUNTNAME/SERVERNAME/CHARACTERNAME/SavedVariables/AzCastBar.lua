@@ -2,15 +2,16 @@
 AzCastBar_Config = {
 	["Player"] = {
 		["vertTile"] = false,
-		["timeLabelAlign"] = "RIGHT",
+		["nameFontFace"] = "Fonts\\FRIZQT__.TTF",
+		["colNormal"] = {
+			0.4, -- [1]
+			0.6, -- [2]
+			0.8, -- [3]
+		},
 		["useSameBGTexture"] = false,
 		["showSpellTarget"] = false,
 		["left"] = 808,
-		["colInterrupt"] = {
-			1, -- [1]
-			0.75, -- [2]
-			0.5, -- [3]
-		},
+		["showTime"] = false,
 		["colSafezone"] = {
 			0.3, -- [1]
 			0.8, -- [2]
@@ -18,53 +19,56 @@ AzCastBar_Config = {
 			0.6, -- [4]
 		},
 		["showLabel"] = false,
-		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
-		},
-		["showTotalTime"] = false,
-		["timeFontFlags"] = "",
-		["height"] = 20,
-		["showTime"] = false,
-		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
-		["bottom"] = 358,
+		["nameLabelAlign"] = "LEFT",
 		["backdropIndent"] = -1,
-		["safeZone"] = false,
+		["timeFontFlags"] = "",
+		["horzTile"] = false,
+		["colBackdrop"] = {
+			0, -- [1]
+			0, -- [2]
+			0, -- [3]
+			1, -- [4]
+		},
+		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Flat.tga",
+		["showTotalTime"] = false,
+		["mergeTrade"] = false,
 		["iconAnchor"] = "NONE",
+		["safeZone"] = false,
 		["colBackGround"] = {
 			0.3, -- [1]
 			0.3, -- [2]
 			0.3, -- [3]
 			0.6, -- [4]
 		},
-		["reverseGrowth"] = false,
+		["showSpark"] = false,
 		["showRank"] = false,
 		["width"] = 304,
 		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
-		["showSpark"] = false,
+		["reverseGrowth"] = false,
 		["colFailed"] = {
 			1, -- [1]
 			0.5, -- [2]
 			0.5, -- [3]
 		},
-		["mergeTrade"] = false,
-		["horzTile"] = false,
+		["bottom"] = 358,
+		["height"] = 20,
 		["colNonInterruptable"] = {
 			0.78, -- [1]
 			0.82, -- [2]
 			0.86, -- [3]
 		},
-		["colBackdrop"] = {
-			0, -- [1]
-			0, -- [2]
-			0, -- [3]
-			1, -- [4]
+		["colInterrupt"] = {
+			1, -- [1]
+			0.75, -- [2]
+			0.5, -- [3]
 		},
-		["nameLabelAlign"] = "LEFT",
+		["timeLabelAlign"] = "RIGHT",
 	},
-	["Pet"] = {
-		["enabled"] = false,
+	["optionsLeft"] = 22.00057601928711,
+	["Focus"] = {
+		["useSameBGTexture"] = false,
+		["reverseGrowth"] = false,
+		["showSpark"] = false,
 		["colInterrupt"] = {
 			1, -- [1]
 			0.75, -- [2]
@@ -75,69 +79,42 @@ AzCastBar_Config = {
 			0.6, -- [2]
 			0.8, -- [3]
 		},
-		["bottom"] = 353,
-		["colFailed"] = {
-			1, -- [1]
-			0.5, -- [2]
-			0.5, -- [3]
+		["colBackdrop"] = {
+			0, -- [1]
+			0, -- [2]
+			0, -- [3]
+			1, -- [4]
 		},
-		["colNonInterruptable"] = {
-			0.78, -- [1]
-			0.82, -- [2]
-			0.86, -- [3]
-		},
-		["showRank"] = false,
-		["left"] = 835,
-	},
-	["Focus"] = {
-		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
+		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Flat.tga",
 		["backdropIndent"] = -1,
+		["bottom"] = 305,
 		["colBackGround"] = {
 			0.3, -- [1]
 			0.3, -- [2]
 			0.3, -- [3]
 			0.6, -- [4]
 		},
-		["bottom"] = 700.000244140625,
-		["useSameBGTexture"] = false,
-		["reverseGrowth"] = false,
-		["left"] = 1120.0009765625,
-		["width"] = 162,
-		["showSpark"] = false,
-		["colInterrupt"] = {
-			1, -- [1]
-			0.75, -- [2]
-			0.5, -- [3]
-		},
+		["showRank"] = false,
+		["width"] = 142,
 		["colFailed"] = {
 			1, -- [1]
 			0.5, -- [2]
 			0.5, -- [3]
 		},
-		["showRank"] = false,
-		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
-		},
+		["height"] = 15,
 		["colNonInterruptable"] = {
 			0.78, -- [1]
 			0.82, -- [2]
 			0.86, -- [3]
 		},
-		["colBackdrop"] = {
-			0, -- [1]
-			0, -- [2]
-			0, -- [3]
-			1, -- [4]
-		},
-		["texture"] = "Interface\\Addons\\Skada\\statusbar\\normTex",
+		["left"] = 1369,
+		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
 	},
 	["Target"] = {
 		["vertTile"] = false,
 		["useSameBGTexture"] = false,
 		["reverseGrowth"] = false,
-		["left"] = 810,
+		["left"] = 1120,
 		["colInterrupt"] = {
 			1, -- [1]
 			0.75, -- [2]
@@ -151,41 +128,41 @@ AzCastBar_Config = {
 			0, -- [3]
 			1, -- [4]
 		},
-		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
+		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Flat.tga",
+		["nameFontFace"] = "Fonts\\FRIZQT__.TTF",
 		["showTotalTime"] = false,
-		["timeLabelAlign"] = "RIGHT",
-		["bottom"] = 700.0001831054688,
+		["backdropIndent"] = -1,
+		["bottom"] = 305,
 		["colBackGround"] = {
 			0.3, -- [1]
 			0.3, -- [2]
 			0.3, -- [3]
 			0.6, -- [4]
 		},
-		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
-		},
+		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
 		["showRank"] = false,
-		["width"] = 300,
+		["width"] = 241,
 		["showSpark"] = false,
-		["horzTile"] = false,
+		["height"] = 15,
 		["colFailed"] = {
 			1, -- [1]
 			0.5, -- [2]
 			0.5, -- [3]
 		},
 		["showLabel"] = true,
-		["height"] = 18,
+		["horzTile"] = false,
 		["colNonInterruptable"] = {
 			0.78, -- [1]
 			0.82, -- [2]
 			0.86, -- [3]
 		},
-		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
-		["backdropIndent"] = -1,
+		["colNormal"] = {
+			0.4, -- [1]
+			0.6, -- [2]
+			0.8, -- [3]
+		},
+		["timeLabelAlign"] = "RIGHT",
 	},
-	["optionsBottom"] = 609.0000610351563,
 	["Mirror"] = {
 		["vertTile"] = false,
 		["useSameBGTexture"] = false,
@@ -203,7 +180,7 @@ AzCastBar_Config = {
 			0, -- [3]
 			1, -- [4]
 		},
-		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Minimalist.tga",
+		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Flat.tga",
 		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
 		["bottom"] = 382,
 		["colBackGround"] = {
@@ -213,12 +190,38 @@ AzCastBar_Config = {
 			0.6, -- [4]
 		},
 		["width"] = 160,
-		["iconAnchor"] = "NONE",
-		["showTotalTime"] = false,
-		["height"] = 20,
-		["backdropIndent"] = -1,
-		["horzTile"] = false,
 		["showSpark"] = false,
+		["height"] = 25,
+		["horzTile"] = false,
+		["backdropIndent"] = -1,
+		["showTotalTime"] = false,
+		["iconAnchor"] = "NONE",
 	},
-	["optionsLeft"] = 22.00057601928711,
+	["optionsBottom"] = 609.0000610351563,
+	["Pet"] = {
+		["enabled"] = false,
+		["colInterrupt"] = {
+			1, -- [1]
+			0.75, -- [2]
+			0.5, -- [3]
+		},
+		["colNormal"] = {
+			0.4, -- [1]
+			0.6, -- [2]
+			0.8, -- [3]
+		},
+		["bottom"] = 353,
+		["showRank"] = false,
+		["colNonInterruptable"] = {
+			0.78, -- [1]
+			0.82, -- [2]
+			0.86, -- [3]
+		},
+		["left"] = 835,
+		["colFailed"] = {
+			1, -- [1]
+			0.5, -- [2]
+			0.5, -- [3]
+		},
+	},
 }

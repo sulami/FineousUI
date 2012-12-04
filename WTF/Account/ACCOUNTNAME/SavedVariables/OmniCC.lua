@@ -1,25 +1,22 @@
 
 OmniCC4Config = {
-	["groups"] = {
-	},
-	["version"] = "5.1.2",
 	["groupSettings"] = {
 		["base"] = {
 			["enabled"] = true,
 			["styles"] = {
+				["minutes"] = {
+					["a"] = 1,
+					["r"] = 1,
+					["scale"] = 1,
+					["g"] = 1,
+					["b"] = 1,
+				},
 				["seconds"] = {
 					["a"] = 1,
 					["r"] = 0.9372549019607843,
 					["scale"] = 1,
 					["g"] = 0.9686274509803922,
 					["b"] = 1,
-				},
-				["soon"] = {
-					["a"] = 1,
-					["r"] = 1,
-					["scale"] = 1.5,
-					["g"] = 0.01176470588235294,
-					["b"] = 0.1,
 				},
 				["hours"] = {
 					["a"] = 1,
@@ -28,29 +25,32 @@ OmniCC4Config = {
 					["g"] = 0.7,
 					["b"] = 0.7,
 				},
-				["minutes"] = {
+				["soon"] = {
 					["a"] = 1,
 					["r"] = 1,
-					["scale"] = 1,
-					["g"] = 1,
-					["b"] = 1,
+					["scale"] = 1.5,
+					["g"] = 0.01176470588235294,
+					["b"] = 0.1,
 				},
 			},
-			["fontSize"] = 18,
+			["fontFace"] = "Fonts\\FRIZQT__.TTF",
 			["effect"] = "pulse",
-			["scaleText"] = true,
-			["minEffectDuration"] = 30,
-			["minSize"] = 0.5,
-			["showCooldownModels"] = true,
 			["minDuration"] = 3,
+			["mmSSDuration"] = 0,
+			["anchor"] = "CENTER",
+			["yOff"] = 0,
+			["showCooldownModels"] = true,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["anchor"] = "CENTER",
-			["mmSSDuration"] = 0,
-			["yOff"] = 0,
-			["fontFace"] = "Fonts\\FRIZQT__.TTF",
+			["minSize"] = 0.5,
+			["minEffectDuration"] = 30,
+			["scaleText"] = true,
+			["fontSize"] = 18,
 		},
 	},
 	["engine"] = "AniUpdater",
+	["version"] = "5.1.2",
+	["groups"] = {
+	},
 }

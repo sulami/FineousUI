@@ -1,0 +1,15 @@
+tag v3.7.4
+8949ad8fbbedca50249094b715446d55835a5594
+Shadowed <shadowed.wow@gmail.com>
+2012-12-03 21:20:00 -0800
+
+Tagging as release 3.7.4
+
+
+--------------------
+
+Shadowed:
+	- Copy/paste typo
+	- Empty bar will be colored tapped if reaction type is both or NPC now. Not sold on this change, may revert it depending on reactions
+	- Strip all the 5.1 compatibility checks since 5.1 is live
+	- Bump options TOC

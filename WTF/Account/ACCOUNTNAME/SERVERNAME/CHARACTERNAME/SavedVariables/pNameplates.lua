@@ -1,14 +1,6 @@
 
 cfg = {
 	["Mvmt"] = {
-		["name"] = {
-			"BOTTOM", -- [1]
-			"TOP", -- [2]
-			0, -- [3]
-			2, -- [4]
-			"THINOUTLINE", -- [5]
-			"CENTER", -- [6]
-		},
 		["level"] = {
 			"LEFT", -- [1]
 			"RIGHT", -- [2]
@@ -16,6 +8,14 @@ cfg = {
 			0, -- [4]
 			"THINOUTLINE", -- [5]
 			"LEFT", -- [6]
+		},
+		["raid"] = {
+			"RIGHT", -- [1]
+			"LEFT", -- [2]
+			-5, -- [3]
+			0, -- [4]
+			"THINOUTLINE", -- [5]
+			"RIGHT", -- [6]
 		},
 		["perc"] = {
 			"CENTER", -- [1]
@@ -25,13 +25,13 @@ cfg = {
 			"NONE", -- [5]
 			"CENTER", -- [6]
 		},
-		["raid"] = {
-			"RIGHT", -- [1]
-			"LEFT", -- [2]
-			-5, -- [3]
-			0, -- [4]
+		["name"] = {
+			"BOTTOM", -- [1]
+			"TOP", -- [2]
+			0, -- [3]
+			2, -- [4]
 			"THINOUTLINE", -- [5]
-			"RIGHT", -- [6]
+			"CENTER", -- [6]
 		},
 	},
 	["FontSize_Cast"] = 10,
@@ -45,13 +45,13 @@ cfg = {
 	["ThreatEnabled"] = true,
 	["hph"] = 14,
 	["raidSize"] = 24,
-	["hpw"] = 100,
-	["FontSize_Level"] = 12,
-	["RaidMarkColor"] = true,
-	["ShowHPValue"] = false,
-	["FontSize_Name"] = 10,
 	["LowHP"] = {
 		false, -- [1]
 		25, -- [2]
 	},
+	["FontSize_Name"] = 10,
+	["ShowHPValue"] = false,
+	["RaidMarkColor"] = true,
+	["FontSize_Level"] = 12,
+	["hpw"] = 100,
 }
