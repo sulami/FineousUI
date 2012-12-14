@@ -26,3 +26,10 @@ MACRO64 0000000000000017 "trinket/focus" "INV_MISC_QUESTIONMARK"
 /use [nomodifier] 14
 /focus [mod:ctrl]
 END
+MACRO64 000000000000001A "WebDKP Commands" "SPELL_MISC_PETHEAL"
+/ra WebDKP Commands:
+/ra !bid # - Bid # DKP while bidding is in progress
+/ra !dkp - Your current DKP
+/ra !standby add - Add yourself to the standby list
+/ra !standby del - Remove yourself from the standby list
+END

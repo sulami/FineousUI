@@ -36,7 +36,7 @@ L = mod:GetLocale()
 
 function mod:GetOptions()
 	return {
-		123461, 123250, 123244, "special", "berserk", "bosskill",
+		123461, 123250, 123244, 123705, "special", "berserk", "proximity", "bosskill",
 	}, {
 		[123461] = "general",
 	}
@@ -54,7 +54,9 @@ function mod:OnBossEnable()
 	self:Log("SPELL_AURA_REMOVED", "GetAwayRemoved", 123461)
 	self:Log("SPELL_AURA_APPLIED", "Protect", 123250)
 	self:Log("SPELL_CAST_START", "Hide", 123244)
-
+	self:Log("SPELL_AURA_APPLIED", "ScaryFog", 123705)
+	self:Log("SPELL_AURA_APPLIED_DOSE", "ScaryFog", 123705)
+	self:Log("SPELL_AURA_REMOVED", "ScaryFogRemoved", 123705)
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "EngageCheck") -- use this to detect him coming out of hide
 	self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 end
@@ -64,7 +66,10 @@ function mod:OnEngage(diff)
 	nextProtectWarning = 85
 	self:Bar("special", "~"..L["special"], 33, 123263)
 	self:RegisterEvent("UNIT_HEALTH_FREQUENT")
-	self:Berserk(self:LFR() and 600 or 480)
+	self:Berserk(self:LFR() and 600 or self:Heroic() and 420 or 480)
+	if self:Tank() then
+		self:OpenProximity(3)
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -79,6 +84,39 @@ function mod:EngageCheck()
 		hiding = nil
 		self:Bar("special", "~"..L["special"], 20, 123263)
 		self:Message(123244, L["end_hide"], "Attention", 123244)
+	end
+end
+
+do
+	local scheduled = nil
+	local function reportFog(spellName)
+		local highestStack, highestStackPlayer = 0
+		for i=1, GetNumGroupMembers() do
+			local unit = ("raid%d"):format(i)
+			local _, _, _, stack = UnitDebuff(unit, spellName)
+			if stack and stack > highestStack then
+				highestStack = stack
+				highestStackPlayer = unit
+			end
+		end
+		mod:TargetMessage(123705, ("%s (%d)"):format(spellName, highestStack), (UnitName(highestStackPlayer)), "Attention", 123705)
+		scheduled = nil
+	end
+
+	function mod:ScaryFog(player, spellId, _, _, spellName)
+		if UnitIsUnit("player", player) then
+			self:OpenProximity(4) -- could be less than 4 but still experimenting
+		end
+		self:Bar(spellId, "~"..spellName, 19, spellId)
+		if not scheduled then
+			scheduled = self:ScheduleTimer(reportFog, 0.1, spellName)
+		end
+	end
+end
+
+function mod:ScaryFogRemoved(player)
+	if UnitIsUnit("player", player) and not self:Tank() then
+		self:CloseProximity()
 	end
 end
 
@@ -116,7 +154,7 @@ do
 				local t = GetTime()
 				if t-prev > 3 then -- warn max once every 3 sec
 					prev = t
-					local hpToGo = math.floor(4 - (getAwayStartHP - hp))
+					local hpToGo = math.ceil(4 - (getAwayStartHP - hp))
 					if lastHpToGo ~= hpToGo and hpToGo > 0 then
 						lastHpToGo = hpToGo
 						self:Message(123461, L["hp_to_go"]:format(hpToGo), "Positive", 123461)

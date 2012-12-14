@@ -1,14 +1,6 @@
 
 cfg = {
 	["Mvmt"] = {
-		["level"] = {
-			"LEFT", -- [1]
-			"RIGHT", -- [2]
-			2, -- [3]
-			0, -- [4]
-			"THINOUTLINE", -- [5]
-			"LEFT", -- [6]
-		},
 		["raid"] = {
 			"RIGHT", -- [1]
 			"LEFT", -- [2]
@@ -17,13 +9,13 @@ cfg = {
 			"THINOUTLINE", -- [5]
 			"RIGHT", -- [6]
 		},
-		["perc"] = {
-			"CENTER", -- [1]
-			"CENTER", -- [2]
-			0, -- [3]
+		["level"] = {
+			"LEFT", -- [1]
+			"RIGHT", -- [2]
+			2, -- [3]
 			0, -- [4]
-			"NONE", -- [5]
-			"CENTER", -- [6]
+			"THINOUTLINE", -- [5]
+			"LEFT", -- [6]
 		},
 		["name"] = {
 			"BOTTOM", -- [1]
@@ -31,6 +23,14 @@ cfg = {
 			0, -- [3]
 			2, -- [4]
 			"THINOUTLINE", -- [5]
+			"CENTER", -- [6]
+		},
+		["perc"] = {
+			"CENTER", -- [1]
+			"CENTER", -- [2]
+			0, -- [3]
+			0, -- [4]
+			"NONE", -- [5]
 			"CENTER", -- [6]
 		},
 	},

@@ -16,16 +16,16 @@ prof = {
 		["ShowHPValue"] = false,
 		["hph"] = 14,
 		["raidSize"] = 24,
-		["hpw"] = 100,
-		["FontSize_Level"] = 12,
+		["FontSize_Name"] = 10,
+		["RaidMarkColor"] = true,
 		["Mvmt"] = {
-			["level"] = {
-				"LEFT", -- [1]
-				"RIGHT", -- [2]
-				2, -- [3]
+			["perc"] = {
+				"CENTER", -- [1]
+				"CENTER", -- [2]
+				0, -- [3]
 				0, -- [4]
-				"THINOUTLINE", -- [5]
-				"LEFT", -- [6]
+				"NONE", -- [5]
+				"CENTER", -- [6]
 			},
 			["raid"] = {
 				"RIGHT", -- [1]
@@ -35,14 +35,6 @@ prof = {
 				"THINOUTLINE", -- [5]
 				"RIGHT", -- [6]
 			},
-			["perc"] = {
-				"CENTER", -- [1]
-				"CENTER", -- [2]
-				0, -- [3]
-				0, -- [4]
-				"NONE", -- [5]
-				"CENTER", -- [6]
-			},
 			["name"] = {
 				"BOTTOM", -- [1]
 				"TOP", -- [2]
@@ -51,9 +43,17 @@ prof = {
 				"THINOUTLINE", -- [5]
 				"CENTER", -- [6]
 			},
+			["level"] = {
+				"LEFT", -- [1]
+				"RIGHT", -- [2]
+				2, -- [3]
+				0, -- [4]
+				"THINOUTLINE", -- [5]
+				"LEFT", -- [6]
+			},
 		},
 		["ThreatEnabled"] = true,
-		["RaidMarkColor"] = true,
-		["FontSize_Name"] = 10,
+		["FontSize_Level"] = 12,
+		["hpw"] = 100,
 	},
 }

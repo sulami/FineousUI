@@ -1,5 +1,8 @@
 
 OmniCC4Config = {
+	["groups"] = {
+	},
+	["version"] = "5.1.3",
 	["groupSettings"] = {
 		["base"] = {
 			["enabled"] = true,
@@ -33,24 +36,21 @@ OmniCC4Config = {
 					["b"] = 0.1,
 				},
 			},
-			["fontFace"] = "Fonts\\FRIZQT__.TTF",
+			["fontSize"] = 18,
 			["effect"] = "pulse",
-			["minDuration"] = 3,
-			["mmSSDuration"] = 0,
-			["anchor"] = "CENTER",
-			["yOff"] = 0,
+			["scaleText"] = true,
+			["minEffectDuration"] = 30,
+			["minSize"] = 0.5,
 			["showCooldownModels"] = true,
+			["minDuration"] = 3,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["minSize"] = 0.5,
-			["minEffectDuration"] = 30,
-			["scaleText"] = true,
-			["fontSize"] = 18,
+			["anchor"] = "CENTER",
+			["mmSSDuration"] = 0,
+			["yOff"] = 0,
+			["fontFace"] = "Fonts\\FRIZQT__.TTF",
 		},
 	},
 	["engine"] = "AniUpdater",
-	["version"] = "5.1.2",
-	["groups"] = {
-	},
 }

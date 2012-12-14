@@ -1,0 +1,33 @@
+------------------------------------------------------------------------
+r130 | fuda01 | 2012-11-12 18:39:57 +0000 (Mon, 12 Nov 2012) | 1 line
+Changed paths:
+   A /tags/1.12.4 (from /trunk:129)
+
+-
+------------------------------------------------------------------------
+r129 | fuda01 | 2012-11-12 18:39:37 +0000 (Mon, 12 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/vexpower.toc
+
+release tag
+------------------------------------------------------------------------
+r128 | fuda01 | 2012-11-12 18:01:53 +0000 (Mon, 12 Nov 2012) | 1 line
+Changed paths:
+   M /trunk/vexpower.lua
+
+fixed: hotfix for the wl mechanics, they bugged out after zonechanging. This fix is only temporal and should work. I'll work on a clean fix when I have more time.
+------------------------------------------------------------------------
+r127 | fuda01 | 2012-10-18 18:22:55 +0000 (Thu, 18 Oct 2012) | 1 line
+Changed paths:
+   M /trunk/core/cps.lua
+   M /trunk/core/initialize.lua
+   M /trunk/core/markers.lua
+   M /trunk/core/power.lua
+   M /trunk/core/text.lua
+   M /trunk/defaults/defaults.lua
+   A /trunk/options/libs/strata.lua
+   A /trunk/options/strata.lua
+   M /trunk/vexpower.toc
+
+-added: optionpanel to adjust frameStrata
+------------------------------------------------------------------------

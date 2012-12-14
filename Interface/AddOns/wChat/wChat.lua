@@ -1,5 +1,4 @@
-﻿
-local chatfadehide	                = false
+﻿local chatfadehide	                = false
 local chatbackgroundhide			= true
 local flashtabfade                		        = false
 local uinoticetrue			= false
@@ -362,8 +361,8 @@ local newAddMsg = {}
 		"[LD]", --LocalDefense
 		"[LFG]", --LookingForGroup
 		"[GR]", --GuildRecruitment
-		"[BG]", --Battleground
-		"[BGL]", --Battleground Leader
+		"[I]", --Instance
+		"[IL]", --Instance Leader
 		"[G]", --Guild
 		"[P]", --Party
 		"[PL]", --Party Leader
@@ -382,12 +381,12 @@ local newAddMsg = {}
 		"%[%d0?%. LocalDefense.-%]",
 		"%[%d0?%. LookingForGroup%]",
 		"%[%d0?%. GuildRecruitment.-%]",
-		gsub((CHAT_BATTLEGROUND_GET or "[battleground]"), ".*%[(.*)%].*", "%%[%1%%]"),
-		gsub((CHAT_BATTLEGROUND_LEADER_GET or "[battleground leader]"), ".*%[(.*)%].*", "%%[%1%%]"),
+		gsub(CHAT_INSTANCE_CHAT_GET, ".*%[(.*)%].*", "%%[%1%%]"),
+		gsub(CHAT_INSTANCE_CHAT_LEADER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_GUILD_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_PARTY_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_PARTY_LEADER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
-		gsub((CHAT_PARTY_GUIDE_GET or "[party guide]"), ".*%[(.*)%].*", "%%[%1%%]"),
+		gsub(CHAT_PARTY_GUIDE_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_OFFICER_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_RAID_GET, ".*%[(.*)%].*", "%%[%1%%]"),
 		gsub(CHAT_RAID_LEADER_GET, ".*%[(.*)%].*", "%%[%1%%]"),

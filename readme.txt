@@ -26,10 +26,11 @@ Step 6:	Maybe you have to configure some Addons on your own.
 	Nameplates: /pp
 	Damage-/Healmeter: /skada config (Disabled in my config)
 	Bossmod: /bigwigs
-	Special Power Bar: /cppba
 	Combattext: /msbt
 	Timer Bars: /ntk (Important if you do not play (Affliction-) Warlock!)
-	Just look out for Profile-Options, choose Fineous-Stormscale and press copy.
+	Alternate Class Power Bar (Soul Shards, Demonic Fury, etc): /vexp
+	Just look out for Profile-Options, choose Fineous-Stormscale and press copy, if Reflux
+	didn't load the proper Profile.
 Step 7: Profit!
 
 Some useful information (better read this):
@@ -49,4 +50,4 @@ You can also update the Addons by yourself, in case something breaks.
 Oh, and by the way:
 If you're either playing on EU-Stormscale, or planning on transfering there,
 <Rapid Eye Movement> is looking for Players.
-Contact me (Fineous), Graivs, Hayek or Crymlink if you're interested.
+Contact someone in the guild or check at rem-gaming.com if you're interested.

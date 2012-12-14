@@ -2,11 +2,16 @@
 AzCastBar_Config = {
 	["Player"] = {
 		["vertTile"] = false,
-		["nameFontFace"] = "Fonts\\FRIZQT__.TTF",
+		["colInterrupt"] = {
+			1, -- [1]
+			0.75, -- [2]
+			0.5, -- [3]
+		},
 		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
+			0.6862745098039216, -- [1]
+			0.6980392156862745, -- [2]
+			1, -- [3]
+			1, -- [4]
 		},
 		["useSameBGTexture"] = false,
 		["showSpellTarget"] = false,
@@ -20,9 +25,9 @@ AzCastBar_Config = {
 		},
 		["showLabel"] = false,
 		["nameLabelAlign"] = "LEFT",
-		["backdropIndent"] = -1,
-		["timeFontFlags"] = "",
 		["horzTile"] = false,
+		["timeFontFlags"] = "",
+		["mergeTrade"] = false,
 		["colBackdrop"] = {
 			0, -- [1]
 			0, -- [2]
@@ -30,10 +35,10 @@ AzCastBar_Config = {
 			1, -- [4]
 		},
 		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Flat.tga",
-		["showTotalTime"] = false,
-		["mergeTrade"] = false,
 		["iconAnchor"] = "NONE",
-		["safeZone"] = false,
+		["showTotalTime"] = false,
+		["nameFontFace"] = "Fonts\\FRIZQT__.TTF",
+		["bottom"] = 358,
 		["colBackGround"] = {
 			0.3, -- [1]
 			0.3, -- [2]
@@ -44,27 +49,23 @@ AzCastBar_Config = {
 		["showRank"] = false,
 		["width"] = 304,
 		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
-		["reverseGrowth"] = false,
+		["safeZone"] = false,
 		["colFailed"] = {
 			1, -- [1]
 			0.5, -- [2]
 			0.5, -- [3]
 		},
-		["bottom"] = 358,
+		["backdropIndent"] = -1,
 		["height"] = 20,
 		["colNonInterruptable"] = {
 			0.78, -- [1]
 			0.82, -- [2]
 			0.86, -- [3]
 		},
-		["colInterrupt"] = {
-			1, -- [1]
-			0.75, -- [2]
-			0.5, -- [3]
-		},
 		["timeLabelAlign"] = "RIGHT",
+		["reverseGrowth"] = false,
 	},
-	["optionsLeft"] = 22.00057601928711,
+	["optionsLeft"] = 109.000602722168,
 	["Focus"] = {
 		["useSameBGTexture"] = false,
 		["reverseGrowth"] = false,
@@ -75,9 +76,10 @@ AzCastBar_Config = {
 			0.5, -- [3]
 		},
 		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
+			0.6862745098039216, -- [1]
+			0.6980392156862745, -- [2]
+			1, -- [3]
+			1, -- [4]
 		},
 		["colBackdrop"] = {
 			0, -- [1]
@@ -129,9 +131,9 @@ AzCastBar_Config = {
 			1, -- [4]
 		},
 		["texture"] = "Interface\\Addons\\NeedToKnow\\Textures\\Flat.tga",
-		["nameFontFace"] = "Fonts\\FRIZQT__.TTF",
 		["showTotalTime"] = false,
 		["backdropIndent"] = -1,
+		["nameFontFace"] = "Fonts\\FRIZQT__.TTF",
 		["bottom"] = 305,
 		["colBackGround"] = {
 			0.3, -- [1]
@@ -142,8 +144,8 @@ AzCastBar_Config = {
 		["bgFile"] = "Interface\\Buttons\\WHITE8X8",
 		["showRank"] = false,
 		["width"] = 241,
-		["showSpark"] = false,
 		["height"] = 15,
+		["showSpark"] = false,
 		["colFailed"] = {
 			1, -- [1]
 			0.5, -- [2]
@@ -157,9 +159,10 @@ AzCastBar_Config = {
 			0.86, -- [3]
 		},
 		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
+			0.6862745098039216, -- [1]
+			0.6980392156862745, -- [2]
+			1, -- [3]
+			1, -- [4]
 		},
 		["timeLabelAlign"] = "RIGHT",
 	},
@@ -170,9 +173,10 @@ AzCastBar_Config = {
 		["left"] = 880,
 		["hideIconBorder"] = true,
 		["colNormal"] = {
-			0.4, -- [1]
-			0.6, -- [2]
-			0.8, -- [3]
+			0.6862745098039216, -- [1]
+			0.6980392156862745, -- [2]
+			1, -- [3]
+			1, -- [4]
 		},
 		["colBackdrop"] = {
 			0, -- [1]
@@ -197,7 +201,7 @@ AzCastBar_Config = {
 		["showTotalTime"] = false,
 		["iconAnchor"] = "NONE",
 	},
-	["optionsBottom"] = 609.0000610351563,
+	["optionsBottom"] = 471.0001220703125,
 	["Pet"] = {
 		["enabled"] = false,
 		["colInterrupt"] = {

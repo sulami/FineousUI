@@ -86,10 +86,10 @@ RaidAchievement_Ulduar: enabled
 RaidAchievement_WotlkHeroics: enabled
 epgp: enabled
 TidyPlates_ThreatPlates: disabled
-Auctionator: enabled
-WebDKP: disabled
+Auctionator: disabled
+WebDKP: enabled
 ArkInventory: disabled
-vexpower: disabled
+vexpower: enabled
 DBM-Core: disabled
 DBM-DefaultSkin: disabled
 DBM-GUI: disabled
@@ -107,13 +107,13 @@ ErrorFilter: disabled
 SkadaCC: enabled
 SkadaDamage: enabled
 SkadaDamageTaken: enabled
-SkadaDeaths: enabled
+SkadaDeaths: disabled
 SkadaDebuffs: enabled
 SkadaDispels: enabled
 SkadaEnemies: enabled
 SkadaHealing: enabled
-SkadaPower: enabled
-SkadaThreat: enabled
+SkadaPower: disabled
+SkadaThreat: disabled
 ncHoverBind: enabled
 CustomPlayerPowerBarAlt: enabled
 ACP: enabled
@@ -149,3 +149,4 @@ BigWigs_Mogushan: enabled
 BigWigs_Options: enabled
 BigWigs_Plugins: enabled
 Reflux: enabled
+NugEnergy: disabled

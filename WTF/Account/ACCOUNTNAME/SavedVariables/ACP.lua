@@ -11,7 +11,6 @@ ACP_Data = {
 		["Blizzard Addons"] = true,
 		["DBM"] = true,
 		["Dominos"] = true,
-		["Skada"] = true,
 		["Forte"] = true,
 		["AtlasLoot"] = true,
 		["ShadowedUnitFrames"] = true,
